@@ -39,7 +39,13 @@ export function initSidebar() {
         }
     });
 
-    backdrop.addEventListener('click', closeSidebar);
+    // pointerdown, not click: on some older Android/Chrome combos, opening
+    // the sidebar in response to a token tap makes the backdrop cover that
+    // same screen point before the browser's delayed synthetic "click" for
+    // that touch fires – which then lands on the backdrop and closes it
+    // right away (a visible flicker). Pointer events for touch are real,
+    // immediate, one-shot events, so they don't have this ghost-click issue.
+    backdrop.addEventListener('pointerdown', closeSidebar);
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && isOpen()) {

@@ -116,13 +116,16 @@ export function draggable(element, options) {
 
     element.addEventListener('pointercancel', (event) => {
         if (event.pointerId === pointerId) {
-            finish(event, true);
+            // Some older Android/Chrome combos fire a spurious pointercancel
+            // for a plain tap (no drag ever started) instead of pointerup –
+            // treat that case as a completed tap rather than dropping it.
+            finish(event, dragging);
         }
     });
 
     element.addEventListener('lostpointercapture', (event) => {
         if (event.pointerId === pointerId) {
-            finish(event, true);
+            finish(event, dragging);
         }
     });
 }
