@@ -212,6 +212,51 @@ input {
     padding: 0 8px;
 }
 
+/* Sits below .board__toolbar--start, at the same left edge as .board__tokens' own top offset. */
+.day-counter {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: inline-flex;
+    gap: 6px;
+    height: 40px;
+    left: max(12px, env(safe-area-inset-left));
+    padding: 0 8px;
+    position: absolute;
+    top: max(64px, env(safe-area-inset-top));
+    z-index: 3;
+}
+
+.day-counter__label {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.day-counter__value {
+    font-weight: 600;
+    min-width: 1.4em;
+    text-align: center;
+}
+
+.day-counter__button {
+    flex: 0 0 auto;
+    height: 28px;
+    width: 28px;
+}
+
+.day-counter__button:active {
+    background: var(--accent);
+}
+
+.day-counter__button:disabled {
+    cursor: default;
+    opacity: 0.4;
+}
+
 .settings-field {
     display: flex;
     flex-direction: column;
@@ -328,6 +373,12 @@ input {
     box-shadow: 0 0 0 1px rgb(0 0 0 / 40%);
     height: 8px;
     width: 8px;
+}
+
+/* Square instead of round, and a fixed color rather than per-source: marks a role tagged on more than one player, not any single ping. */
+.token__ping-dot--shared {
+    background: var(--tag-shared);
+    border-radius: 0;
 }
 
 /* ------------------------------------------------------------------- Sidebar */
@@ -721,6 +772,7 @@ input {
     min-width: 0;
 }
 
+.ping-add-form__day,
 .ping-card__day {
     flex: 0 0 auto;
     text-align: center;

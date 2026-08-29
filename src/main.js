@@ -1,8 +1,9 @@
 import { applyTranslations, getLanguage, setLanguage } from './i18n.js';
-import { clearSelection, hasSelection, initDetails, showDetails } from './details.js';
+import { clearSelection, hasSelection, initDetails, resetNewPingDay, showDetails } from './details.js';
 import { initSidebar, openSidebar, refreshLabels, showPanel } from './sidebar.js';
 import { isLocked, refresh, subscribe } from './state.js';
 import { initBoard } from './board.js';
+import { initDayCounter } from './daycounter.js';
 import { initEdition } from './edition.js';
 import { initGameSettings } from './gamesettings.js';
 import { initDistribution } from './distribution.js';
@@ -62,7 +63,7 @@ function main() {
     setCatalog(readBootstrapData());
 
     applyTranslations();
-    initSidebar();
+    initSidebar({ onOpen: resetNewPingDay });
     initDetails();
     initBoard({
         onSelect(playerId) {
@@ -72,6 +73,7 @@ function main() {
         }
     });
     initRoster();
+    initDayCounter();
     initEdition();
     initGameSettings();
     initDistribution();

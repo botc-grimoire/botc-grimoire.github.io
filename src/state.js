@@ -16,6 +16,9 @@ export const LIFE_ALIVE = 'alive';
 // to offer "executed" or "exiled" as the selectable option.
 export const LIFE_STATES = [LIFE_ALIVE, 'murdered', 'executed', 'exiled'];
 
+// The day counter's start value and lower bound – there's no "day 0".
+export const DEFAULT_DAY = 1;
+
 /**
  * The own player is not an entry in the player list: it is never created,
  * renamed, or deleted, but exists as a fixed board entry with this reserved
@@ -393,6 +396,7 @@ function normalizeBoard(value) {
         ?? createBoardEntry(SELF_ID, SELF_X, SELF_Y);
 
     return {
+        day: Number.isInteger(source.day) && source.day >= DEFAULT_DAY ? source.day : DEFAULT_DAY,
         locked: source.locked === true,
         players: [self, ...players.filter((entry) => entry.playerId !== SELF_ID)]
     };
@@ -818,6 +822,10 @@ export function getSharedRoles(canonicalize = defaultCanonicalize) {
     return new Set([...counts].filter(([, count]) => count > 1).map(([key]) => key));
 }
 
+export function getDay() {
+    return board.day;
+}
+
 export function isLocked() {
     return board.locked;
 }
@@ -880,6 +888,16 @@ export function setLifeState(playerId, lifeState) {
     }
 
     entry.lifeState = lifeState;
+    persistBoard();
+}
+
+/** No upper bound; DEFAULT_DAY (1) is the lower one – there's no "day 0". */
+export function setDay(day) {
+    if (!Number.isInteger(day) || day < DEFAULT_DAY) {
+        return;
+    }
+
+    board.day = day;
     persistBoard();
 }
 

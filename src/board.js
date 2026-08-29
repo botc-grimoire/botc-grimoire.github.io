@@ -7,6 +7,7 @@ import {
     getPingSources,
     getPlayer,
     getPlayersPingedBy,
+    getSharedRoles,
     isLocked,
     removeFromBoard,
     setLocked,
@@ -29,20 +30,35 @@ let selectHandler = () => {};
 let tokenLayer = null;
 
 // Pure UI state (not in localStorage) – which ping sources are currently
-// checked as filters. Keys as in pingSourceKey().
+// checked as filters. Keys as in pingSourceKey(). SHARED_ROLES_FILTER_KEY is
+// a synthetic entry (no real ping source behind it) for the "double claims"
+// filter; it never collides with a real key since those always contain a
+// space (playerId + role id) and this one doesn't.
 const activePingFilters = new Set();
+const SHARED_ROLES_FILTER_KEY = 'shared-roles';
 
 function pingSourceKey(source) {
     return `${source.sourcePlayerId} ${getRoleId(source.sourceRole)}`;
 }
 
 /** Small dots above the token, one per active filter that matches. */
-function buildPingDots(entry, pingSourceLookup) {
+function buildPingDots(entry, pingSourceLookup, sharedRoles) {
     const container = document.createElement('div');
 
     container.className = 'token__pings';
 
     activePingFilters.forEach((key) => {
+        if (key === SHARED_ROLES_FILTER_KEY) {
+            if (entry.roles.some((role) => sharedRoles.has(getRoleId(role)))) {
+                const dot = document.createElement('span');
+
+                dot.className = 'token__ping-dot token__ping-dot--shared';
+                container.append(dot);
+            }
+
+            return;
+        }
+
         const source = pingSourceLookup.get(key);
 
         if (!source || !getPlayersPingedBy(source.sourcePlayerId, source.sourceRole, getRoleId).includes(entry.playerId)) {
@@ -61,11 +77,37 @@ function buildPingDots(entry, pingSourceLookup) {
     return container;
 }
 
-/** Rebuilds the checkbox list in the filter popover; selection is preserved via activePingFilters. */
-function rebuildPingFilterOptions(pingSources) {
+/** A single filter checkbox row; selection is preserved via activePingFilters. */
+function appendPingFilterOption(key, label) {
+    const wrapper = document.createElement('label');
+    const checkbox = document.createElement('input');
+
+    wrapper.className = 'ping-filter__option';
+    checkbox.checked = activePingFilters.has(key);
+    checkbox.type = 'checkbox';
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            activePingFilters.add(key);
+        } else {
+            activePingFilters.delete(key);
+        }
+
+        render();
+    });
+
+    const text = document.createElement('span');
+
+    text.textContent = label;
+
+    wrapper.append(checkbox, text);
+    pingFilterOptions.append(wrapper);
+}
+
+/** Rebuilds the checkbox list in the filter popover. */
+function rebuildPingFilterOptions(pingSources, sharedRoles) {
     pingFilterOptions.replaceChildren();
 
-    if (pingSources.length === 0) {
+    if (pingSources.length === 0 && sharedRoles.size === 0) {
         const hint = document.createElement('p');
 
         hint.className = 'panel__hint';
@@ -76,34 +118,21 @@ function rebuildPingFilterOptions(pingSources) {
     }
 
     pingSources.forEach((source) => {
-        const key = pingSourceKey(source);
-        const label = document.createElement('label');
-        const checkbox = document.createElement('input');
-
-        label.className = 'ping-filter__option';
-        checkbox.checked = activePingFilters.has(key);
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                activePingFilters.add(key);
-            } else {
-                activePingFilters.delete(key);
-            }
-
-            render();
-        });
-
         const livePlayer = getPlayer(source.sourcePlayerId);
-        const text = document.createElement('span');
 
-        text.textContent = `${livePlayer ? displayName(livePlayer) : source.sourceName} (${normalizeRoleName(source.sourceRole)})`;
-
-        label.append(checkbox, text);
-        pingFilterOptions.append(label);
+        appendPingFilterOption(
+            pingSourceKey(source),
+            `${livePlayer ? displayName(livePlayer) : source.sourceName} (${normalizeRoleName(source.sourceRole)})`
+        );
     });
+
+    // Only offered once at least one role is actually tagged on more than one player.
+    if (sharedRoles.size > 0) {
+        appendPingFilterOption(SHARED_ROLES_FILTER_KEY, t('board.ping-filter.shared'));
+    }
 }
 
-function buildToken(entry, pingSourceLookup) {
+function buildToken(entry, pingSourceLookup, sharedRoles) {
     const player = getPlayer(entry.playerId);
     const token = document.createElement('div');
     const classes = ['token'];
@@ -146,7 +175,7 @@ function buildToken(entry, pingSourceLookup) {
     }
 
     if (activePingFilters.size > 0) {
-        token.append(buildPingDots(entry, pingSourceLookup));
+        token.append(buildPingDots(entry, pingSourceLookup, sharedRoles));
     }
 
     makeTokenDraggable(token, entry);
@@ -201,11 +230,12 @@ function render() {
     const locked = isLocked();
     const pingSources = getPingSources(getRoleId);
     const pingSourceLookup = new Map(pingSources.map((source) => [pingSourceKey(source), source]));
+    const sharedRoles = getSharedRoles(getRoleId);
 
     tokenLayer.replaceChildren();
     entries.forEach((entry) => {
         if (getPlayer(entry.playerId)) {
-            tokenLayer.append(buildToken(entry, pingSourceLookup));
+            tokenLayer.append(buildToken(entry, pingSourceLookup, sharedRoles));
         }
     });
 
@@ -217,7 +247,7 @@ function render() {
     // unlocking.
     pingFilter.hidden = !locked;
     pingQuickAddButton.hidden = !locked;
-    rebuildPingFilterOptions(pingSources);
+    rebuildPingFilterOptions(pingSources, sharedRoles);
 
     // Your own token doesn't count – otherwise the hint would never show.
     const others = entries.filter((entry) => entry.playerId !== SELF_ID).length;

@@ -1,4 +1,4 @@
-import { addPing, getBoardPlayers, getPlayer } from './state.js';
+import { addPing, getBoardPlayers, getDay, getPlayer } from './state.js';
 import { getRoleId, normalizeRoleName } from './catalog.js';
 import { rebuildRoleOptions } from './details.js';
 import { displayName } from './player.js';
@@ -118,7 +118,7 @@ function redirectEnterToSubmit(event) {
 }
 
 export function openPingDialog() {
-    dayInput.value = '';
+    dayInput.value = String(getDay());
     commentInput.value = '';
     sourceRoleInput.value = '';
     // The datalist is otherwise only kept up to date while a player is

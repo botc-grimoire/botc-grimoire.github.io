@@ -3,6 +3,7 @@ import { t } from './i18n.js';
 const OPEN_CLASS = 'sidebar--expanded';
 
 let backdrop = null;
+let onOpen = () => {};
 let panels = {};
 let sidebar = null;
 let toggle = null;
@@ -21,7 +22,8 @@ export function closeSidebar() {
     updateToggle();
 }
 
-export function initSidebar() {
+export function initSidebar(options = {}) {
+    onOpen = options.onOpen ?? (() => {});
     backdrop = document.getElementById('sidebar-backdrop');
     sidebar = document.getElementById('sidebar');
     toggle = document.getElementById('sidebar-toggle');
@@ -73,6 +75,7 @@ export function openSidebar() {
     sidebar.classList.add(OPEN_CLASS);
     backdrop.hidden = false;
     updateToggle();
+    onOpen();
 }
 
 export function showPanel(name) {

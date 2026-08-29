@@ -5,6 +5,7 @@ import {
     addRole,
     getBoardEntry,
     getBoardPlayers,
+    getDay,
     getEdition,
     getPlayer,
     getSharedRoles,
@@ -72,6 +73,7 @@ const GROUPS = [
 
 let currentId = null;
 let nameOutput = null;
+let newPingDayInput = null;
 let newPingPlayerSelect = null;
 let newPingRoleInput = null;
 let notesInput = null;
@@ -369,6 +371,16 @@ function rebuildNewPingPlayerOptions() {
     return options;
 }
 
+/**
+ * Defaults the "add ping" form's day field to the current day counter.
+ * Called whenever the sidebar is opened (see main.js), regardless of whether
+ * that happened via a token tap or the toggle button – and again after a
+ * successful submit, ready for the next entry.
+ */
+export function resetNewPingDay() {
+    newPingDayInput.value = String(getDay());
+}
+
 function commitNewPing() {
     if (!currentId || newPingPlayerSelect.disabled) {
         return;
@@ -380,13 +392,20 @@ function commitNewPing() {
         return;
     }
 
+    const rawDay = newPingDayInput.value.trim();
+    const parsedDay = Number(rawDay);
+    const day = rawDay !== '' && Number.isInteger(parsedDay) && parsedDay > 0 ? parsedDay : null;
+
     addPing(currentId, {
         comment: '',
-        day: null,
+        day,
         sourcePlayerId: newPingPlayerSelect.value,
         sourceRole: trimmedRole
     }, getRoleId);
     newPingRoleInput.value = '';
+    // Day usually stays the same across several claims recorded in a row –
+    // reset to the current day counter, not to empty, ready for the next one.
+    resetNewPingDay();
 }
 
 /** Renders the current player's ping history; keeps existing cards. */
@@ -395,6 +414,7 @@ function renderPings(entry) {
 
     newPingPlayerSelect.disabled = !hasOtherPlayers;
     newPingRoleInput.disabled = !hasOtherPlayers;
+    newPingDayInput.disabled = !hasOtherPlayers;
     pingAddButton.disabled = !hasOtherPlayers;
     pingsEmptyHint.hidden = hasOtherPlayers;
 
@@ -522,6 +542,7 @@ export function hasSelection() {
 
 export function initDetails() {
     nameOutput = document.getElementById('details-name');
+    newPingDayInput = document.getElementById('new-ping-day');
     newPingPlayerSelect = document.getElementById('new-ping-player');
     newPingRoleInput = document.getElementById('new-ping-role');
     notesInput = document.getElementById('details-notes');
@@ -542,6 +563,12 @@ export function initDetails() {
 
     pingAddButton.addEventListener('click', commitNewPing);
     newPingRoleInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            commitNewPing();
+        }
+    });
+    newPingDayInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             event.preventDefault();
             commitNewPing();

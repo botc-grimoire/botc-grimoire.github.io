@@ -38,6 +38,23 @@
             <span class="team-distribution" id="team-distribution" data-i18n-title="settings.distribution"></span>
         </div>
 
+        <div class="day-counter" id="day-counter">
+            <span class="day-counter__label" data-i18n="details.pings.day"></span>
+            <button class="day-counter__button icon-button" id="day-counter-decrement" type="button"
+                    data-i18n-label="board.day.decrease" data-i18n-title="board.day.decrease">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <span class="day-counter__value" id="day-counter-value"></span>
+            <button class="day-counter__button icon-button" id="day-counter-increment" type="button"
+                    data-i18n-label="board.day.increase" data-i18n-title="board.day.increase">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
         <div class="board__toolbar board__toolbar--end">
             <button class="icon-button icon-button--toolbar" id="board-arrange" type="button"
                     data-i18n-label="board.arrange" data-i18n-title="board.arrange">
@@ -243,6 +260,9 @@
                     <label class="visually-hidden" for="new-ping-role" data-i18n="details.role"></label>
                     <input class="ping-add-form__role text-input" id="new-ping-role" type="text" autocomplete="off"
                            list="role-options" data-i18n-placeholder="details.pings.role.placeholder">
+                    <label class="visually-hidden" for="new-ping-day" data-i18n="details.pings.day"></label>
+                    <input class="ping-add-form__day text-input" id="new-ping-day" type="number" min="1" step="1"
+                           inputmode="numeric" data-i18n-placeholder="details.pings.day">
                     <button class="icon-button icon-button--toolbar" id="ping-add" type="button"
                             data-i18n-label="details.pings.add" data-i18n-title="details.pings.add">
                         <svg aria-hidden="true" viewBox="0 0 24 24">
