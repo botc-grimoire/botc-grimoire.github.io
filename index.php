@@ -1,0 +1,323 @@
+<?php
+    $languages = ['de', 'en'];
+    $language = in_array($_COOKIE['lang'] ?? '', $languages, true) ? $_COOKIE['lang'] : 'de';
+    $rolesRaw = @file_get_contents(__DIR__ . '/data/roles.json');
+    $rolesData = $rolesRaw === false ? null : json_decode($rolesRaw, true);
+
+    // mask JSON_HEX_TAG to prevent </script> injection
+    $roles = json_encode(
+        $rolesData ?? ['editions' => []],
+        JSON_HEX_TAG | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+    );
+?>
+<!doctype html>
+<html lang="<?= htmlspecialchars($language, ENT_QUOTES, 'UTF-8') ?>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#1a1d21">
+    <title>Blood on the Clocktower</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="web.manifest">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="board" id="board">
+        <div class="board__toolbar board__toolbar--start">
+            <button class="icon-button icon-button--toolbar" id="game-settings-open" type="button"
+                    data-i18n-label="settings.title" data-i18n-title="settings.title">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 3.5v2.4M12 18.1v2.4M20.5 12h-2.4M5.9 12H3.5M17.5 6.5l-1.7 1.7M8.2 15.8l-1.7 1.7M17.5 17.5l-1.7-1.7M8.2 8.2 6.5 6.5"
+                          fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <span class="team-distribution" id="team-distribution" data-i18n-title="settings.distribution"></span>
+        </div>
+
+        <div class="board__toolbar board__toolbar--end">
+            <button class="icon-button icon-button--toolbar" id="board-arrange" type="button"
+                    data-i18n-label="board.arrange" data-i18n-title="board.arrange">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <circle cx="12" cy="4" r="2.1"/>
+                    <circle cx="18.9" cy="8" r="2.1"/>
+                    <circle cx="18.9" cy="16" r="2.1"/>
+                    <circle cx="12" cy="20" r="2.1"/>
+                    <circle cx="5.1" cy="16" r="2.1"/>
+                    <circle cx="5.1" cy="8" r="2.1"/>
+                </svg>
+            </button>
+            <button class="icon-button icon-button--toolbar" id="board-clear" type="button"
+                    data-i18n-label="board.clear" data-i18n-title="board.clear">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M6 7h12l-1 12.5a1.5 1.5 0 0 1-1.5 1.4h-7A1.5 1.5 0 0 1 7 19.5L6 7Z"
+                          fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M4.5 7h15M9.5 4.2h5M10 11v6M14 11v6"
+                          fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <button class="icon-button icon-button--toolbar" id="ping-quick-add" type="button"
+                    data-i18n-label="details.pings.add" data-i18n-title="details.pings.add">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
+                          fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M12 8v5M9.5 10.5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <details class="ping-filter" id="ping-filter">
+                <summary class="icon-button icon-button--toolbar" data-i18n-label="board.ping-filter" data-i18n-title="board.ping-filter">
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M4 5h16L14 13v5l-4 2v-7L4 5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="ping-filter__options" id="ping-filter-options"></div>
+            </details>
+            <button class="icon-button icon-button--toolbar" id="board-lock" type="button" aria-pressed="false"
+                    data-i18n-label="board.lock" data-i18n-title="board.lock">
+                <svg aria-hidden="true" class="icon-lock-open" viewBox="0 0 24 24">
+                    <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M8.5 11V8a3.5 3.5 0 0 1 6.9-.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                <svg aria-hidden="true" class="icon-lock-closed" viewBox="0 0 24 24">
+                    <rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <p class="board__empty" id="board-empty" data-i18n="board.empty"></p>
+        <div class="board__tokens" id="token-layer"></div>
+    </main>
+
+    <dialog class="ping-dialog" id="ping-dialog">
+        <form method="dialog" class="ping-dialog__form" id="ping-dialog-form">
+            <h2 data-i18n="details.pings.add"></h2>
+
+            <label class="visually-hidden" for="ping-dialog-source-player" data-i18n="details.pings.player"></label>
+            <select class="ping-card__player" id="ping-dialog-source-player"></select>
+
+            <label class="visually-hidden" for="ping-dialog-source-role" data-i18n="details.role"></label>
+            <input class="text-input" id="ping-dialog-source-role" type="text" autocomplete="off"
+                   list="role-options" data-i18n-placeholder="details.pings.role.placeholder">
+
+            <label class="visually-hidden" for="ping-dialog-day" data-i18n="details.pings.day"></label>
+            <input class="text-input" id="ping-dialog-day" type="number" min="1" step="1" inputmode="numeric"
+                   data-i18n-placeholder="details.pings.day">
+
+            <label class="visually-hidden" for="ping-dialog-comment" data-i18n="details.pings.comment.placeholder"></label>
+            <input class="text-input" id="ping-dialog-comment" type="text" autocomplete="off"
+                   data-i18n-placeholder="details.pings.comment.placeholder">
+
+            <details class="target-picker" id="ping-dialog-targets-picker">
+                <summary class="text-button" data-i18n="details.pings.targets"></summary>
+                <div class="target-picker__options" id="ping-dialog-targets"></div>
+            </details>
+
+            <div class="ping-dialog__actions">
+                <button class="text-button" type="submit" value="cancel" data-i18n="details.pings.cancel"></button>
+                <button class="text-button text-button--primary" type="submit" value="create"
+                        id="ping-dialog-submit" data-i18n="details.pings.create"></button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="game-settings-dialog" id="game-settings-dialog">
+        <div class="game-settings-dialog__header">
+            <h2 data-i18n="settings.title"></h2>
+            <button class="icon-button icon-button--toolbar" id="game-settings-close" type="button"
+                    data-i18n-label="settings.close" data-i18n-title="settings.close">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="game-settings-dialog__body">
+            <div class="settings-field">
+                <label for="edition-select" data-i18n="board.edition"></label>
+                <select class="settings-field__select" id="edition-select" data-i18n-title="board.edition"></select>
+            </div>
+
+            <div id="fabled-section">
+                <h3 class="details__section" data-i18n="settings.fabled"></h3>
+                <ul class="fabled-list" id="fabled-list"></ul>
+                <select class="settings-field__select" id="fabled-add-select" data-i18n-label="settings.fabled.add"></select>
+            </div>
+
+            <div id="lorics-section">
+                <h3 class="details__section" data-i18n="settings.lorics"></h3>
+                <ul class="loric-list" id="loric-list"></ul>
+                <select class="settings-field__select" id="loric-add-select" data-i18n-label="settings.lorics.add"></select>
+            </div>
+        </div>
+    </dialog>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="false"
+                data-i18n-label="sidebar.open" data-i18n-title="sidebar.open">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <div class="sidebar__header">
+            <label class="lang-switch">
+                <span class="lang-switch__label" aria-hidden="true">DE</span>
+                <input class="lang-switch__input" id="language-switch" type="checkbox" role="switch"
+                       data-i18n-label="lang.toggle" data-i18n-title="lang.toggle">
+                <span class="lang-switch__track" aria-hidden="true"><span class="lang-switch__knob"></span></span>
+                <span class="lang-switch__label" aria-hidden="true">EN</span>
+            </label>
+        </div>
+
+        <section class="panel" id="panel-roster">
+            <header class="panel__header">
+                <h1 class="panel__title" data-i18n="roster.title"></h1>
+            </header>
+
+            <ul class="player-list" id="player-list"></ul>
+            <p class="panel__hint" id="roster-empty" data-i18n="roster.empty"></p>
+
+            <div class="panel__form">
+                <label class="visually-hidden" for="new-player-name" data-i18n="roster.name"></label>
+                <input class="text-input" id="new-player-name" type="text" autocomplete="off" data-i18n-placeholder="roster.placeholder">
+                <button class="text-button text-button--primary" id="add-player" type="button" data-i18n="roster.add"></button>
+            </div>
+        </section>
+
+        <section class="panel" id="panel-locked" hidden>
+            <p class="panel__hint" data-i18n="details.locked.hint"></p>
+        </section>
+
+        <section class="panel" id="panel-details" hidden>
+            <header class="panel__header">
+                <h1 class="panel__title" id="details-name"></h1>
+            </header>
+
+            <div id="role-section">
+                <h3 class="details__section" data-i18n="details.role"></h3>
+                <ul class="tag-list" id="role-tags"></ul>
+                <p class="tag-description" id="role-description"></p>
+                <div class="tag-form">
+                    <label class="visually-hidden" for="role-input" data-i18n="details.role"></label>
+                    <input class="text-input" id="role-input" type="text" autocomplete="off"
+                           list="role-options" data-i18n-placeholder="details.role.placeholder">
+                    <datalist id="role-options"></datalist>
+                    <button class="icon-button icon-button--toolbar" id="role-add" type="button"
+                            data-i18n-label="details.role.add" data-i18n-title="details.role.add">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="notes-section">
+                <h3 class="details__section" data-i18n="details.notes"></h3>
+                <textarea class="details__notes" id="details-notes" rows="6"></textarea>
+            </div>
+
+            <div id="trust-section">
+                <h3 class="details__section" data-i18n="details.trust"></h3>
+                <div class="choice-list" id="trust-list" role="radiogroup" data-i18n-label="details.trust"></div>
+            </div>
+
+            <div id="life-section">
+                <h3 class="details__section" data-i18n="details.life"></h3>
+                <div class="choice-list" id="life-list" role="radiogroup" data-i18n-label="details.life"></div>
+            </div>
+
+            <div id="pings-section">
+                <h3 class="details__section" data-i18n="details.pings"></h3>
+                <ul class="ping-list" id="ping-list"></ul>
+                <p class="panel__hint" id="pings-empty" data-i18n="details.pings.empty"></p>
+                <div class="ping-add-form">
+                    <label class="visually-hidden" for="new-ping-player" data-i18n="details.pings.player"></label>
+                    <select class="ping-add-form__player" id="new-ping-player"></select>
+                    <label class="visually-hidden" for="new-ping-role" data-i18n="details.role"></label>
+                    <input class="ping-add-form__role text-input" id="new-ping-role" type="text" autocomplete="off"
+                           list="role-options" data-i18n-placeholder="details.pings.role.placeholder">
+                    <button class="icon-button icon-button--toolbar" id="ping-add" type="button"
+                            data-i18n-label="details.pings.add" data-i18n-title="details.pings.add">
+                        <svg aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </aside>
+
+    <?php // Faces for trustworthiness, from evil to good – referenced via <use>. ?>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+        <symbol id="face-evil" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6.9 7.4 10.3 9.3M17.1 7.4 13.7 9.3" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="9.1" cy="11.4" r="1.1"/>
+            <circle cx="14.9" cy="11.4" r="1.1"/>
+            <path d="M8.2 16.8Q12 13 15.8 16.8" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="face-suspect" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6.9 8.4 10.3 7.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="9.1" cy="11" r="1.1"/>
+            <circle cx="14.9" cy="11" r="1.1"/>
+            <path d="M8.6 16Q12 14.2 15.4 16" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="face-unknown" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="9.1" cy="10.6" r="1.1"/>
+            <circle cx="14.9" cy="10.6" r="1.1"/>
+            <path d="M8.4 15.4 15.6 15.4" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="face-maybe-good" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="9.1" cy="10.6" r="1.1"/>
+            <circle cx="14.9" cy="10.6" r="1.1"/>
+            <path d="M8.6 14.4Q12 16.5 15.4 14.4" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="face-good" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="9.1" cy="10.4" r="1.1"/>
+            <circle cx="14.9" cy="10.4" r="1.1"/>
+            <path d="M7.9 13.6Q12 17.8 16.1 13.6" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+        </symbol>
+        <?php // Life status: heart, dagger, flame (stake/pyre), door (exile). ?>
+        <symbol id="life-alive" viewBox="0 0 24 24">
+            <path d="M12 19.6C12 19.6 4.4 15.1 4.4 9.9A4.5 4.5 0 0 1 12 8.3 4.5 4.5 0 0 1 19.6 9.9C19.6 15.1 12 19.6 12 19.6Z"
+                  fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="life-murdered" viewBox="0 0 24 24">
+            <path d="M12 21 9.7 12.5 14.3 12.5Z" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7.4 12.5 16.6 12.5M12 12.5 12 4.6M10.2 4.6 13.8 4.6" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="life-executed" viewBox="0 0 24 24">
+            <path d="M12 3.2c3.1 3.6 5.2 6.3 5.2 9.4a5.2 5.2 0 0 1-10.4 0c0-1.7.7-3.2 2-4.8.3 1.7 1.2 2.6 2.3 2.8-1-2.6-.6-5 .9-7.4Z"
+                  fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="life-exiled" viewBox="0 0 24 24">
+            <path d="M10.5 4.5 4.5 4.5 4.5 19.5 10.5 19.5" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.2 12 19.5 12M16.1 8.6 19.5 12 16.1 15.4" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+    </svg>
+
+    <script id="bootstrap-data" type="application/json"><?= $roles ?></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

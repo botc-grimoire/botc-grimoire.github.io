@@ -1,0 +1,189 @@
+const DICTIONARY = {
+    de: {
+        'app.title': 'Blood on the Clocktower',
+        'board.arrange': 'Im Kreis anordnen',
+        'board.clear': 'Board leeren',
+        'board.clear.confirm': 'Alle Spieler und deren Zustände vom Board entfernen? Die Spielerliste bleibt erhalten.',
+        'board.edition': 'Edition',
+        'board.empty': 'Ziehe Spieler aus der Seitenleiste auf das Board.',
+        'board.lock': 'Board sperren',
+        'board.ping-filter': 'Ping-Filter',
+        'board.ping-filter.empty': 'Noch keine Pings erfasst.',
+        'board.remove': 'Vom Board entfernen',
+        'board.unlock': 'Board entsperren',
+        'details.life': 'Lebensstatus',
+        'details.locked.hint': 'Tippe auf einen Spieler auf dem Board, um seinen Zustand zu setzen.',
+        'details.notes': 'Notizen',
+        'details.pings': 'Pings',
+        'details.pings.add': 'Ping hinzufügen',
+        'details.pings.cancel': 'Abbrechen',
+        'details.pings.comment.placeholder': 'Kommentar',
+        'details.pings.create': 'Erstellen',
+        'details.pings.day': 'Tag',
+        'details.pings.empty': 'Kein anderer Spieler auf dem Board.',
+        'details.pings.player': 'Spieler',
+        'details.pings.remove': 'Ping entfernen',
+        'details.pings.role.placeholder': 'Rolle',
+        'details.pings.targets': 'Zielspieler',
+        'details.role': 'Rolle',
+        'details.role.add': 'Rolle hinzufügen',
+        'details.role.placeholder': 'Rolle hinzufügen',
+        'details.role.remove': 'Rolle entfernen',
+        'details.role.unknown': 'Keine Beschreibung verfügbar.',
+        'details.trust': 'Vertrauenswürdigkeit',
+        'lang.toggle': 'Sprache umschalten',
+        'life.alive': 'Lebendig',
+        'life.executed': 'Hingerichtet',
+        'life.exiled': 'Verbannt',
+        'life.murdered': 'Ermordet',
+        'player.self': 'Ich',
+        'roster.add': 'Hinzufügen',
+        'roster.color': 'Farbe wählen',
+        'roster.empty': 'Noch keine Spieler angelegt.',
+        'roster.name': 'Name',
+        'roster.onboard': 'Auf dem Board',
+        'roster.placeholder': 'Neuer Spieler',
+        'roster.remove': 'Spieler löschen',
+        'roster.rename': 'Namen ändern',
+        'roster.title': 'Spieler',
+        'settings.close': 'Schließen',
+        'settings.fabled': 'Fabelwesen',
+        'settings.fabled.add': '+ Fabelwesen hinzufügen',
+        'settings.fabled.remove': 'Fabelwesen entfernen',
+        'settings.lorics': 'Lorics',
+        'settings.lorics.add': '+ Loric hinzufügen',
+        'settings.lorics.remove': 'Loric entfernen',
+        'settings.distribution': 'Bürger: aktuell/erwartet - Außenseiter: aktuell/erwartet - Reisende - erwartete Schergen - erwartete Dämonen',
+        'settings.title': 'Spieleinstellungen',
+        'sidebar.close': 'Seitenleiste schließen',
+        'sidebar.open': 'Seitenleiste öffnen',
+        'trust.evil': 'Böse',
+        'trust.good': 'Gut',
+        'trust.maybe-good': 'Vielleicht vertrauenswürdig',
+        'trust.suspect': 'Suspekt',
+        'trust.unknown': 'Unbekannt'
+    },
+    en: {
+        'app.title': 'Blood on the Clocktower',
+        'board.arrange': 'Arrange in circle',
+        'board.clear': 'Clear board',
+        'board.clear.confirm': 'Remove all players and their states from the board? The player list will be kept.',
+        'board.edition': 'Edition',
+        'board.empty': 'Drag players from the sidebar onto the board.',
+        'board.lock': 'Lock board',
+        'board.ping-filter': 'Ping filter',
+        'board.ping-filter.empty': 'No pings recorded yet.',
+        'board.remove': 'Remove from board',
+        'board.unlock': 'Unlock board',
+        'details.life': 'Life status',
+        'details.locked.hint': 'Tap a player on the board to set their state.',
+        'details.notes': 'Notes',
+        'details.pings': 'Pings',
+        'details.pings.add': 'Add ping',
+        'details.pings.cancel': 'Cancel',
+        'details.pings.comment.placeholder': 'Comment',
+        'details.pings.create': 'Create',
+        'details.pings.day': 'Day',
+        'details.pings.empty': 'No other player on the board.',
+        'details.pings.player': 'Player',
+        'details.pings.remove': 'Remove ping',
+        'details.pings.role.placeholder': 'Role',
+        'details.pings.targets': 'Target players',
+        'details.role': 'Role',
+        'details.role.add': 'Add role',
+        'details.role.placeholder': 'Add role',
+        'details.role.remove': 'Remove role',
+        'details.role.unknown': 'No description available.',
+        'details.trust': 'Trustworthiness',
+        'lang.toggle': 'Switch language',
+        'life.alive': 'Alive',
+        'life.executed': 'Executed',
+        'life.exiled': 'Exiled',
+        'life.murdered': 'Murdered',
+        'player.self': 'Me',
+        'roster.add': 'Add',
+        'roster.color': 'Pick colour',
+        'roster.empty': 'No players yet.',
+        'roster.name': 'Name',
+        'roster.onboard': 'On the board',
+        'roster.placeholder': 'New player',
+        'roster.remove': 'Delete player',
+        'roster.rename': 'Change name',
+        'roster.title': 'Players',
+        'settings.close': 'Close',
+        'settings.fabled': 'Fabled',
+        'settings.fabled.add': '+ Add Fabled',
+        'settings.fabled.remove': 'Remove Fabled',
+        'settings.lorics': 'Lorics',
+        'settings.lorics.add': '+ Add Loric',
+        'settings.lorics.remove': 'Remove Loric',
+        'settings.distribution': 'Townsfolk: current/expected - Outsiders: current/expected - Travellers - expected Minions - expected Demons',
+        'settings.title': 'Game settings',
+        'sidebar.close': 'Close sidebar',
+        'sidebar.open': 'Open sidebar',
+        'trust.evil': 'Evil',
+        'trust.good': 'Good',
+        'trust.maybe-good': 'Possibly trustworthy',
+        'trust.suspect': 'Suspicious',
+        'trust.unknown': 'Unknown'
+    }
+};
+
+const FALLBACK_LANGUAGE = 'de';
+
+export function getLanguage() {
+    const lang = document.documentElement.lang;
+
+    return DICTIONARY[lang] ? lang : FALLBACK_LANGUAGE;
+}
+
+export function localize(value) {
+    if (value === null || typeof value !== 'object') {
+        return value;
+    }
+
+    return value[getLanguage()] ?? value[FALLBACK_LANGUAGE] ?? '';
+}
+
+/**
+ * Switches the language in the running document – no reload, so the sidebar
+ * stays open and the view's state is preserved. The cookie only remembers
+ * the choice for the next page load.
+ */
+export function setLanguage(lang) {
+    if (!DICTIONARY[lang]) {
+        return;
+    }
+
+    const oneYear = 60 * 60 * 24 * 365;
+
+    document.cookie = `lang=${lang};path=/;max-age=${oneYear};samesite=lax`;
+    document.documentElement.lang = lang;
+}
+
+export function t(key, replacements = {}) {
+    const lang = getLanguage();
+    const template = DICTIONARY[lang][key] ?? DICTIONARY[FALLBACK_LANGUAGE][key] ?? key;
+
+    return template.replace(/\{(\w+)\}/g, (match, name) => {
+        return Object.hasOwn(replacements, name) ? String(replacements[name]) : match;
+    });
+}
+
+export function applyTranslations(root = document) {
+    root.querySelectorAll('[data-i18n]').forEach((element) => {
+        element.textContent = t(element.dataset.i18n);
+    });
+
+    root.querySelectorAll('[data-i18n-label]').forEach((element) => {
+        element.setAttribute('aria-label', t(element.dataset.i18nLabel));
+    });
+
+    root.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+        element.setAttribute('placeholder', t(element.dataset.i18nPlaceholder));
+    });
+
+    root.querySelectorAll('[data-i18n-title]').forEach((element) => {
+        element.setAttribute('title', t(element.dataset.i18nTitle));
+    });
+}

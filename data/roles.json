@@ -1,0 +1,1292 @@
+{
+    "editions": [
+        {
+            "id": "trouble-brewing",
+            "name": {
+                "de": "Unheil braut sich zusammen",
+                "en": "Trouble Brewing"
+            },
+            "roles": [
+                {
+                    "id": "washerwoman",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Waschweib",
+                        "en": "Washerwoman"
+                    },
+                    "description": {
+                        "de": "Du erfährst in der ersten Nacht, dass einer von zwei Spielern eine bestimmte Dorfbewohner-Rolle hat.",
+                        "en": "You start knowing that 1 of 2 players is a particular Townsfolk."
+                    },
+                    "icon": "🧼",
+                    "strategies": [
+                        {
+                            "de": "",
+                            "en": "Share your information quickly to provide useful information to the Townsfolk team or wait at least very late in the game to reduce the number of possible Demon players."
+                        },
+                        {
+                            "de": "",
+                            "en": "Publicly reveal which character is in play, but not which player it is or reveal another character role to bluff."
+                        },
+                        {
+                            "de": "",
+                            "en": "Stating a suspect player as Townsfolk character. Maybe he is bad and use this as opportunity to appear good."
+                        },
+                        {
+                            "de": "",
+                            "en": "Beware of the Spy! They may register as a Townsfolk character to you. That player who you think is the Investigator may not be the Investigator after all. But: The spy won't know which Townsfolk you've seen them as."
+                        }
+                    ],
+                    "bluffRoles": "Any strong character (e.g. Fortune Teller, Monk, Empath)",
+                    "bluffStrategies": [
+                        {
+                            "de": "",
+                            "en": "If a player claims to be a particular Townsfolk character, you can claim to be the Washerwoman, and confirm that they are who they say they are."
+                        },
+                        {
+                            "de": "",
+                            "en": "Immediately upon awakening, tell the group that a particular Townsfolk is in play. In bad case an evil player could use this as bluff."
+                        }
+                    ]
+                },
+                {
+                    "id": "librarian",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Bibliothekar",
+                        "en": "Librarian"
+                    },
+                    "description": {
+                        "de": "Du erfährst in der ersten Nacht, dass einer von zwei Spielern eine bestimmte Außenseiter-Rolle hat (oder dass keine Außenseiter im Spiel sind).",
+                        "en": "You start knowing that 1 of 2 players is a particular Outsider (or that zero are in play)."
+                    },
+                    "icon": "📚",
+                    "strategies": [
+                        {
+                            "de": "",
+                            "en": "Share your information quickly to provide useful information to the Townsfolk team or wait at least very late in the game to reduce the number of possible Demon players."
+                        },
+                        {
+                            "de": "",
+                            "en": "If you get a 0, you could try to encourage Outsider bluffs by sharing another number."
+                        },
+                        {
+                            "de": "",
+                            "en": "Imply your identified outsider as powerful Townsfolk or make it known that they are confirmed not to be the Demon."
+                        },
+                        {
+                            "de": "",
+                            "en": "You could give false information about who the Drunk is to protect the character."
+                        }
+                    ],
+                    "bluffRoles": "Any strong character (e.g. Fortune Teller, Monk, Empath)",
+                    "bluffStrategies": [
+                        {
+                            "de": "",
+                            "en": "You can try to backup another player."
+                        },
+                        {
+                            "de": "",
+                            "en": "Naming two good players as the Drunk can cause them to doubt their information."
+                        },
+                        {
+                            "de": "",
+                            "en": "Naming one of your fellow evil players as a potential Drunk to protect their bluffs."
+                        },
+                        {
+                            "de": "",
+                            "en": "Immediately reveal which Outsider is 'in play' very early in the game, but don't name your 'players'."
+                        }
+                    ]
+                },
+                {
+                    "id": "investigator",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Detektiv",
+                        "en": "Investigator"
+                    },
+                    "description": {
+                        "de": "Du erfährst in der ersten Nacht, dass einer von zwei Spielern eine bestimmte Diener-Rolle hat.",
+                        "en": "You start knowing that 1 of 2 players is a particular Minion."
+                    },
+                    "icon": "🔎",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "chef",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Koch",
+                        "en": "Chef"
+                    },
+                    "description": {
+                        "de": "Du erfährst in der ersten Nacht, wie viele Paare böser Spieler direkt nebeneinander sitzen.",
+                        "en": "You start knowing how many pairs of evil players there are."
+                    },
+                    "icon": "👨‍🍳",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "empath",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Empath",
+                        "en": "Empath"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du, wie viele deiner zwei lebenden Nachbarn böse sind.",
+                        "en": "Each night, you learn how many of your 2 alive neighbours are evil."
+                    },
+                    "icon": "🫀",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "fortune_teller",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Wahrsagerin",
+                        "en": "Fortune Teller"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du zwei Spieler und erfährst, ob einer von ihnen der Dämon ist. Ein guter Spieler registriert für dich fälschlich als Dämon.",
+                        "en": "Each night, choose 2 players: you learn if either is a Demon. There is 1 good player that registers as a Demon to you."
+                    },
+                    "icon": "🔮",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "undertaker",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Totengräber",
+                        "en": "Undertaker"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du, welche Rolle der heute hingerichtete Spieler hatte.",
+                        "en": "Each night, you learn which character died by execution today."
+                    },
+                    "icon": "⛏️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "monk",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Mönch",
+                        "en": "Monk"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) schützt du einen anderen Spieler vor dem Dämon.",
+                        "en": "Each night, choose a player (not yourself): they are safe from the Demon tonight."
+                    },
+                    "icon": "🙏",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "ravenkeeper",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Rabenhüter",
+                        "en": "Ravenkeeper"
+                    },
+                    "description": {
+                        "de": "Wenn du nachts stirbst, wachst du auf, wählst einen Spieler und erfährst seine Rolle.",
+                        "en": "If you die at night, you are woken to choose a player: you learn their character."
+                    },
+                    "icon": "🐦‍⬛",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "virgin",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Jungfrau",
+                        "en": "Virgin"
+                    },
+                    "description": {
+                        "de": "Wenn du erstmals nominiert wirst und der Nominierende ein Dorfbewohner ist, wird dieser sofort hingerichtet.",
+                        "en": "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately."
+                    },
+                    "icon": "🕊️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "slayer",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Dämonenjäger",
+                        "en": "Slayer"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du am Tag öffentlich einen Spieler: Ist er der Dämon, stirbt er.",
+                        "en": "Once per game, during the day, publicly choose a player: if they are the Demon, they die."
+                    },
+                    "icon": "🏹",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "soldier",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Soldat",
+                        "en": "Soldier"
+                    },
+                    "description": {
+                        "de": "Du bist immun gegen die Angriffe des Dämons.",
+                        "en": "You are safe from the Demon."
+                    },
+                    "icon": "🛡️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "mayor",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Bürgermeister",
+                        "en": "Mayor"
+                    },
+                    "description": {
+                        "de": "Wenn am Ende nur drei Spieler leben und niemand hingerichtet wird, gewinnt das Dorf. Stirbst du nachts, kann stattdessen ein anderer Spieler sterben.",
+                        "en": "If only 3 players live and no execution occurs, your team wins. If you die at night, another player might die instead."
+                    },
+                    "icon": "🏛️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "butler",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Butler",
+                        "en": "Butler"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du deinen Herrn. Am nächsten Tag darfst du nur abstimmen, wenn dein Herr abstimmt.",
+                        "en": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too."
+                    },
+                    "icon": "🥄",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "drunk",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Trunkenbold",
+                        "en": "Drunk"
+                    },
+                    "description": {
+                        "de": "Du weißt nicht, dass du der Trunkenbold bist. Du glaubst, ein Dorfbewohner zu sein, deine Fähigkeit funktioniert aber nicht.",
+                        "en": "You do not know you are the Drunk. You think you are a Townsfolk character, but your ability malfunctions."
+                    },
+                    "icon": "🍺",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "recluse",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Einsiedler",
+                        "en": "Recluse"
+                    },
+                    "description": {
+                        "de": "Du kannst fälschlich als böse und als Diener oder Dämon registrieren.",
+                        "en": "You might register as evil and as a Minion or Demon, even if dead."
+                    },
+                    "icon": "🏚️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "saint",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Heiliger",
+                        "en": "Saint"
+                    },
+                    "description": {
+                        "de": "Wirst du hingerichtet, verliert das Dorf sofort.",
+                        "en": "If you die by execution, your team loses."
+                    },
+                    "icon": "😇",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "poisoner",
+                    "team": "minion",
+                    "name": {
+                        "de": "Giftmischer",
+                        "en": "Poisoner"
+                    },
+                    "description": {
+                        "de": "Jede Nacht vergiftest du einen Spieler: Seine Fähigkeit funktioniert nicht und seine Infos sind falsch.",
+                        "en": "Each night, choose a player: their ability malfunctions tonight and tomorrow day."
+                    },
+                    "icon": "🧪",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "spy",
+                    "team": "minion",
+                    "name": {
+                        "de": "Spion",
+                        "en": "Spy"
+                    },
+                    "description": {
+                        "de": "Jede Nacht siehst du das Grimoire. Du kannst fälschlich als gut und als Dorfbewohner oder Außenseiter registrieren.",
+                        "en": "Each night, you see the Grimoire. You might register as good and as a Townsfolk or Outsider."
+                    },
+                    "icon": "🕵️",
+                    "strategies": [],
+                    "bluffStrategies": [
+                        {
+                            "de": "",
+                            "en": "Any character role with board information like Washerwoman, Investigator, Librarian, Empathm, Fortune Teller"
+                        }
+                    ]
+                },
+                {
+                    "id": "scarlet_woman",
+                    "team": "minion",
+                    "name": {
+                        "de": "Scharlachrote Frau",
+                        "en": "Scarlet Woman"
+                    },
+                    "description": {
+                        "de": "Stirbt der Dämon, während mindestens fünf Spieler leben, wirst du der Dämon.",
+                        "en": "If there are 5 or more players alive and the Demon dies, you become the Demon."
+                    },
+                    "icon": "💄",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "baron",
+                    "team": "minion",
+                    "name": {
+                        "de": "Baron",
+                        "en": "Baron"
+                    },
+                    "description": {
+                        "de": "Es sind zwei zusätzliche Außenseiter im Spiel.",
+                        "en": "There are extra Outsiders in play. [+2 Outsiders]"
+                    },
+                    "icon": "🎩",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "imp",
+                    "team": "demon",
+                    "name": {
+                        "de": "Imp",
+                        "en": "Imp"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) tötest du einen Spieler. Tötest du dich selbst, wird ein Diener zum Kobold.",
+                        "en": "Each night, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp."
+                    },
+                    "icon": "😈",
+                    "strategies": [],
+                    "bluffStrategies": []
+                }
+            ]
+        },
+        {
+            "id": "bad-moon-rising",
+            "name": {
+                "de": "Der Mond geht auf",
+                "en": "Bad Moon Rising"
+            },
+            "roles": [
+                {
+                    "id": "grandmother",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Großmutter",
+                        "en": "Grandmother"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn einen guten Spieler und dessen Rolle. Tötet der Dämon diesen Spieler, stirbst du ebenfalls.",
+                        "en": "You start knowing a good player and their character. If the Demon kills them, you die too."
+                    },
+                    "icon": "👵",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "sailor",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Seemann",
+                        "en": "Sailor"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen anderen Spieler: entweder du oder er ist bis zur Dämmerung betrunken. Du kannst nicht sterben.",
+                        "en": "Each night, choose a player (not yourself): either you or they are drunk until dusk. You can't die."
+                    },
+                    "icon": "⚓",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "chambermaid",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Zimmermädchen",
+                        "en": "Chambermaid"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du zwei andere Spieler: du erfährst, wie viele von ihnen wegen ihrer Fähigkeit aufgewacht sind.",
+                        "en": "Each night, choose 2 players (not yourself): you learn how many woke tonight due to their ability."
+                    },
+                    "icon": "🛎️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "exorcist",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Exorzist",
+                        "en": "Exorcist"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten), wählst du einen Spieler (nicht denselben wie in der Vornacht): ist er der Dämon, erfährt er, wer du bist, und ist diese Nacht vor sich selbst sicher.",
+                        "en": "Each night*, choose a player (different to last night): if chosen player is the Demon, they learn who you are, then this player is safe from the Demon tonight."
+                    },
+                    "icon": "✝️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "innkeeper",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Gastwirt",
+                        "en": "Innkeeper"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du zwei Spieler: sie können diese Nacht nicht sterben, aber einer von ihnen ist bis zur Dämmerung betrunken.",
+                        "en": "Each night*, choose 2 players: they can't die tonight, but one of them is drunk until dusk."
+                    },
+                    "icon": "🛏️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "gambler",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Spieler",
+                        "en": "Gambler"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler und rätst seine Rolle: liegst du falsch, stirbst du.",
+                        "en": "Each night*, choose a player and guess their character: if you guess wrong, you die."
+                    },
+                    "icon": "🎲",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "gossip",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Klatschbase",
+                        "en": "Gossip"
+                    },
+                    "description": {
+                        "de": "An jedem Tag darfst du eine öffentliche Aussage treffen. War sie wahr, stirbt in dieser Nacht ein Spieler.",
+                        "en": "Each day, you may make a public statement. Tonight, if it was true, a player dies."
+                    },
+                    "icon": "🗣️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "courtier",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Höfling",
+                        "en": "Courtier"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts eine Rolle: der Spieler mit dieser Rolle ist für drei Nächte und drei Tage betrunken.",
+                        "en": "Once per game, at night, choose a character: they are drunk for 3 nights and 3 days."
+                    },
+                    "icon": "💃",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "professor",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Professor",
+                        "en": "Professor"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts (ab der zweiten) einen toten Spieler: ist er ein Dorfbewohner, wird er wiederbelebt.",
+                        "en": "Once per game, at night*, choose a dead player: if they are a Townsfolk, they are resurrected."
+                    },
+                    "icon": "🎓",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "minstrel",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Minnesänger",
+                        "en": "Minstrel"
+                    },
+                    "description": {
+                        "de": "Stirbt ein Diener durch Hinrichtung, sind alle anderen Spieler (außer Reisende) bis zur Dämmerung des nächsten Tages betrunken.",
+                        "en": "When a Minion dies by execution, all other players (except Travellers) are drunk until dusk the next day."
+                    },
+                    "icon": "🎻",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "tea_lady",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Teedame",
+                        "en": "Tea Lady"
+                    },
+                    "description": {
+                        "de": "Sind deine beiden lebenden Nachbarn gut, können sie nicht sterben.",
+                        "en": "If both your alive neighbours are good, they can't die."
+                    },
+                    "icon": "🍵",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "pacifist",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Pazifist",
+                        "en": "Pacifist"
+                    },
+                    "description": {
+                        "de": "Hingerichtete gute Spieler sterben möglicherweise nicht.",
+                        "en": "Executed good players might not die."
+                    },
+                    "icon": "☮️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "fool",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Narr",
+                        "en": "Fool"
+                    },
+                    "description": {
+                        "de": "Das erste Mal, wenn du sterben würdest, stirbst du nicht.",
+                        "en": "The first time you would die, you don't."
+                    },
+                    "icon": "🃏",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "tinker",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Bastler",
+                        "en": "Tinker"
+                    },
+                    "description": {
+                        "de": "Du kannst jederzeit sterben.",
+                        "en": "You might die at any time."
+                    },
+                    "icon": "🔧",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "moonchild",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Mondkind",
+                        "en": "Moonchild"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn eine gute Rolle, die für dich als \"böse\" gilt. Wird der Spieler mit dieser Rolle hingerichtet, erfahren es alle, und er kann einen weiteren Spieler wählen, der stirbt.",
+                        "en": "You start knowing a good character is 'evil' for you. If executed, all players learn that character, and that player may choose another player to die."
+                    },
+                    "icon": "🌙",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "goon",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Schläger",
+                        "en": "Goon"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wird der erste Spieler, der dich wählt, betrunken bis zur nächsten Dämmerung. Du wechselst deine Gesinnung, sobald du betrunken oder vergiftet wirst.",
+                        "en": "Each night, the first player to choose you, you become drunk until dusk. You become the opposite alignment (good becomes evil, evil becomes good) whenever you become drunk or poisoned."
+                    },
+                    "icon": "🥊",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "lunatic",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Wahnsinniger",
+                        "en": "Lunatic"
+                    },
+                    "description": {
+                        "de": "Du glaubst, der Dämon zu sein, hast aber keine wirkliche Macht. Der Dämon weiß, wer du bist und was du wählst.",
+                        "en": "You think you are a Demon, but you have no real power. The Demon knows who you are and who you choose."
+                    },
+                    "icon": "🤪",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "godfather",
+                    "team": "minion",
+                    "name": {
+                        "de": "Pate",
+                        "en": "Godfather"
+                    },
+                    "description": {
+                        "de": "Du erfährst zu Beginn, welche Außenseiter im Spiel sind. Stirbt ein Außenseiter durch Hinrichtung, wählst du in der kommenden Nacht (ab der zweiten) einen Spieler: er stirbt.",
+                        "en": "You start knowing which Outsiders are in play. If an Outsider died today, choose a player tonight (not the first night): they die."
+                    },
+                    "icon": "🕴️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "devils_advocate",
+                    "team": "minion",
+                    "name": {
+                        "de": "Advocatus Diaboli",
+                        "en": "Devil's Advocate"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen lebenden Spieler (nicht denselben wie in der Vornacht): würde er morgen hingerichtet, stirbt er nicht.",
+                        "en": "Each night, choose a living player (different to last night): if executed tomorrow, they don't die."
+                    },
+                    "icon": "😏",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "assassin",
+                    "team": "minion",
+                    "name": {
+                        "de": "Assassine",
+                        "en": "Assassin"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts (ab der zweiten) einen Spieler: er stirbt, selbst wenn er geschützt oder unsterblich ist.",
+                        "en": "Once per game, at night*, choose a player: they die, even if for some reason they could not."
+                    },
+                    "icon": "🗡️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "mastermind",
+                    "team": "minion",
+                    "name": {
+                        "de": "Mastermind",
+                        "en": "Mastermind"
+                    },
+                    "description": {
+                        "de": "Würde das Dorf heute gewinnen, gewinnt es stattdessen erst am nächsten Tag, wenn ein weiterer Spieler hingerichtet wird.",
+                        "en": "If the Demon dies by execution (with 3+ players remaining), play proceeds to a new day, without the Storyteller naming a new Demon."
+                    },
+                    "icon": "🧠",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "zombuul",
+                    "team": "demon",
+                    "name": {
+                        "de": "Zombuul",
+                        "en": "Zombuul"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten), sofern heute niemand gestorben ist, wählst du einen Spieler: er stirbt. Du scheinst tot, sobald du zum ersten Mal getötet wirst.",
+                        "en": "Each night*, if no one died today, choose a player: they die. You register as good & alive if dead."
+                    },
+                    "icon": "🧟",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "pukka",
+                    "team": "demon",
+                    "name": {
+                        "de": "Pukka",
+                        "en": "Pukka"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler: er ist vergiftet. Der zuvor vergiftete Spieler stirbt danach, dann ist er nicht mehr vergiftet.",
+                        "en": "Each night, choose a player: they are poisoned. The previously poisoned player dies then becomes healthy."
+                    },
+                    "icon": "☠️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "shabaloth",
+                    "team": "demon",
+                    "name": {
+                        "de": "Shabaloth",
+                        "en": "Shabaloth"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du zwei Spieler: sie sterben. Ein zuvor auf diese Weise getöteter Spieler kann stattdessen wiederbelebt werden.",
+                        "en": "Each night*, choose 2 players: they die. A dead player, chosen by you this way, might be brought back to life."
+                    },
+                    "icon": "🤢",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "po",
+                    "team": "demon",
+                    "name": {
+                        "de": "Po",
+                        "en": "Po"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) darfst du einen Spieler wählen: er stirbt. Tust du das drei Nächte in Folge nicht, wählst du in der folgenden Nacht drei Spieler: sie sterben.",
+                        "en": "Each night*, you may choose a player: they die. If you do this 3 times in a row, all players die."
+                    },
+                    "icon": "💣",
+                    "strategies": [],
+                    "bluffStrategies": []
+                }
+            ]
+        },
+        {
+            "id": "sects-violets",
+            "name": {
+                "de": "Sekten & Veilchen",
+                "en": "Sects & Violets"
+            },
+            "roles": [
+                {
+                    "id": "clockmaker",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Uhrmacher",
+                        "en": "Clockmaker"
+                    },
+                    "description": {
+                        "de": "Du erfährst zu Beginn, wie viele Schritte zwischen dem Dämon und dem ihm nächstgelegenen Diener liegen.",
+                        "en": "You start knowing how many steps from the Demon to its nearest Minion."
+                    },
+                    "icon": "🕰️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "dreamer",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Träumerin",
+                        "en": "Dreamer"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler (nicht dich selbst): du erfährst eine gute und eine böse Rolle, von denen eine seine tatsächliche Rolle ist.",
+                        "en": "Each night, choose a player (not yourself): you learn 1 good and 1 evil character, 1 of which is correct."
+                    },
+                    "icon": "💭",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "snake_charmer",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Schlangenbeschwörer",
+                        "en": "Snake Charmer"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler: ist er der Dämon, tauscht ihr Rolle und Gesinnung, und der neue Dämon ist vergiftet.",
+                        "en": "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you, then is poisoned."
+                    },
+                    "icon": "🐍",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "mathematician",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Mathematikerin",
+                        "en": "Mathematician"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du, wie oft eine Fähigkeit heute (durch äußere Effekte) nicht wie erwartet funktioniert hat.",
+                        "en": "Each night, you learn how many players' abilities worked abnormally (since dawn) due to another character's ability."
+                    },
+                    "icon": "➗",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "flowergirl",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Blumenmädchen",
+                        "en": "Flowergirl"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) erfährst du, ob der Dämon heute für eine Nominierung gestimmt hat.",
+                        "en": "Each night*, you learn if the Demon voted today."
+                    },
+                    "icon": "🌼",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "town_crier",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Ausrufer",
+                        "en": "Town Crier"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) erfährst du, ob ein Diener heute nominiert hat.",
+                        "en": "Each night*, you learn if a Minion nominated today."
+                    },
+                    "icon": "📯",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "oracle",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Orakel",
+                        "en": "Oracle"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) erfährst du, wie viele der toten Spieler böse sind.",
+                        "en": "Each night*, you learn how many dead players are evil."
+                    },
+                    "icon": "🧿",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "savant",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Gelehrter",
+                        "en": "Savant"
+                    },
+                    "description": {
+                        "de": "Jeden Tag darfst du den Erzähler aufsuchen: er nennt dir zwei Aussagen, eine wahr und eine falsch.",
+                        "en": "Each day, you may visit the Storyteller to learn 2 things in private: 1 is true & 1 is false."
+                    },
+                    "icon": "🧐",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "seamstress",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Näherin",
+                        "en": "Seamstress"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts zwei Spieler (außer dir): du erfährst, ob sie derselben Gesinnung angehören.",
+                        "en": "Once per game, at night, choose 2 players (not yourself): you learn if they are the same alignment."
+                    },
+                    "icon": "🧵",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "philosopher",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Philosoph",
+                        "en": "Philosopher"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts eine gute Rolle: du erhältst deren Fähigkeit. Ein anderer Spieler mit dieser Rolle wird dadurch betrunken.",
+                        "en": "Once per game, at night, choose a good character: gain that ability. If a player has that ability, they are drunk until you die."
+                    },
+                    "icon": "🤔",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "artist",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Künstlerin",
+                        "en": "Artist"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel darfst du den Erzähler aufsuchen und eine Ja/Nein-Frage stellen, die wahrheitsgemäß beantwortet wird.",
+                        "en": "Once per game, during the day, privately ask the Storyteller any yes/no question."
+                    },
+                    "icon": "🎨",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "juggler",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Jongleur",
+                        "en": "Juggler"
+                    },
+                    "description": {
+                        "de": "Am ersten Tag darfst du bis zu fünf Spieler öffentlich ihrer Rolle zuordnen. In der folgenden Nacht erfährst du, wie viele davon richtig waren.",
+                        "en": "On your first day, publicly guess up to 5 players' characters. Tonight, you learn how many you got correct."
+                    },
+                    "icon": "🤹",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "sage",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Weiser",
+                        "en": "Sage"
+                    },
+                    "description": {
+                        "de": "Wirst du vom Dämon getötet, erfährst du danach, dass einer von zwei Spielern der Dämon ist.",
+                        "en": "If the Demon kills you, you learn that it is 1 of 2 players."
+                    },
+                    "icon": "🧙",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "mutant",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Mutant",
+                        "en": "Mutant"
+                    },
+                    "description": {
+                        "de": "Verhältst du dich wie ein Außenseiter, kannst du dafür hingerichtet werden.",
+                        "en": "If you claim to be (or are revealed as) an Outsider, you might be executed."
+                    },
+                    "icon": "🧬",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "sweetheart",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Herzensdame",
+                        "en": "Sweetheart"
+                    },
+                    "description": {
+                        "de": "Stirbst du, ist von nun an ein zufälliger Spieler betrunken.",
+                        "en": "When you die, a player is drunk from now on."
+                    },
+                    "icon": "💕",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "barber",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Barbier",
+                        "en": "Barber"
+                    },
+                    "description": {
+                        "de": "Wirst du hingerichtet, darf der Dämon in dieser Nacht die Rollen zweier Spieler tauschen.",
+                        "en": "If you die, the Demon may choose 2 players (not another Demon) to swap characters."
+                    },
+                    "icon": "✂️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "klutz",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Tollpatsch",
+                        "en": "Klutz"
+                    },
+                    "description": {
+                        "de": "Sobald du stirbst, wählst du sofort öffentlich einen Spieler: ist er böse, verliert dein Team.",
+                        "en": "When you learn that you died, publicly choose a player: if evil, your team loses."
+                    },
+                    "icon": "🤦",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "evil_twin",
+                    "team": "minion",
+                    "name": {
+                        "de": "Böser Zwilling",
+                        "en": "Evil Twin"
+                    },
+                    "description": {
+                        "de": "Du und ein guter Spieler kennt einander und eure Rollen zu Beginn. Wird der gute Zwilling hingerichtet, verliert das Dorf.",
+                        "en": "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live."
+                    },
+                    "icon": "👥",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "witch",
+                    "team": "minion",
+                    "name": {
+                        "de": "Hexe",
+                        "en": "Witch"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler: stimmt er morgen ab, stirbt er. Sind nur noch drei Spieler übrig, verlierst du diese Fähigkeit.",
+                        "en": "Each night, choose a player: if they vote today, they die. If just 3 players live, you lose this ability."
+                    },
+                    "icon": "🧹",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "cerenovus",
+                    "team": "minion",
+                    "name": {
+                        "de": "Cerenovus",
+                        "en": "Cerenovus"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler und eine gute Rolle: er glaubt, verrückt zu sein, diese Rolle zu haben. Behauptet er das nicht am Tag, riskiert er die Hinrichtung.",
+                        "en": "Each night, choose a player & a good character: they are mad they are this character, or they might be executed."
+                    },
+                    "icon": "🌀",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "pit_hag",
+                    "team": "minion",
+                    "name": {
+                        "de": "Moorhexe",
+                        "en": "Pit-Hag"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler und eine Rolle: hat sie noch niemand, wird der Spieler zu dieser Rolle.",
+                        "en": "Each night (not the first), choose a player & a character they become (if not in play). If a Demon is made, deaths tonight are arbitrary."
+                    },
+                    "icon": "🐸",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "fang_gu",
+                    "team": "demon",
+                    "name": {
+                        "de": "Fang Gu",
+                        "en": "Fang Gu"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: er stirbt. Das erste Mal geschieht dies bei einem Außenseiter, wird dieser stattdessen zum neuen Fang Gu, und du stirbst.",
+                        "en": "Each night*, choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead."
+                    },
+                    "icon": "🐺",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "vigormortis",
+                    "team": "demon",
+                    "name": {
+                        "de": "Vigormortis",
+                        "en": "Vigormortis"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: er stirbt, seine Fähigkeit geht auf einen Diener über, und er registriert fortan als vergiftet.",
+                        "en": "Each night*, choose a player: they die. Their Minion neighbours may choose to keep their ability when they die."
+                    },
+                    "icon": "🥀",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "no_dashii",
+                    "team": "demon",
+                    "name": {
+                        "de": "No Dashii",
+                        "en": "No Dashii"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: er stirbt. Deine Dorfbewohner-Nachbarn sind vergiftet.",
+                        "en": "Each night*, choose a player: they die. Your Townsfolk neighbours are poisoned."
+                    },
+                    "icon": "🐉",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "vortox",
+                    "team": "demon",
+                    "name": {
+                        "de": "Vortox",
+                        "en": "Vortox"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: er stirbt. Informationen von Dorfbewohner-Fähigkeiten sind heute falsch. Wird keiner hingerichtet, gewinnt dein Team.",
+                        "en": "Each night*, choose a player: they die. Townsfolk abilities yield false info. Each day, if no-one is executed, evil wins."
+                    },
+                    "icon": "🌪️",
+                    "strategies": [],
+                    "bluffStrategies": []
+                }
+            ]
+        },
+        {
+            "id": "travellers",
+            "name": {
+                "de": "Reisende",
+                "en": "Travellers"
+            },
+            "roles": [
+                {
+                    "id": "scapegoat",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Sündenbock",
+                        "en": "Scapegoat"
+                    },
+                    "description": {
+                        "de": "Würde ein Spieler deiner Gesinnung durch Hinrichtung sterben und es gibt keine passendere Wahl, stirbst du stattdessen.",
+                        "en": "If a player of your alignment is executed, you may die instead."
+                    },
+                    "icon": "🐑",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "gunslinger",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Revolverheld",
+                        "en": "Gunslinger"
+                    },
+                    "description": {
+                        "de": "Einmal pro Tag darfst du, nachdem jemand für eine Nominierung gestimmt hat, ohne mit dir zu sprechen, diesen Spieler töten.",
+                        "en": "Each day, after the 1st vote has been cast, you may choose a player that voted: if they didn't talk with you today, they die."
+                    },
+                    "icon": "🔫",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "beggar",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Bettler",
+                        "en": "Beggar"
+                    },
+                    "description": {
+                        "de": "Du musst von einem anderen Spieler etwas erhalten (z. B. eine Berührung oder ein Geschenk), um deine Gesinnung zu ändern und zu gewinnen, wenn das Dorf gewinnt.",
+                        "en": "You must use a hand signal to ask for a vote from a player. If they consent, you may exchange places with them & they gain your ability."
+                    },
+                    "icon": "🥺",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "bureaucrat",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Bürokrat",
+                        "en": "Bureaucrat"
+                    },
+                    "description": {
+                        "de": "Der Erzähler zählt die Stimme eines von dir gewählten Spielers dreifach in die eine oder andere Richtung.",
+                        "en": "Each night, choose a player (not yourself): their vote counts as 3 votes tomorrow, in favour of whichever you choose."
+                    },
+                    "icon": "📜",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "thief",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Dieb",
+                        "en": "Thief"
+                    },
+                    "description": {
+                        "de": "Der Erzähler kehrt die Stimme eines von dir gewählten Spielers am nächsten Tag um.",
+                        "en": "Each night, choose a player (not yourself): their vote counts negatively tomorrow."
+                    },
+                    "icon": "🥷",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "butcher",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Metzger",
+                        "en": "Butcher"
+                    },
+                    "description": {
+                        "de": "An jedem Tag, an dem ein Spieler hingerichtet wurde, darfst du in der folgenden Nacht einen weiteren Spieler wählen: ist er böse, stirbt er.",
+                        "en": "Each day, if a player was executed, you may choose a player that night: if evil, they die."
+                    },
+                    "icon": "🔪",
+                    "strategies": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "bone_collector",
+                    "team": "traveller",
+                    "name": {
+                        "de": "Knochensammler",
+                        "en": "Bone Collector"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts einen toten Spieler: bis zur nächsten Dämmerung erhält er wieder seine Fähigkeit zurück.",
+                        "en": "Once per game, at night, choose a dead player: they regain their ability until dusk."
+                    },
+                    "icon": "🦴",
+                    "strategies": [],
+                    "bluffStrategies": []
+                }
+            ]
+        }
+    ]
+}

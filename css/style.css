@@ -1,0 +1,995 @@
+/* ------------------------------------------------------------------ Foundation */
+
+:root {
+    --accent: #b0413e;
+    --border: #343a42;
+    --danger: #c0392b;
+    --radius: 10px;
+    --sidebar-width: min(85vw, 340px);
+    --surface: #22262c;
+    --surface-raised: #2b3037;
+    --text: #e8eaed;
+    --text-muted: #98a0aa;
+    --token-size: 48px;
+
+    /* Trustworthiness – from evil to good */
+    --trust-evil: #c0392b;
+    --trust-suspect: #d68910;
+    --trust-unknown: #4a4f57;
+    --trust-maybe-good: #2980b9;
+    --trust-good: #27ae60;
+
+    /* Life status – "exiled" is not yet offered, but already defined */
+    --life-alive: #27ae60;
+    --life-murdered: #c0392b;
+    --life-executed: #d68910;
+    --life-exiled: #5d6d7e;
+
+    /* Same hue as --trust-suspect/--life-executed, but a different meaning: shared role tags */
+    --tag-shared: #d68910;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+ * Must be !important: our own display rules (.panel { display: flex },
+ * .icon-button { display: inline-flex }) are more specific than the
+ * [hidden] { display: none } from the browser's UA stylesheet and would
+ * otherwise render the hidden attribute ineffective.
+ */
+[hidden] {
+    display: none !important;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #1a1d21;
+    color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* -------------------------------------------------------------------- Buttons */
+
+.icon-button {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.icon-button svg {
+    /* Elements with fill="none" in the markup deliberately override this. */
+    fill: currentColor;
+    height: 60%;
+    width: 60%;
+}
+
+.icon-button--toolbar {
+    height: 44px;
+    width: 44px;
+}
+
+.icon-button--toolbar:active {
+    background: var(--accent);
+}
+
+.text-button {
+    align-content: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0 14px;
+}
+
+.text-button--primary {
+    background: var(--accent);
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.text-button:disabled {
+    cursor: default;
+    opacity: 0.4;
+}
+
+/* Just a holding place for the <symbol> definitions, never visible itself. */
+.icon-sprite {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+}
+
+/* ---------------------------------------------------------------------- Board */
+
+.board {
+    display: block;
+    height: 100dvh;
+    position: relative;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    width: 100%;
+}
+
+.board__toolbar {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    top: max(12px, env(safe-area-inset-top));
+    z-index: 3;
+}
+
+.board__toolbar--start {
+    left: max(12px, env(safe-area-inset-left));
+}
+
+.board__toolbar--end {
+    right: max(12px, env(safe-area-inset-right));
+}
+
+/* Native <details>/<summary> as a checkbox dropdown – no custom JS needed for expanding/collapsing. */
+.ping-filter {
+    position: relative;
+}
+
+.ping-filter > summary {
+    list-style: none;
+}
+
+.ping-filter > summary::-webkit-details-marker {
+    display: none;
+}
+
+.ping-filter__options {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 50vh;
+    max-width: 70vw;
+    overflow-y: auto;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: max-content;
+}
+
+.ping-filter__option {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+/* Current/expected team distribution, purely informational, not a button. */
+.team-distribution {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    display: inline-flex;
+    font-size: 0.75rem;
+    font-weight: 600;
+    height: 44px;
+    padding: 0 8px;
+}
+
+.settings-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.settings-field__select {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    min-height: 44px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.board--locked .icon-lock-open,
+.board:not(.board--locked) .icon-lock-closed {
+    display: none;
+}
+
+.board--locked #board-lock {
+    background: var(--accent);
+}
+
+.board__empty {
+    color: var(--text-muted);
+    left: 50%;
+    margin: 0;
+    max-width: 15rem;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.board__tokens {
+    inset: max(64px, env(safe-area-inset-top)) 12px 12px 12px;
+    position: absolute;
+}
+
+/* --------------------------------------------------------------------- Token */
+
+.token {
+    align-items: center;
+    background: var(--trust-color, var(--trust-unknown));
+    border: 3px solid var(--player-color, #888);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    /* Two characters instead of one – smaller than before so both still fit. */
+    font-size: calc(var(--token-size) * 0.32);
+    font-weight: 600;
+    height: var(--token-size);
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    touch-action: none;
+    transform: translate(-50%, -50%);
+    width: var(--token-size);
+}
+
+.token--dragging {
+    box-shadow: 0 6px 18px rgb(0 0 0 / 45%);
+    z-index: 2;
+}
+
+/* Murdered, executed, or exiled – no longer in the game. */
+.token--inactive {
+    opacity: 0.4;
+}
+
+/* The player's own token carries a word instead of a letter and needs a smaller size. */
+.token--self .token__label {
+    font-size: calc(var(--token-size) * 0.26);
+    letter-spacing: 0.02em;
+}
+
+/* Purely decorative – clicks should always land on the circle itself. */
+.token__label {
+    pointer-events: none;
+}
+
+.token__remove {
+    background: var(--danger);
+    border-color: transparent;
+    font-size: 15px;
+    height: 22px;
+    line-height: 1;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 22px;
+}
+
+.board--locked .token__remove {
+    display: none;
+}
+
+/* Ping filter matches: small circles above the token, wrapping to a new line from 5 onward. */
+.token__pings {
+    bottom: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+    left: 50%;
+    margin-bottom: 6px;
+    max-width: 44px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.token__ping-dot {
+    background: var(--ping-dot-color, var(--text-muted));
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 40%);
+    height: 8px;
+    width: 8px;
+}
+
+.drag-ghost {
+    align-items: center;
+    background: var(--trust-unknown);
+    border: 3px solid var(--player-color, #888);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    font-size: calc(var(--token-size) * 0.32);
+    font-weight: 600;
+    height: var(--token-size);
+    justify-content: center;
+    left: 0;
+    opacity: 0.85;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: var(--token-size);
+    z-index: 20;
+}
+
+/* ------------------------------------------------------------------- Sidebar */
+
+.sidebar-backdrop {
+    background: rgb(0 0 0 / 45%);
+    inset: 0;
+    position: fixed;
+    z-index: 8;
+}
+
+/* The handle sits inside the sidebar element, so it moves along with the drawer. */
+.sidebar-toggle {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 22px 0 0 22px;
+    border-right: none;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    left: -34px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+}
+
+.sidebar-toggle svg {
+    height: 22px;
+    width: 22px;
+}
+
+.sidebar {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.22s ease;
+    width: var(--sidebar-width);
+    z-index: 10;
+}
+
+.sidebar--expanded {
+    transform: translateX(0);
+}
+
+/* Sits above all panels so the language switch stays independent of the panel. */
+.sidebar__header {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+/* --------------------------------------------------------------------- Panels */
+
+.panel {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.panel__header {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.panel__title {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.panel__hint {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.panel__form {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr auto;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* Shared by the player list (sidebar footer) and the role-tag input field. */
+.text-input {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    min-height: 44px;
+    padding: 0 12px;
+    width: 100%;
+}
+
+/* --------------------------------------------------------------- Player list */
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.player-item {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--player-color, #888);
+    border-radius: var(--radius);
+    cursor: grab;
+    display: flex;
+    gap: 8px;
+    min-height: 48px;
+    padding: 6px 8px;
+    user-select: none;
+    -webkit-user-select: none;
+    /*
+     * pan-y, not none: vertical gestures keep scrolling the list (the browser then
+     * sends pointercancel, which counts as an abort), horizontal gestures belong to
+     * us – and dragging onto the board goes to the left anyway.
+     */
+    touch-action: pan-y;
+}
+
+.player-item--dragging {
+    opacity: 0.45;
+}
+
+.player-item--placed {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.player-item__color {
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex: 0 0 auto;
+    height: 32px;
+    padding: 0;
+    width: 32px;
+}
+
+.player-item__name {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.player-item__badge {
+    color: var(--text-muted);
+    flex: 0 0 auto;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.player-item__input {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    color: var(--text);
+    flex: 1 1 auto;
+    min-height: 34px;
+    min-width: 0;
+    padding: 0 8px;
+}
+
+.player-item__action {
+    flex: 0 0 auto;
+    font-size: 16px;
+    height: 32px;
+    line-height: 1;
+    width: 32px;
+}
+
+.player-item__action--danger {
+    color: #f0a19a;
+}
+
+/* -------------------------------------------------------------- Language switch */
+
+.lang-switch {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 6px;
+}
+
+.lang-switch__label {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.lang-switch:has(:checked) .lang-switch__label:last-child,
+.lang-switch:not(:has(:checked)) .lang-switch__label:first-child {
+    color: var(--text);
+}
+
+.lang-switch__input {
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.lang-switch__track {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    position: relative;
+    width: 44px;
+}
+
+/* Color stays the same in both states – only the position indicates which one applies. */
+.lang-switch__knob {
+    background: var(--text-muted);
+    border-radius: 50%;
+    height: 16px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    transition: transform 0.18s ease;
+    width: 16px;
+}
+
+.lang-switch__input:checked + .lang-switch__track .lang-switch__knob {
+    transform: translateX(20px);
+}
+
+.lang-switch__input:focus-visible + .lang-switch__track {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------- Details */
+
+.details__section {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    margin: 8px 0 0;
+    text-transform: uppercase;
+}
+
+.details__notes {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    margin-top: 12px;
+    padding: 10px 12px;
+    resize: vertical;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------------- Tags */
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    margin-top: 12px;
+    padding: 0 0 0 3px;
+}
+
+.tag {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    gap: 4px;
+    padding: 4px 4px 4px 12px;
+}
+
+/* Outline instead of border/background so it plays nicely with .tag--shared. */
+.tag--active {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.tag__label {
+    font-size: 0.9rem;
+}
+
+.tag__remove {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-muted);
+    font-size: 14px;
+    height: 22px;
+    width: 22px;
+}
+
+/* Role is entered for more than one player – possible bluff/mix-up. */
+.tag--shared {
+    background: var(--tag-shared);
+    border-color: var(--tag-shared);
+}
+
+.tag--shared .tag__label {
+    color: #fff;
+}
+
+.tag--shared .tag__remove {
+    color: #fff;
+}
+
+.tag-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 12px 0;
+}
+
+.tag-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tag-form .text-input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* -------------------------------------------------------------------- Pings */
+
+.ping-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+}
+
+.ping-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+}
+
+.ping-card__row {
+    display: flex;
+    gap: 6px;
+}
+
+.ping-card__player {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    flex: 1 1 auto;
+    min-height: 44px;
+    min-width: 0;
+    padding: 0 8px;
+}
+
+.ping-card__role {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.ping-card__day {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 4.5rem;
+}
+
+.ping-card__remove {
+    flex: 0 0 auto;
+    font-size: 15px;
+    height: 32px;
+    width: 32px;
+}
+
+/* Form below the list, same pattern as with the role tags. */
+.ping-add-form {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.ping-add-form__player {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    flex: 1 1 auto;
+    min-height: 44px;
+    min-width: 30%;
+    padding: 0 8px;
+}
+
+.ping-add-form__role {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/*
+ * Quick dialog: write one ping into several target histories at once.
+ * Selector "dialog.ping-dialog" instead of just ".ping-dialog": the UA
+ * stylesheet sets "dialog[open] { display: block }" with higher specificity
+ * than a single class – without the type selector our display would lose here.
+ */
+dialog.ping-dialog {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    max-width: min(90vw, 380px);
+    padding: 16px;
+    width: 100%;
+}
+
+.ping-dialog::backdrop {
+    background: rgb(0 0 0 / 55%);
+}
+
+.ping-dialog__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ping-dialog h2 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.ping-dialog__actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+
+/* Target player selection: same checkbox look as the board's ping filter. */
+.target-picker > summary {
+    list-style: none;
+}
+
+.target-picker > summary::-webkit-details-marker {
+    display: none;
+}
+
+.target-picker__options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+/*
+ * Game settings: edition + lorics. Selector "dialog.game-settings-dialog"
+ * for the same reason as with the ping dialog (see there) instead of just the class.
+ */
+dialog.game-settings-dialog {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    max-width: min(90vw, 420px);
+    padding: 16px;
+    width: 100%;
+}
+
+.game-settings-dialog::backdrop {
+    background: rgb(0 0 0 / 55%);
+}
+
+.game-settings-dialog__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.game-settings-dialog__header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.game-settings-dialog__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fabled-list,
+.loric-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    margin: 12px 0;
+    max-height: 40vh;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.fabled-item,
+.loric-item {
+    align-items: flex-start;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    gap: 8px;
+    padding: 8px 10px;
+}
+
+.fabled-item__text,
+.loric-item__text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.fabled-item__description,
+.loric-item__description {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 2px 0 0;
+}
+
+.fabled-item__remove,
+.loric-item__remove {
+    flex: 0 0 auto;
+    font-size: 15px;
+    height: 32px;
+    width: 32px;
+}
+
+/*
+ * Radio bar for trustworthiness and life status: all levels in one row,
+ * only the icon is visible, the text sits invisibly behind it.
+ * --choice-count sets the column count, --choice-color the level's color.
+ */
+.choice-list {
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(var(--choice-count, 5), 1fr);
+    margin-top: 12px;
+}
+
+.choice {
+    cursor: pointer;
+    display: block;
+}
+
+.choice__input {
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.choice__icon {
+    align-items: center;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-bottom: 3px solid var(--choice-color);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+    min-height: 46px;
+}
+
+.choice__icon svg {
+    fill: currentColor;
+    height: 26px;
+    width: 26px;
+}
+
+.choice__input:checked + .choice__icon {
+    background: var(--choice-color);
+    border-color: var(--choice-color);
+    color: #fff;
+}
+
+.choice__input:focus-visible + .choice__icon {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+/* ------------------------------------------------------- Larger screens */
+
+@media (min-width: 820px) {
+    :root {
+        --sidebar-width: 340px;
+        --token-size: 60px;
+    }
+
+    .sidebar-backdrop {
+        display: none;
+    }
+
+    /* From here on, the sidebar is docked instead of overlaying – the board makes room. */
+    body:has(.sidebar--expanded) .board {
+        width: calc(100% - var(--sidebar-width));
+    }
+}
