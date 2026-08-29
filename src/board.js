@@ -16,6 +16,7 @@ import {
 } from './state.js';
 import { displayName, tokenLabel } from './player.js';
 import { draggable } from './drag.js';
+import { getRoleId, normalizeRoleName } from './catalog.js';
 import { t } from './i18n.js';
 
 let arrangeButton = null;
@@ -33,7 +34,7 @@ let tokenLayer = null;
 const activePingFilters = new Set();
 
 function pingSourceKey(source) {
-    return `${source.sourcePlayerId} ${source.sourceRole}`;
+    return `${source.sourcePlayerId} ${getRoleId(source.sourceRole)}`;
 }
 
 /** Small dots above the token, one per active filter that matches. */
@@ -45,7 +46,7 @@ function buildPingDots(entry, pingSourceLookup) {
     activePingFilters.forEach((key) => {
         const source = pingSourceLookup.get(key);
 
-        if (!source || !getPlayersPingedBy(source.sourcePlayerId, source.sourceRole).includes(entry.playerId)) {
+        if (!source || !getPlayersPingedBy(source.sourcePlayerId, source.sourceRole, getRoleId).includes(entry.playerId)) {
             return;
         }
 
@@ -96,7 +97,7 @@ function rebuildPingFilterOptions(pingSources) {
         const livePlayer = getPlayer(source.sourcePlayerId);
         const text = document.createElement('span');
 
-        text.textContent = `${livePlayer ? displayName(livePlayer) : source.sourceName} (${source.sourceRole})`;
+        text.textContent = `${livePlayer ? displayName(livePlayer) : source.sourceName} (${normalizeRoleName(source.sourceRole)})`;
 
         label.append(checkbox, text);
         pingFilterOptions.append(label);
@@ -199,7 +200,7 @@ function clamp(value, min, max) {
 function render() {
     const entries = getBoardPlayers();
     const locked = isLocked();
-    const pingSources = getPingSources();
+    const pingSources = getPingSources(getRoleId);
     const pingSourceLookup = new Map(pingSources.map((source) => [pingSourceKey(source), source]));
 
     tokenLayer.replaceChildren();

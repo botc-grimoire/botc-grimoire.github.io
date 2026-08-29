@@ -1,5 +1,5 @@
 import { getBoardPlayers, subscribe } from './state.js';
-import { getOutsiderModifier, getRoleTeam } from './catalog.js';
+import { getOutsiderModifier, getRoleId, getRoleTeam } from './catalog.js';
 
 /**
  * Official Grimoire distribution by player count WITHOUT travellers (5–15
@@ -34,7 +34,7 @@ function countDistinctRoles(players, team) {
 
     players.forEach((entry) => {
         entry.roles.forEach((role) => {
-            const key = role.trim().toLowerCase();
+            const key = getRoleId(role);
 
             if (!seen.has(key) && getRoleTeam(role) === team) {
                 seen.add(key);
@@ -69,7 +69,7 @@ function countOutsiderBonus(players) {
     players.forEach((entry) => {
         entry.roles.forEach((role) => {
             const modifier = getOutsiderModifier(role);
-            const key = role.trim().toLowerCase();
+            const key = getRoleId(role);
 
             if (modifier > 0 && !seen.has(key)) {
                 seen.add(key);

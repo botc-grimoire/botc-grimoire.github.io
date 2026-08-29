@@ -1,5 +1,5 @@
 import { addPing, getBoardPlayers, getPlayer } from './state.js';
-import { normalizeRoleName } from './catalog.js';
+import { getRoleId, normalizeRoleName } from './catalog.js';
 import { rebuildRoleOptions } from './details.js';
 import { displayName } from './player.js';
 
@@ -105,7 +105,7 @@ function handleSubmit(event) {
     // If a target already has an entry for this source, addPing() overwrites
     // it instead of creating a duplicate.
     targetIds.forEach((targetId) => {
-        addPing(targetId, { comment, day, sourcePlayerId, sourceRole });
+        addPing(targetId, { comment, day, sourcePlayerId, sourceRole }, getRoleId);
     });
 }
 

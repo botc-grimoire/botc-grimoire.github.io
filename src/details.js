@@ -16,7 +16,7 @@ import {
     subscribe,
     updatePing
 } from './state.js';
-import { findRoleDescription, getRoleNames, getRoleTeam, normalizeRoleName } from './catalog.js';
+import { findRoleDescription, getRoleId, getRoleNames, getRoleTeam, normalizeRoleName } from './catalog.js';
 import { displayName } from './player.js';
 import { t } from './i18n.js';
 
@@ -160,7 +160,9 @@ function buildRoleTag(playerId, role, shared) {
     const label = document.createElement('span');
 
     label.className = 'tag__label';
-    label.textContent = role;
+    // Displayed in the active UI language even if stored in the other one –
+    // the underlying `role` value (used for identity/removal) stays untouched.
+    label.textContent = normalizeRoleName(role);
 
     const remove = document.createElement('button');
 
@@ -177,7 +179,7 @@ function buildRoleTag(playerId, role, shared) {
 }
 
 function commitRoleInput() {
-    if (currentId && addRole(currentId, normalizeRoleName(roleInput.value))) {
+    if (currentId && addRole(currentId, normalizeRoleName(roleInput.value), getRoleId)) {
         roleInput.value = '';
     }
 }
@@ -383,7 +385,7 @@ function commitNewPing() {
         day: null,
         sourcePlayerId: newPingPlayerSelect.value,
         sourceRole: trimmedRole
-    });
+    }, getRoleId);
     newPingRoleInput.value = '';
 }
 
@@ -468,11 +470,11 @@ function render() {
         selectedRole = null;
     }
 
-    const sharedRoles = getSharedRoles();
+    const sharedRoles = getSharedRoles(getRoleId);
 
     roleTagList.replaceChildren();
     entry.roles.forEach((role) => {
-        roleTagList.append(buildRoleTag(entry.playerId, role, sharedRoles.has(role.toLowerCase())));
+        roleTagList.append(buildRoleTag(entry.playerId, role, sharedRoles.has(getRoleId(role))));
     });
 
     if (selectedRole === null) {

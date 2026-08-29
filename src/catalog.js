@@ -30,6 +30,16 @@ function findRoleByName(tagText) {
 }
 
 /**
+ * A stable, language-independent key for a role tag: the role `id` for
+ * known roles or today's trim+lowercase fallback for unrecognized text.
+ */
+export function getRoleId(tagText) {
+    const role = findRoleByName(tagText);
+
+    return role ? role.id : tagText.trim().toLowerCase();
+}
+
+/**
  * Returns a role's description by its displayed name – in both languages,
  * since a tag may have been entered in a different language than the UI
  * currently shows. `null` if no catalog entry matches (e.g. a freely typed
@@ -42,20 +52,16 @@ export function findRoleDescription(tagText) {
 }
 
 /**
- * Normalizes the spelling when entering a tag: "empath" and "eMpAtH" both
- * become "Empath", provided the name (in either language) matches a known
- * role. Otherwise the trimmed original text is kept – homebrew roles are not
- * an error case.
+ * Normalizes a tag to the currently active UI language.
+ * Also used to re-translate an already-stored tag for display when the
+ * active language changes.
+ * Unrecognized text is kept as-is (trimmed).
  */
 export function normalizeRoleName(tagText) {
     const trimmed = tagText.trim();
     const role = findRoleByName(trimmed);
 
-    if (!role) {
-        return trimmed;
-    }
-
-    return role.name.de.toLowerCase() === trimmed.toLowerCase() ? role.name.de : role.name.en;
+    return role ? localize(role.name) : trimmed;
 }
 
 /**

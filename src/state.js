@@ -303,6 +303,17 @@ function emit(name) {
     events.dispatchEvent(new CustomEvent(name));
 }
 
+/**
+ * Default role-comparison key when no catalog-aware canonicalizer is
+ * supplied: today's behavior, trim+lowercase. state.js stays free of any
+ * catalog/i18n dependency (it's tested standalone, without a loaded
+ * catalog) – callers that know about the role catalog pass catalog.js's
+ * getRoleId() instead, so e.g. "Waschweib" and "Washerwoman" compare equal.
+ */
+function defaultCanonicalize(text) {
+    return text.trim().toLowerCase();
+}
+
 /** Trims, drops empty values, and deduplicates case-insensitively. */
 function normalizeRoleTags(value) {
     if (!Array.isArray(value)) {
@@ -624,7 +635,7 @@ export function removeLoric(id) {
  * removed from the roster (role tags have no stable id, so `sourceRole`
  * always remains a plain snapshot).
  */
-export function addPing(playerId, { sourcePlayerId, sourceRole, day, comment }) {
+export function addPing(playerId, { sourcePlayerId, sourceRole, day, comment }, canonicalize = defaultCanonicalize) {
     const entry = getBoardEntry(playerId);
     const source = getPlayer(sourcePlayerId);
     const trimmedRole = typeof sourceRole === 'string' ? sourceRole.trim() : '';
@@ -640,7 +651,7 @@ export function addPing(playerId, { sourcePlayerId, sourceRole, day, comment }) 
     // entry is updated instead of duplicated (e.g. when the quick dialog
     // creates the same ping again for a target that was already recorded).
     const existing = entry.pings.find(
-        (ping) => ping.sourcePlayerId === sourcePlayerId && ping.sourceRole === trimmedRole
+        (ping) => ping.sourcePlayerId === sourcePlayerId && canonicalize(ping.sourceRole) === canonicalize(trimmedRole)
     );
 
     if (existing) {
@@ -669,11 +680,11 @@ export function addPing(playerId, { sourcePlayerId, sourceRole, day, comment }) 
     return ping;
 }
 
-export function addRole(playerId, role) {
+export function addRole(playerId, role, canonicalize = defaultCanonicalize) {
     const entry = getBoardEntry(playerId);
     const trimmed = typeof role === 'string' ? role.trim() : '';
 
-    if (!entry || trimmed === '' || entry.roles.some((r) => r.toLowerCase() === trimmed.toLowerCase())) {
+    if (!entry || trimmed === '' || entry.roles.some((r) => canonicalize(r) === canonicalize(trimmed))) {
         return false;
     }
 
@@ -740,12 +751,12 @@ export function getBoardPlayers() {
  * All currently used (source player, role tag) combinations across all board
  * players, deduplicated. The basis for the board filter list.
  */
-export function getPingSources() {
+export function getPingSources(canonicalize = defaultCanonicalize) {
     const sources = new Map();
 
     board.players.forEach((entry) => {
         entry.pings.forEach((ping) => {
-            const key = `${ping.sourcePlayerId} ${ping.sourceRole}`;
+            const key = `${ping.sourcePlayerId} ${canonicalize(ping.sourceRole)}`;
 
             if (!sources.has(key)) {
                 sources.set(key, {
@@ -762,25 +773,26 @@ export function getPingSources() {
 }
 
 /** Target `playerId`s whose ping history has an entry with this source. */
-export function getPlayersPingedBy(sourcePlayerId, sourceRole) {
+export function getPlayersPingedBy(sourcePlayerId, sourceRole, canonicalize = defaultCanonicalize) {
     return board.players
         .filter((entry) => entry.pings.some(
-            (ping) => ping.sourcePlayerId === sourcePlayerId && ping.sourceRole === sourceRole
+            (ping) => ping.sourcePlayerId === sourcePlayerId && canonicalize(ping.sourceRole) === canonicalize(sourceRole)
         ))
         .map((entry) => entry.playerId);
 }
 
 /**
- * Roles that are currently recorded for more than one player (case-
- * insensitively) – used to highlight possible bluffs/mix-ups. Keys are
- * lowercased.
+ * Roles that are currently recorded for more than one player – used to
+ * highlight possible bluffs/mix-ups. Keys are built via `canonicalize`
+ * (the caller's language-independent role id when supplied, otherwise a
+ * lowercased tag).
  */
-export function getSharedRoles() {
+export function getSharedRoles(canonicalize = defaultCanonicalize) {
     const counts = new Map();
 
     board.players.forEach((entry) => {
         entry.roles.forEach((role) => {
-            const key = role.toLowerCase();
+            const key = canonicalize(role);
 
             counts.set(key, (counts.get(key) ?? 0) + 1);
         });
