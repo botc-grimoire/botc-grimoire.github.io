@@ -78,7 +78,7 @@ function buildPingDots(entry, pingSourceLookup, sharedRoles) {
 }
 
 /** A single filter checkbox row; selection is preserved via activePingFilters. */
-function appendPingFilterOption(key, label) {
+function insertPingFilterOptionAt(key, label, append) {
     const wrapper = document.createElement('label');
     const checkbox = document.createElement('input');
 
@@ -100,7 +100,13 @@ function appendPingFilterOption(key, label) {
     text.textContent = label;
 
     wrapper.append(checkbox, text);
-    pingFilterOptions.append(wrapper);
+    
+    if (append) {
+        pingFilterOptions.append(wrapper);
+    }
+    else {
+        pingFilterOptions.prepend(wrapper);
+    }
 }
 
 /** Rebuilds the checkbox list in the filter popover. */
@@ -123,12 +129,12 @@ function rebuildPingFilterOptions(pingSources, sharedRoles) {
         const role = normalizeRoleName(source.sourceRole);
         const label = source.day === null ? `${name} (${role})` : `${name} (${role}, ${t('details.pings.day')} ${source.day})`;
 
-        appendPingFilterOption(pingSourceKey(source), label);
+        insertPingFilterOptionAt(pingSourceKey(source), label, true);
     });
 
     // Only offered once at least one role is actually tagged on more than one player.
     if (sharedRoles.size > 0) {
-        appendPingFilterOption(SHARED_ROLES_FILTER_KEY, t('board.ping-filter.shared'));
+        insertPingFilterOptionAt(SHARED_ROLES_FILTER_KEY, t('board.ping-filter.shared'), false);
     }
 }
 

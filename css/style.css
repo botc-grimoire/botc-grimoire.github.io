@@ -379,6 +379,7 @@ input {
 .token__ping-dot--shared {
     background: var(--tag-shared);
     border-radius: 0;
+    order: -1;
 }
 
 /* ------------------------------------------------------------------- Sidebar */
