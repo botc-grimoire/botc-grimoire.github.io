@@ -285,15 +285,10 @@ input {
     opacity: 0.4;
 }
 
-/* The player's own token carries a word instead of a letter and needs a smaller size. */
-.token--self .token__label {
+.token__label {
     font-size: calc(var(--token-size) * 0.26);
     letter-spacing: 0.02em;
-}
-
-/* Purely decorative – clicks should always land on the circle itself. */
-.token__label {
-    pointer-events: none;
+    pointer-events: none; /* Purely decorative – clicks should always land on the circle itself. */
 }
 
 .token__remove {
