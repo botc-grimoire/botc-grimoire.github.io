@@ -129,20 +129,3 @@ export function draggable(element, options) {
         }
     });
 }
-
-/** Creates the floating preview element shown while dragging from the player list. */
-export function createGhost(label, color) {
-    const ghost = document.createElement('div');
-
-    ghost.className = 'drag-ghost';
-    ghost.style.setProperty('--player-color', color);
-    ghost.textContent = label;
-    document.body.append(ghost);
-
-    return ghost;
-}
-
-export function moveGhost(ghost, x, y) {
-    ghost.style.left = `${x}px`;
-    ghost.style.top = `${y}px`;
-}

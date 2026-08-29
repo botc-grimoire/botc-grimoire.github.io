@@ -335,27 +335,6 @@ input {
     width: 8px;
 }
 
-.drag-ghost {
-    align-items: center;
-    background: var(--trust-unknown);
-    border: 3px solid var(--player-color, #888);
-    border-radius: 50%;
-    color: #fff;
-    display: flex;
-    font-size: calc(var(--token-size) * 0.32);
-    font-weight: 600;
-    height: var(--token-size);
-    justify-content: center;
-    left: 0;
-    opacity: 0.85;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    transform: translate(-50%, -50%);
-    width: var(--token-size);
-    z-index: 20;
-}
-
 /* ------------------------------------------------------------------- Sidebar */
 
 .sidebar-backdrop {
@@ -484,27 +463,15 @@ input {
     border: 1px solid var(--border);
     border-left: 4px solid var(--player-color, #888);
     border-radius: var(--radius);
-    cursor: grab;
     display: flex;
     gap: 8px;
     min-height: 48px;
     padding: 6px 8px;
     user-select: none;
     -webkit-user-select: none;
-    /*
-     * pan-y, not none: vertical gestures keep scrolling the list (the browser then
-     * sends pointercancel, which counts as an abort), horizontal gestures belong to
-     * us – and dragging onto the board goes to the left anyway.
-     */
-    touch-action: pan-y;
-}
-
-.player-item--dragging {
-    opacity: 0.45;
 }
 
 .player-item--placed {
-    cursor: default;
     opacity: 0.6;
 }
 
@@ -525,11 +492,10 @@ input {
     white-space: nowrap;
 }
 
-.player-item__badge {
-    color: var(--text-muted);
+.player-item__toggle {
+    align-items: center;
+    display: flex;
     flex: 0 0 auto;
-    font-size: 0.7rem;
-    text-transform: uppercase;
 }
 
 .player-item__input {
@@ -576,14 +542,16 @@ input {
     color: var(--text);
 }
 
-.lang-switch__input {
+.lang-switch__input,
+.player-item__toggle-input {
     height: 1px;
     opacity: 0;
     position: absolute;
     width: 1px;
 }
 
-.lang-switch__track {
+.lang-switch__track,
+.player-item__toggle-track {
     background: var(--surface-raised);
     border: 1px solid var(--border);
     border-radius: 999px;
@@ -595,7 +563,8 @@ input {
 }
 
 /* Color stays the same in both states – only the position indicates which one applies. */
-.lang-switch__knob {
+.lang-switch__knob,
+.player-item__toggle-knob {
     background: var(--text-muted);
     border-radius: 50%;
     height: 16px;
@@ -606,11 +575,18 @@ input {
     width: 16px;
 }
 
-.lang-switch__input:checked + .lang-switch__track .lang-switch__knob {
+.lang-switch__input:checked + .lang-switch__track .lang-switch__knob,
+.player-item__toggle-input:checked + .player-item__toggle-track .player-item__toggle-knob {
     transform: translateX(20px);
 }
 
-.lang-switch__input:focus-visible + .lang-switch__track {
+/* Unlike the language switch (two neutral options), "active" is a real on/off state, so the track itself also highlights. */
+.player-item__toggle-input:checked + .player-item__toggle-track {
+    background: var(--accent);
+}
+
+.lang-switch__input:focus-visible + .lang-switch__track,
+.player-item__toggle-input:focus-visible + .player-item__toggle-track {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }

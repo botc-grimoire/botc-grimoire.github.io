@@ -1,15 +1,14 @@
 import {
     addRosterPlayer,
+    addToBoard,
     getRoster,
     isOnBoard,
+    removeFromBoard,
     removeRosterPlayer,
     renamePlayer,
     setPlayerColor,
     subscribe
 } from './state.js';
-import { createGhost, draggable, moveGhost } from './drag.js';
-import { dropOnBoard } from './board.js';
-import { initial } from './player.js';
 import { t } from './i18n.js';
 
 let addButton = null;
@@ -27,7 +26,6 @@ function buildItem(player) {
     const color = document.createElement('input');
 
     color.className = 'player-item__color';
-    color.dataset.noDrag = '';
     color.setAttribute('aria-label', t('roster.color'));
     color.title = t('roster.color');
     color.type = 'color';
@@ -39,10 +37,11 @@ function buildItem(player) {
     name.className = 'player-item__name';
     name.textContent = player.name;
 
+    const toggle = buildActiveToggle(player, placed);
+
     const rename = document.createElement('button');
 
     rename.className = 'player-item__action icon-button';
-    rename.dataset.noDrag = '';
     rename.setAttribute('aria-label', t('roster.rename'));
     rename.title = t('roster.rename');
     rename.type = 'button';
@@ -52,27 +51,52 @@ function buildItem(player) {
     const remove = document.createElement('button');
 
     remove.className = 'player-item__action player-item__action--danger icon-button';
-    remove.dataset.noDrag = '';
     remove.setAttribute('aria-label', t('roster.remove'));
     remove.title = t('roster.remove');
     remove.type = 'button';
     remove.innerHTML = '&times;';
     remove.addEventListener('click', () => removeRosterPlayer(player.id));
 
-    item.append(color, name);
-
-    if (placed) {
-        const badge = document.createElement('span');
-
-        badge.className = 'player-item__badge';
-        badge.textContent = t('roster.onboard');
-        item.append(badge);
-    }
-
-    item.append(rename, remove);
-    makeItemDraggable(item, player);
+    item.append(color, name, toggle, rename, remove);
 
     return item;
+}
+
+/**
+ * A compact switch (visual style shared with the language switch, see
+ * .lang-switch in style.css) instead of the old drag&drop onto the board:
+ * checked adds the player to the board (centered), unchecked removes it.
+ */
+function buildActiveToggle(player, placed) {
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+    const track = document.createElement('span');
+    const knob = document.createElement('span');
+
+    label.className = 'player-item__toggle';
+
+    input.className = 'player-item__toggle-input';
+    input.setAttribute('role', 'switch');
+    input.type = 'checkbox';
+    input.checked = placed;
+    input.setAttribute('aria-label', t(placed ? 'roster.active' : 'roster.inactive'));
+    input.title = t(placed ? 'roster.active' : 'roster.inactive');
+    input.addEventListener('change', () => {
+        if (input.checked) {
+            addToBoard(player.id, 50, 50);
+        } else {
+            removeFromBoard(player.id);
+        }
+    });
+
+    track.className = 'player-item__toggle-track';
+    track.setAttribute('aria-hidden', 'true');
+    knob.className = 'player-item__toggle-knob';
+    track.append(knob);
+
+    label.append(input, track);
+
+    return label;
 }
 
 /** Swaps the name for an input field; Enter commits, Escape discards. */
@@ -81,7 +105,6 @@ function startEditing(nameElement, player) {
     let settled = false;
 
     input.className = 'player-item__input';
-    input.dataset.noDrag = '';
     input.type = 'text';
     input.value = player.name;
     input.autocomplete = 'off';
@@ -113,31 +136,6 @@ function startEditing(nameElement, player) {
     nameElement.replaceWith(input);
     input.focus();
     input.select();
-}
-
-function makeItemDraggable(item, player) {
-    let ghost = null;
-
-    draggable(item, {
-        canDrag: () => !isOnBoard(player.id),
-        onDragStart(state) {
-            ghost = createGhost(initial(player.name), player.color);
-            moveGhost(ghost, state.x, state.y);
-            item.classList.add('player-item--dragging');
-        },
-        onDragMove(state) {
-            moveGhost(ghost, state.x, state.y);
-        },
-        onDragEnd(state, cancelled) {
-            ghost?.remove();
-            ghost = null;
-            item.classList.remove('player-item--dragging');
-
-            if (!cancelled) {
-                dropOnBoard(player.id, state.x, state.y);
-            }
-        }
-    });
 }
 
 function handleAdd() {

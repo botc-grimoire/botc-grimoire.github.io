@@ -1,7 +1,6 @@
 import {
     LIFE_ALIVE,
     SELF_ID,
-    addToBoard,
     arrangeInCircle,
     clearBoard,
     getBoardPlayers,
@@ -228,37 +227,6 @@ function render() {
     lockButton.setAttribute('aria-pressed', String(locked));
     lockButton.setAttribute('aria-label', t(locked ? 'board.unlock' : 'board.lock'));
     lockButton.setAttribute('title', t(locked ? 'board.unlock' : 'board.lock'));
-}
-
-/**
- * Drops a player at the pointer position. If it's outside the board,
- * nothing happens – the drag then counts as cancelled.
- */
-export function dropOnBoard(playerId, clientX, clientY) {
-    if (isLocked()) {
-        return false;
-    }
-
-    const rect = tokenLayer.getBoundingClientRect();
-    const inside = clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
-
-    if (!inside) {
-        return false;
-    }
-
-    addToBoardAt(playerId, ((clientX - rect.left) / rect.width) * 100, ((clientY - rect.top) / rect.height) * 100);
-
-    return true;
-}
-
-function addToBoardAt(playerId, x, y) {
-    // The token should stay fully within the board, even when dropped at the edge.
-    const rect = tokenLayer.getBoundingClientRect();
-    const size = Number.parseFloat(getComputedStyle(board).getPropertyValue('--token-size')) || 48;
-    const halfWidth = (size / 2 / rect.width) * 100;
-    const halfHeight = (size / 2 / rect.height) * 100;
-
-    addToBoard(playerId, clamp(x, halfWidth, 100 - halfWidth), clamp(y, halfHeight, 100 - halfHeight));
 }
 
 export function initBoard(options = {}) {
