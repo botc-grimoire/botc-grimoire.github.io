@@ -38,7 +38,7 @@ const activePingFilters = new Set();
 const SHARED_ROLES_FILTER_KEY = 'shared-roles';
 
 function pingSourceKey(source) {
-    return `${source.sourcePlayerId} ${getRoleId(source.sourceRole)}`;
+    return `${source.sourcePlayerId} ${getRoleId(source.sourceRole)} ${source.day}`;
 }
 
 /** Small dots above the token, one per active filter that matches. */
@@ -61,7 +61,7 @@ function buildPingDots(entry, pingSourceLookup, sharedRoles) {
 
         const source = pingSourceLookup.get(key);
 
-        if (!source || !getPlayersPingedBy(source.sourcePlayerId, source.sourceRole, getRoleId).includes(entry.playerId)) {
+        if (!source || !getPlayersPingedBy(source.sourcePlayerId, source.sourceRole, source.day, getRoleId).includes(entry.playerId)) {
             return;
         }
 
@@ -119,11 +119,11 @@ function rebuildPingFilterOptions(pingSources, sharedRoles) {
 
     pingSources.forEach((source) => {
         const livePlayer = getPlayer(source.sourcePlayerId);
+        const name = livePlayer ? displayName(livePlayer) : source.sourceName;
+        const role = normalizeRoleName(source.sourceRole);
+        const label = source.day === null ? `${name} (${role})` : `${name} (${role}, ${t('details.pings.day')} ${source.day})`;
 
-        appendPingFilterOption(
-            pingSourceKey(source),
-            `${livePlayer ? displayName(livePlayer) : source.sourceName} (${normalizeRoleName(source.sourceRole)})`
-        );
+        appendPingFilterOption(pingSourceKey(source), label);
     });
 
     // Only offered once at least one role is actually tagged on more than one player.

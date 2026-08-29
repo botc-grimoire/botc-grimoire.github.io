@@ -769,18 +769,19 @@ export function getBoardPlayers() {
 }
 
 /**
- * All currently used (source player, role tag) combinations across all board
- * players, deduplicated. The basis for the board filter list.
+ * All currently used (source player, role tag, day) combinations across all
+ * board players, deduplicated.
  */
 export function getPingSources(canonicalize = defaultCanonicalize) {
     const sources = new Map();
 
     board.players.forEach((entry) => {
         entry.pings.forEach((ping) => {
-            const key = `${ping.sourcePlayerId} ${canonicalize(ping.sourceRole)}`;
+            const key = `${ping.sourcePlayerId} ${canonicalize(ping.sourceRole)} ${ping.day}`;
 
             if (!sources.has(key)) {
                 sources.set(key, {
+                    day: ping.day,
                     sourceColor: ping.sourceColor,
                     sourceName: ping.sourceName,
                     sourcePlayerId: ping.sourcePlayerId,
@@ -793,11 +794,11 @@ export function getPingSources(canonicalize = defaultCanonicalize) {
     return [...sources.values()];
 }
 
-/** Target `playerId`s whose ping history has an entry with this source. */
-export function getPlayersPingedBy(sourcePlayerId, sourceRole, canonicalize = defaultCanonicalize) {
+/** Target `playerId`s whose ping history has an entry with this source (and day). */
+export function getPlayersPingedBy(sourcePlayerId, sourceRole, day, canonicalize = defaultCanonicalize) {
     return board.players
         .filter((entry) => entry.pings.some(
-            (ping) => ping.sourcePlayerId === sourcePlayerId && canonicalize(ping.sourceRole) === canonicalize(sourceRole)
+            (ping) => ping.sourcePlayerId === sourcePlayerId && canonicalize(ping.sourceRole) === canonicalize(sourceRole) && ping.day === day
         ))
         .map((entry) => entry.playerId);
 }
