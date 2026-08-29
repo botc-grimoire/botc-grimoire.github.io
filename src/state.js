@@ -703,12 +703,20 @@ export function addToBoard(playerId, x, y) {
     persistBoard();
 }
 
+/** Angle of a board entry around the board's center, same convention as the placement below (0 = top, clockwise). */
+function angleOf(entry) {
+    return Math.atan2(entry.x - 50, 50 - entry.y);
+}
+
 /**
  * Distributes all players evenly around a ring. The own token always ends up
  * exactly centered on the bottom arc (6 o'clock) – the board is viewed from
  * the visitor's own first-person perspective, with the other players lining
- * up clockwise from there. `aspect` is the board's width/height; it's used to
- * turn the ellipse into a circle that looks right.
+ * up clockwise from there, in their current clockwise order around the
+ * board – e.g. after manually dragging them into a seating order – rather
+ * than by unrelated array/add order (which would silently swap neighbors).
+ * `aspect` is the board's width/height; it's used to turn the ellipse into a
+ * circle that looks right.
  */
 export function arrangeInCircle(aspect = 1) {
     const count = board.players.length;
@@ -719,13 +727,22 @@ export function arrangeInCircle(aspect = 1) {
 
     // According to normalizeBoard(), "self" is always at index 0; still looked up robustly.
     const selfIndex = board.players.findIndex((entry) => entry.playerId === SELF_ID);
+    const selfAngle = selfIndex === -1 ? 0 : angleOf(board.players[selfIndex]);
     const base = 38;
     const radiusX = aspect >= 1 ? base / aspect : base;
     const radiusY = aspect >= 1 ? base : base * aspect;
 
-    board.players.forEach((entry, index) => {
-        const offset = selfIndex === -1 ? index : (index - selfIndex + count) % count;
-        const angle = Math.PI + (offset / count) * Math.PI * 2;
+    const ordered = board.players
+        .map((entry, index) => ({
+            entry,
+            // Self always sorts first (forced to the bottom below); others by
+            // their current angle, measured clockwise starting from self.
+            relative: index === selfIndex ? -1 : (angleOf(entry) - selfAngle + Math.PI * 2) % (Math.PI * 2)
+        }))
+        .sort((a, b) => a.relative - b.relative);
+
+    ordered.forEach(({ entry }, rank) => {
+        const angle = Math.PI + (rank / count) * Math.PI * 2;
 
         entry.x = clamp(50 + radiusX * Math.sin(angle), 0, 100);
         entry.y = clamp(50 - radiusY * Math.cos(angle), 0, 100);
