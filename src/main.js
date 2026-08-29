@@ -12,20 +12,20 @@ import { initRoster } from './roster.js';
 import { setCatalog } from './catalog.js';
 
 /**
- * Role and bluff data arrive once from the server on the first request and
- * then live in the document. Everything after that runs without server contact.
+ * Role and bluff data are fetched once on startup and then live in memory.
+ * Everything after that runs without server contact.
  */
-function readBootstrapData() {
-    const element = document.getElementById('bootstrap-data');
-
-    if (!element) {
-        return { editions: [] };
-    }
-
+async function readBootstrapData() {
     try {
-        return JSON.parse(element.textContent);
+        const response = await fetch('data/roles.json');
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        return await response.json();
     } catch (error) {
-        console.warn('[botc] Rollendaten konnten nicht gelesen werden:', error);
+        console.warn('[botc] Rollendaten konnten nicht geladen werden:', error);
 
         return { editions: [] };
     }
@@ -59,8 +59,8 @@ function syncPanel() {
     showPanel(hasSelection() ? 'details' : 'locked');
 }
 
-function main() {
-    setCatalog(readBootstrapData());
+async function main() {
+    setCatalog(await readBootstrapData());
 
     applyTranslations();
     initSidebar({ onOpen: resetNewPingDay });
