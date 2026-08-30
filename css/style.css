@@ -175,21 +175,31 @@ input {
     display: none;
 }
 
-.ping-filter__options {
+.ping-filter__popover {
     background: var(--surface-raised);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    max-height: 50vh;
+    gap: 8px;
     max-width: 70vw;
-    overflow-y: auto;
     padding: 10px;
     position: absolute;
     right: 0;
     top: calc(100% + 8px);
     width: max-content;
+}
+
+.ping-filter__add {
+    width: 100%;
+}
+
+.ping-filter__options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 .ping-filter__option {
