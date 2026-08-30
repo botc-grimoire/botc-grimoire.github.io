@@ -219,21 +219,13 @@ input {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     display: inline-flex;
+    flex-direction: column;
     gap: 6px;
-    height: 40px;
     left: max(12px, env(safe-area-inset-left));
     padding: 0 8px;
     position: absolute;
     top: max(64px, env(safe-area-inset-top));
     z-index: 3;
-}
-
-.day-counter__label {
-    color: var(--text-muted);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
 }
 
 .day-counter__value {
