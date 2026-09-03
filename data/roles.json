@@ -525,7 +525,7 @@
                         "en": "Butler"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du deinen Herrn. Am nächsten Tag darfst du nur abstimmen, wenn dein Herr abstimmt.",
+                        "de": "Jede Nacht wählst du einen anderen Spieler als deinen Herrn. Am nächsten Tag darfst du nur abstimmen, wenn dein Herr abstimmt.",
                         "en": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too."
                     },
                     "icon": "🥄",
@@ -566,8 +566,8 @@
                         "en": "Drunk"
                     },
                     "description": {
-                        "de": "Du weißt nicht, dass du der Trunkenbold bist. Du glaubst, ein Dorfbewohner zu sein, deine Fähigkeit funktioniert aber nicht.",
-                        "en": "You do not know you are the Drunk. You think you are a Townsfolk character, but your ability malfunctions."
+                        "de": "Du weißt nicht, dass du der Trunkenbold bist. Du glaubst, ein Dorfbewohner zu sein, bist es aber nicht.",
+                        "en": "You do not know you are the Drunk. You think you are a Townsfolk character, but you are not."
                     },
                     "icon": "🍺",
                     "strategies": [
@@ -599,7 +599,7 @@
                         "en": "Recluse"
                     },
                     "description": {
-                        "de": "Du kannst fälschlich als böse und als Diener oder Dämon angezeigt werden.",
+                        "de": "Du kannst fälschlich als böse und als Diener oder Dämon angezeigt werden, auch wenn du tot bist.",
                         "en": "You might register as evil and as a Minion or Demon, even if dead."
                     },
                     "icon": "🏚️",
@@ -672,8 +672,8 @@
                         "en": "Poisoner"
                     },
                     "description": {
-                        "de": "Jede Nacht vergiftest du einen Spieler: Seine Fähigkeit funktioniert nicht und seine Infos sind falsch.",
-                        "en": "Each night, choose a player: their ability malfunctions tonight and tomorrow day."
+                        "de": "Jede Nacht vergiftest du einen Spieler: Bis morgen Tag funktioniert seine Fähigkeit nicht und seine Infos sind falsch.",
+                        "en": "Each night, choose a player: they are poisoned tonight and tomorrow day."
                     },
                     "icon": "🧪",
                     "strategies": [
@@ -709,8 +709,8 @@
                         "en": "Spy"
                     },
                     "description": {
-                        "de": "Jede Nacht siehst du das Grimoire. Du kannst fälschlich als gut und als Dorfbewohner oder Außenseiter angezeigt werden.",
-                        "en": "Each night, you see the Grimoire. You might register as good and as a Townsfolk or Outsider."
+                        "de": "Jede Nacht siehst du das Grimoire. Du kannst fälschlich als gut und als Dorfbewohner oder Außenseiter angezeigt werden, auch wenn du tot bist.",
+                        "en": "Each night, you see the Grimoire. You might register as good and as a Townsfolk or Outsider, even if dead."
                     },
                     "icon": "🕵️",
                     "strategies": [
@@ -754,8 +754,8 @@
                         "en": "Scarlet Woman"
                     },
                     "description": {
-                        "de": "Stirbt der Dämon, während mindestens fünf Spieler leben, wirst du der Dämon.",
-                        "en": "If there are 5 or more players alive and the Demon dies, you become the Demon."
+                        "de": "Stirbt der Dämon, während mindestens fünf Spieler leben, wirst du der Dämon. (Reisende zählen nicht mit.)",
+                        "en": "If there are 5 or more players alive and the Demon dies, you become the Demon. (Travellers don't count.)"
                     },
                     "icon": "💄",
                     "strategies": [
@@ -923,8 +923,8 @@
                         "en": "Sailor"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du einen anderen Spieler: Entweder du oder er ist bis zur Dämmerung betrunken. Du kannst nicht sterben.",
-                        "en": "Each night, choose a player (not yourself): Either you or they are drunk until dusk. You can't die."
+                        "de": "Jede Nacht wählst du einen lebenden Spieler: Entweder du oder er ist bis zur Dämmerung betrunken. Du kannst nicht sterben.",
+                        "en": "Each night, choose an alive player: Either you or they are drunk until dusk. You can't die."
                     },
                     "icon": "⚓",
                     "strategies": [
@@ -962,8 +962,8 @@
                         "en": "Chambermaid"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du zwei andere Spieler: du erfährst, wie viele von ihnen wegen ihrer Fähigkeit aufgewacht sind.",
-                        "en": "Each night, choose 2 players (not yourself): you learn how many woke tonight due to their ability."
+                        "de": "Jede Nacht wählst du zwei andere lebende Spieler: du erfährst, wie viele von ihnen wegen ihrer Fähigkeit aufgewacht sind.",
+                        "en": "Each night, choose 2 alive players (not yourself): you learn how many woke tonight due to their ability."
                     },
                     "icon": "🛎️",
                     "strategies": [
@@ -1435,7 +1435,7 @@
                         "en": "Moonchild"
                     },
                     "description": {
-                        "de": "Wenn du erfährst, dass du gestorben bist, wähle öffentlich einen lebenden Spieler. Wenn er ein guter Spieler ist, stirbt er.",
+                        "de": "Wenn du erfährst, dass du gestorben bist, wähle öffentlich einen lebenden Spieler. Ist er gut, stirbt er in dieser Nacht.",
                         "en": "When you learn that you died, publicly choose 1 alive player. Tonight, if it was a good player, they die."
                     },
                     "icon": "🌙",
@@ -1472,7 +1472,7 @@
                         "en": "Goon"
                     },
                     "description": {
-                        "de": "Jede Nacht wird der erste Spieler, der dich wählt, betrunken bis zur nächsten Dämmerung. Sobald du einen anderen Spieler betrunken machst, nimmst du dessen Gesinnung an.",
+                        "de": "Jede Nacht wird der erste Spieler, der dich mit seiner Fähigkeit wählt, bis zur nächsten Dämmerung betrunken. Du nimmst seine Gesinnung an, auch wenn er betrunken oder vergiftet ist.",
                         "en": "Each night, the 1st player to choose you with their ability is drunk until dusk. You become their alignment (also if the other player is drunk or poisoned)."
                     },
                     "icon": "🥊",
@@ -1708,8 +1708,8 @@
                         "en": "Zombuul"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten), sofern heute niemand gestorben ist, wählst du einen Spieler: Er stirbt. Du scheinst tot, sobald du zum ersten Mal getötet wirst.",
-                        "en": "Each night*, if no one died today, choose a player: They die. You register as good & alive if dead."
+                        "de": "Jede Nacht (ab der zweiten), sofern heute niemand gestorben ist, wählst du einen Spieler: Er stirbt. Beim ersten Mal, wenn du sterben würdest, überlebst du, giltst aber als tot.",
+                        "en": "Each night*, if no one died today, choose a player: They die. The first time you die, you live but register as dead."
                     },
                     "icon": "🧟",
                     "strategies": [
@@ -1910,8 +1910,8 @@
                         "en": "Dreamer"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du einen Spieler (nicht dich selbst): Du erfährst eine gute und eine böse Rolle, von denen eine seine tatsächliche Rolle ist.",
-                        "en": "Each night, choose a player (not yourself): You learn 1 good and 1 evil character, 1 of which is correct."
+                        "de": "Jede Nacht wählst du einen Spieler (nicht dich selbst oder Reisende): Du erfährst eine gute und eine böse Rolle, von denen eine seine tatsächliche Rolle ist.",
+                        "en": "Each night, choose a player (not yourself or Travellers): You learn 1 good and 1 evil character, 1 of which is correct."
                     },
                     "icon": "💭",
                     "strategies": [
@@ -2216,7 +2216,7 @@
                     },
                     "description": {
                         "de": "Einmal pro Spiel wählst du nachts eine gute Rolle: Du erhältst deren Fähigkeit. Ein anderer Spieler mit dieser Rolle wird dadurch betrunken.",
-                        "en": "Once per game, at night, choose a good character: Gain that ability. If a player has that ability, they are drunk until you die."
+                        "en": "Once per game, at night, choose a good character: Gain that ability. If this character is in play, they are drunk."
                     },
                     "icon": "🤔",
                     "strategies": [
@@ -2361,8 +2361,8 @@
                         "en": "Mutant"
                     },
                     "description": {
-                        "de": "Verhältst du dich wie ein Außenseiter, kannst du dafür hingerichtet werden.",
-                        "en": "If you claim to be (or are revealed as) an Outsider, you might be executed."
+                        "de": "Glaubst du wahnhaft, ein Außenseiter zu sein, kannst du dafür hingerichtet werden.",
+                        "en": "If you are \"mad\" about being an Outsider, you might be executed."
                     },
                     "icon": "🧬",
                     "strategies": [
@@ -2469,8 +2469,8 @@
                         "en": "Klutz"
                     },
                     "description": {
-                        "de": "Sobald du stirbst, wählst du sofort öffentlich einen Spieler: Ist er böse, verliert dein Team.",
-                        "en": "When you learn that you died, publicly choose a player: If evil, your team loses."
+                        "de": "Sobald du erfährst, dass du gestorben bist, wählst du öffentlich einen lebenden Spieler: Ist er böse, verliert dein Team.",
+                        "en": "When you learn that you died, publicly choose 1 alive player: If evil, your team loses."
                     },
                     "icon": "🤦",
                     "strategies": [
@@ -2510,7 +2510,7 @@
                         "en": "Evil Twin"
                     },
                     "description": {
-                        "de": "Du und ein guter Spieler kennt einander und eure Rollen zu Beginn. Wird der gute Zwilling hingerichtet, verliert das Dorf.",
+                        "de": "Du und ein guter Spieler kennt einander und eure Rollen zu Beginn. Wird der gute Zwilling hingerichtet, verliert das Dorf. Das Dorf kann nicht gewinnen, solange ihr beide lebt.",
                         "en": "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live."
                     },
                     "icon": "👥",
@@ -2543,8 +2543,8 @@
                         "en": "Witch"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du einen Spieler: Stimmt er morgen ab, stirbt er. Sind nur noch drei Spieler übrig, verlierst du diese Fähigkeit.",
-                        "en": "Each night, choose a player: If they vote today, they die. If just 3 players live, you lose this ability."
+                        "de": "Jede Nacht wählst du einen Spieler: Nominiert er morgen, stirbt er. Sind nur noch drei Spieler übrig, verlierst du diese Fähigkeit.",
+                        "en": "Each night, choose a player: If they nominate tomorrow, they die. If just 3 players live, you lose this ability."
                     },
                     "icon": "🧹",
                     "strategies": [
@@ -2589,7 +2589,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du einen Spieler und eine gute Rolle: Er glaubt, verrückt zu sein, diese Rolle zu haben. Behauptet er das nicht am Tag, riskiert er die Hinrichtung.",
-                        "en": "Each night, choose a player & a good character: They are mad they are this character, or they might be executed."
+                        "en": "Each night, choose a player & a good character: They are mad they are this character tomorrow, or they might be executed."
                     },
                     "icon": "🌀",
                     "strategies": [
@@ -2632,8 +2632,8 @@
                         "en": "Pit-Hag"
                     },
                     "description": {
-                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler und eine Rolle: Hat sie noch niemand, wird der Spieler zu dieser Rolle.",
-                        "en": "Each night (not the first), choose a player & a character they become (if not in play). Wenn ein Dämon erschaffen wird, sind die Todesfälle heute Nacht willkürlich."
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler und eine Rolle: Hat sie noch niemand, wird der Spieler zu dieser Rolle. Entsteht dadurch ein Dämon, sind die Todesfälle in dieser Nacht willkürlich.",
+                        "en": "Each night (not the first), choose a player & a character they become (if not in play). If a Demon is made, deaths tonight are arbitrary."
                     },
                     "icon": "🐸",
                     "strategies": [
@@ -2714,7 +2714,7 @@
                         "en": "Vigormortis"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: Er stirbt. Wenn ein Diener stirbt, behält er seine Fähigkeit und vergiftet einen guten Nachbarn.",
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: Er stirbt. Wenn ein Diener stirbt, behält er seine Fähigkeit und vergiftet einen Dorfbewohner-Nachbarn.",
                         "en": "Each night*, choose a player: They die. Minions you kill keep their ability and poison one Townsfolk neighbor."
                     },
                     "icon": "🥀",
@@ -2858,7 +2858,7 @@
                         "en": "Scapegoat"
                     },
                     "description": {
-                        "de": "Würde ein Spieler deiner Gesinnung durch Hinrichtung sterben und es gibt keine passendere Wahl, stirbst du stattdessen.",
+                        "de": "Würde ein Spieler deiner Gesinnung durch Hinrichtung sterben, kannst du stattdessen sterben.",
                         "en": "If a player of your alignment is executed, you may die instead."
                     },
                     "icon": "🐑",
@@ -2969,7 +2969,7 @@
                         "en": "Bureaucrat"
                     },
                     "description": {
-                        "de": "Der Erzähler zählt die Stimme eines von dir gewählten Spielers dreifach in die eine oder andere Richtung.",
+                        "de": "Jede Nacht wählst du einen anderen Spieler: Der Erzähler zählt seine Stimme morgen dreifach, in die von dir gewählte Richtung.",
                         "en": "Each night, choose a player (not yourself): their vote counts as 3 votes tomorrow, in favour of whichever you choose."
                     },
                     "icon": "📜",
@@ -3006,7 +3006,7 @@
                         "en": "Thief"
                     },
                     "description": {
-                        "de": "Der Erzähler kehrt die Stimme eines von dir gewählten Spielers am nächsten Tag um.",
+                        "de": "Jede Nacht wählst du einen anderen Spieler: Seine Stimme zählt am nächsten Tag negativ.",
                         "en": "Each night, choose a player (not yourself): Their vote counts negatively tomorrow."
                     },
                     "icon": "🥷",
