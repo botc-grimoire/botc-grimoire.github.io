@@ -1,11 +1,25 @@
-import { FABLED, LORICS, addFabled, addLoric, getActiveFabled, getActiveLorics, removeFabled, removeLoric, subscribe } from './state.js';
+import { FABLED, LORICS, addFabled, addLoric, getActiveFabled, getActiveLorics, getEdition, removeFabled, removeLoric, subscribe } from './state.js';
+import { getRoleById, getRolesByTeam } from './catalog.js';
 import { localize, t } from './i18n.js';
+
+// Order the glossary's role list is grouped in, one <optgroup> per team.
+const GLOSSARY_TEAMS = ['townsfolk', 'outsider', 'traveller', 'minion', 'demon'];
 
 let dialog = null;
 let fabledAddSelect = null;
 let fabledList = null;
+let glossaryBluffDescription = null;
+let glossaryBluffTags = null;
+let glossaryHintsList = null;
+let glossaryPanel = null;
+let glossaryRoleDescription = null;
+let glossaryRoleSelect = null;
+let glossaryTab = null;
 let loricAddSelect = null;
 let loricList = null;
+let selectedBluffRoleId = null;
+let settingsPanel = null;
+let settingsTab = null;
 
 function buildFabledItem(entry) {
     const item = document.createElement('li');
@@ -133,7 +147,105 @@ function renderLorics() {
     rebuildLoricAddOptions(new Set(active.map((loric) => loric.id)));
 }
 
+/**
+ * Rebuilds the glossary's role <select>, grouped by team via <optgroup>,
+ * restricted to the currently selected edition (#edition-select).
+ */
+function rebuildGlossaryRoleOptions() {
+    const edition = getEdition();
+
+    glossaryRoleSelect.replaceChildren();
+
+    GLOSSARY_TEAMS.forEach((team) => {
+        const roles = getRolesByTeam(team, edition);
+
+        if (roles.length === 0) {
+            return;
+        }
+
+        const group = document.createElement('optgroup');
+
+        group.label = t(`settings.glossary.${team}`);
+
+        roles.forEach((role) => {
+            const option = document.createElement('option');
+
+            option.textContent = role.name;
+            option.value = role.id;
+            group.append(option);
+        });
+
+        glossaryRoleSelect.append(group);
+    });
+}
+
+function buildBluffTag(roleId, roleName) {
+    const tag = document.createElement('li');
+
+    tag.className = roleId === selectedBluffRoleId ? 'tag tag--active' : 'tag';
+    tag.addEventListener('click', () => {
+        selectedBluffRoleId = selectedBluffRoleId === roleId ? null : roleId;
+        renderGlossaryRole();
+    });
+
+    const label = document.createElement('span');
+
+    label.className = 'tag__label';
+    label.textContent = roleName;
+    tag.append(label);
+
+    return tag;
+}
+
+/**
+ * Renders the description, bluff-suggestion tags (from bluffRoles), and
+ * hints (from strategies) for the currently selected glossary role.
+ */
+function renderGlossaryRole() {
+    const role = getRoleById(glossaryRoleSelect.value);
+    const bluffRoleIds = role?.bluffRoles ?? [];
+
+    glossaryRoleDescription.textContent = role ? localize(role.description) : '';
+
+    if (!bluffRoleIds.includes(selectedBluffRoleId)) {
+        selectedBluffRoleId = null;
+    }
+
+    glossaryBluffTags.replaceChildren();
+    bluffRoleIds
+        .map((bluffId) => ({ bluffId, bluffRole: getRoleById(bluffId) }))
+        .filter(({ bluffRole }) => bluffRole !== null)
+        .forEach(({ bluffId, bluffRole }) => {
+            glossaryBluffTags.append(buildBluffTag(bluffId, localize(bluffRole.name)));
+        });
+
+    glossaryBluffDescription.textContent = selectedBluffRoleId
+        ? localize(getRoleById(selectedBluffRoleId).description)
+        : '';
+
+    glossaryHintsList.replaceChildren();
+    (role?.strategies ?? []).forEach((strategy) => {
+        const hint = document.createElement('li');
+
+        hint.textContent = localize(strategy);
+        glossaryHintsList.append(hint);
+    });
+}
+
+function switchTab(tab) {
+    const showGlossary = tab === 'glossary';
+
+    settingsTab.setAttribute('aria-selected', String(!showGlossary));
+    glossaryTab.setAttribute('aria-selected', String(showGlossary));
+    settingsPanel.hidden = showGlossary;
+    glossaryPanel.hidden = !showGlossary;
+}
+
 export function openGameSettings() {
+    switchTab('settings');
+    selectedBluffRoleId = null;
+    rebuildGlossaryRoleOptions();
+    renderGlossaryRole();
     dialog.showModal();
 }
 
@@ -141,11 +253,27 @@ export function initGameSettings() {
     dialog = document.getElementById('game-settings-dialog');
     fabledAddSelect = document.getElementById('fabled-add-select');
     fabledList = document.getElementById('fabled-list');
+    glossaryBluffDescription = document.getElementById('glossary-bluff-description');
+    glossaryBluffTags = document.getElementById('glossary-bluff-tags');
+    glossaryHintsList = document.getElementById('glossary-hints-list');
+    glossaryPanel = document.getElementById('game-settings-panel-glossary');
+    glossaryRoleDescription = document.getElementById('glossary-role-description');
+    glossaryRoleSelect = document.getElementById('glossary-role-select');
+    glossaryTab = document.getElementById('game-settings-tab-glossary');
     loricAddSelect = document.getElementById('loric-add-select');
     loricList = document.getElementById('loric-list');
+    settingsPanel = document.getElementById('game-settings-panel-settings');
+    settingsTab = document.getElementById('game-settings-tab-settings');
 
     document.getElementById('game-settings-open').addEventListener('click', openGameSettings);
     document.getElementById('game-settings-close').addEventListener('click', () => dialog.close());
+
+    settingsTab.addEventListener('click', () => switchTab('settings'));
+    glossaryTab.addEventListener('click', () => switchTab('glossary'));
+    glossaryRoleSelect.addEventListener('change', () => {
+        selectedBluffRoleId = null;
+        renderGlossaryRole();
+    });
 
     fabledAddSelect.addEventListener('change', () => {
         if (fabledAddSelect.value) {
@@ -161,6 +289,11 @@ export function initGameSettings() {
 
     subscribe('fabled-changed', renderFabled);
     subscribe('lorics-changed', renderLorics);
+    subscribe('edition-changed', () => {
+        selectedBluffRoleId = null;
+        rebuildGlossaryRoleOptions();
+        renderGlossaryRole();
+    });
     renderFabled();
     renderLorics();
 }

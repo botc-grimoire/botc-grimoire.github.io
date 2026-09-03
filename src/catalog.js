@@ -19,6 +19,29 @@ export function getRoleNames(editionId) {
     return [...new Set(names)].sort((a, b) => a.localeCompare(b));
 }
 
+/**
+ * All catalog roles of a given team ("townsfolk"/"outsider"/"traveller"/
+ * "minion"/"demon") within one edition, as {id, name} pairs (name localized
+ * to the active language), alphabetically sorted. Used for the settings
+ * glossary's role list, grouped by team via <optgroup>. As with
+ * getRoleNames(), "experimental" (and any unknown edition) is unfiltered –
+ * all roles across all editions are included.
+ */
+export function getRolesByTeam(team, editionId) {
+    const edition = editionId === 'experimental' ? null : editions.find((entry) => entry.id === editionId);
+    const roles = edition ? edition.roles : editions.flatMap((entry) => entry.roles);
+
+    return roles
+        .filter((role) => role.team === team)
+        .map((role) => ({ id: role.id, name: localize(role.name) }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/** The full catalog entry for a role id (unlocalized), or `null` if unknown. */
+export function getRoleById(id) {
+    return editions.flatMap((entry) => entry.roles).find((role) => role.id === id) ?? null;
+}
+
 /** Looks up a role by its displayed name, in both languages. */
 function findRoleByName(tagText) {
     const needle = tagText.trim().toLowerCase();
