@@ -3118,7 +3118,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht (ab der zweiten) wählst du einen lebenden Spieler: Stimmt er zu, erfährst du seine Rolle, aber ihr könntet beide sterben.",
-                        "en": "Each night*, choose a living player: if they agree, you learn their character, but you both might die."
+                        "en": "Each night*, choose a living player: If they agree, you learn their character, but you both might die."
                     },
                     "icon": "💋",
                     "strategies": [
@@ -3491,6 +3491,2284 @@
                         {
                             "de": "Bist du böse und dein Amigo ist der Dämon, bringe möglichst viele Spieler dazu, ihn zu nominieren.",
                             "en": "If your amigo is the Demon, get as many players as possible to nominate them."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                }
+            ]
+        },
+        {
+            "id": "experimental",
+            "name": {
+                "de": "Experimentell",
+                "en": "Experimental"
+            },
+            "roles": [
+                {
+                    "id": "acrobat",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Akrobat",
+                        "en": "Acrobat"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Ist er in dieser Nacht betrunken oder vergiftet oder wird er es, stirbst du.",
+                        "en": "Each night*, choose a player: if they are or become drunk or poisoned tonight, you die."
+                    },
+                    "icon": "🤸",
+                    "strategies": [],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "alchemist",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Alchemist",
+                        "en": "Alchemist"
+                    },
+                    "description": {
+                        "de": "Du hast die Fähigkeit eines Dieners. Nutzt du sie, kann der Erzähler dich auffordern, anders zu wählen.",
+                        "en": "You have a Minion ability. When using this, the Storyteller may prompt you to choose differently."
+                    },
+                    "icon": "⚗️",
+                    "strategies": [],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "alsaahir",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Alsaahir",
+                        "en": "Alsaahir"
+                    },
+                    "description": {
+                        "de": "Errätst du an einem Tag öffentlich, welche Spieler Diener und welcher der Dämon ist, gewinnt das gute Team.",
+                        "en": "Each day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins."
+                    },
+                    "icon": "🧠",
+                    "strategies": [
+                        {
+                            "de": "Rate jeden Tag! Jede Vermutung grenzt ein, wer Dämon und Diener sind.",
+                            "en": "Make a guess every day! Every guess you make narrows down who the Demon and Minion players are."
+                        },
+                        {
+                            "de": "Warte ein paar Tage mit deiner ersten Vermutung, um zu verbergen, dass du der Alsaahir bist. Das böse Team möchte dich vielleicht vergiften und töten, wenn es weiß, wer du bist. Deine Rolle zu verbergen hilft dir, nüchtern zu bleiben und länger zu leben.",
+                            "en": "Wait a few days before making your first guess, to hide that you are the Alsaahir. The evil team may want to poison and kill you if they know who you are. So hiding your role helps you stay sober and live longer."
+                        },
+                        {
+                            "de": "Ermutige gute Spieler, sich zu offenbaren und ihre Informationen zu teilen, damit sie statt dir zum Ziel des Dämons werden. Es ist besser, wenn du so lange wie möglich am Leben bleibst, da die Macht des Alsaahir im Spielverlauf wächst.",
+                            "en": "Encourage good players to come out and share their information, so they can be a demon target instead of you. It's better for you to stay alive as long as possible, because the Alsaahir's power grows as the game progresses."
+                        },
+                        {
+                            "de": "Suche Charaktere, die böse Spieler erkennen, wie den Detektiv, die Empathin, die Wahrsagerin oder den Kopfgeldjäger, und nutze ihre Informationen, um deine Trefferchance zu erhöhen.",
+                            "en": "Seek out characters that detect evil players, such as the Investigator, Empath, Fortune Teller, or Bounty Hunter, and use their information to boost your chances of guessing correctly."
+                        },
+                        {
+                            "de": "Denk daran, tote Spieler in deine Vermutungen einzubeziehen! Glaubst du, der Imp hat sich selbst getötet oder der Fang Gu ist auf einen Außenseiter übergesprungen, musst du sowohl den toten als auch den lebenden Dämon als Dämonen raten und alle Diener (tot oder lebendig) als Diener.",
+                            "en": "Remember to include dead players in your guesses! If you think the Imp killed themself in the night, or the Fang Gu jumped to an Outsider, you'll need to guess the dead demon and the living demon as Demons, and any minions (dead or alive) as a Minion."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "amnesiac",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Amnesiker",
+                        "en": "Amnesiac"
+                    },
+                    "description": {
+                        "de": "Du weißt nicht, welche Fähigkeit du hast. Jeden Tag darfst du privat raten, welche es ist: Du erfährst, wie zutreffend deine Vermutung war.",
+                        "en": "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are."
+                    },
+                    "icon": "💭",
+                    "strategies": [
+                        {
+                            "de": "Die meisten, wenn auch nicht alle, Amnesiker-Fähigkeiten sind irgendeine Art von Informationsfähigkeit und meist mächtiger als eine durchschnittliche Dorfbewohner-Fähigkeit (wegen des Risikos, dass du sie nicht erraten könntest). Das macht deine Fähigkeit besonders nützlich, solltest du sie herausfinden.",
+                            "en": "Most, though not all, Amnesiac abilities are information abilities of some kind or another, and they are usually more powerful than your average Townsfolk ability (due to the risk that you might not guess it). This makes your ability especially useful, should you figure it out."
+                        },
+                        {
+                            "de": "Du kannst bei Fragen an den Erzähler so allgemein oder so spezifisch sein, wie du willst. Am besten beginnst du mit größeren Fragen wie 'Hat meine Fähigkeit mit Außenseitern zu tun?' und wirst später spezifischer.",
+                            "en": "You're free to be as broad or as specific as you like when asking clarifying questions of the Storyteller. It's probably best to start with bigger questions like 'Does my ability have to do with Outsiders?' and later move on to more specific questions."
+                        },
+                        {
+                            "de": "Bei vielen Amnesiker-Fähigkeiten wählst du nachts Spieler aus. Variiere deine Wahl, um unterschiedliche Daten zum Schlussfolgern zu bekommen.",
+                            "en": "Many Amnesiac abilities will have you choosing players at night. Try to vary who you choose to get a variety of data to deduce from."
+                        },
+                        {
+                            "de": "Denk daran, dass der Erzähler versucht hat, deine Fähigkeit vernünftig erratbar zu machen. Wirken Theorien so abwegig, dass du nicht glaubst, der Erzähler hätte sie dir gegeben, kann es sich lohnen, sie deshalb zu verwerfen.",
+                            "en": "Remember that your Storyteller tried to make your ability reasonable to guess. If theories seem so outlandish that you don't believe the Storyteller would make it your ability, it may be worth discounting them on those merits."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "atheist",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Atheist",
+                        "en": "Atheist"
+                    },
+                    "description": {
+                        "de": "Der Erzähler darf die Spielregeln brechen. Wird er hingerichtet, gewinnt das gute Team, selbst wenn du tot bist. [Keine bösen Charaktere]",
+                        "en": "The Storyteller can break the game rules, and if executed, good wins, even if you are dead. [No evil characters]"
+                    },
+                    "icon": "🚫",
+                    "strategies": [
+                        {
+                            "de": "Bist du der Atheist, weißt du, wer der Dämon ist: Niemand. Du weißt genau, was zu tun ist, um zu gewinnen: Den Erzähler hinrichten.",
+                            "en": "If you are the Atheist, you know who the Demon is: Nobody. You know exactly what to do to win the game: Execute the Storyteller."
+                        },
+                        {
+                            "de": "Enthülle deinen Charakter früh. Es hat kaum Sinn, über deine Identität zu lügen, da es keine bösen Spieler zu täuschen gibt und keine Dämonen-Angriffe, denen du nachts ausweichen musst.",
+                            "en": "Reveal your character early. There isn't really much point lying about who you are, since there are no evil players to fool, and no Demon attacks to avoid at night."
+                        },
+                        {
+                            "de": "Gibt es Charaktere im Skript, die dich betrunken machen könnten, wie den Trunkenbold, tue alles, um herauszufinden, ob du betrunken bist oder nicht.",
+                            "en": "If there are characters on the script that could make you drunk, such as the Drunk, do everything you can to figure out whether or not you are drunk."
+                        },
+                        {
+                            "de": "Hab keine Angst zu sterben. Die meisten Spieler wollen den Atheisten irgendwann töten, nur für den Fall, dass er böse ist. Zu sterben, damit das gute Team gewinnen kann, lohnt sich.",
+                            "en": "Don't be afraid to die. Most players will want to kill the Atheist at some stage, just in case you are evil. Dying so that the good team can win is worth it."
+                        },
+                        {
+                            "de": "Sind Charaktere mit spielbeendenden Fähigkeiten im Spiel, wie der Bürgermeister oder die Heilige, frag beim Erzähler nach, ob eine riskante Aktion das Spiel beenden würde.",
+                            "en": "If there are any characters in play that have game-ending abilities, such as the Mayor or Saint, then check with the Storyteller as to whether or not the game will end if you take a risky action."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "balloonist",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Ballonfahrer",
+                        "en": "Balloonist"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du einen Spieler eines anderen Charaktertyps als in der vorherigen Nacht. [+0 oder +1 Außenseiter]",
+                        "en": "Each night, you learn a player of a different character type than last night. [+0 or +1 Outsider]"
+                    },
+                    "icon": "🎈",
+                    "strategies": [
+                        {
+                            "de": "Achte auf Außenseiter-Behauptungen! Du könntest einen zusätzlichen Außenseiter erzeugt haben. Hörst du von Spielern, die behaupten, der Fanatiker, die Petze oder das Mondkind zu sein, kann dir das helfen, deine Behauptung zu beweisen.",
+                            "en": "Pay attention to Outsider claims! You might have added an extra Outsider. So if you hear players claiming to be the Zealot, the Snitch, and the Moonchild, this can help you prove you are what you claim to be."
+                        },
+                        {
+                            "de": "Sprich jeden Tag mit dem Spieler, dessen Namen du letzte Nacht erfahren hast. Finde heraus, welcher Charakter er behauptet zu sein, und vergleiche das mit dem vorherigen Spieler, um zu sehen, ob es Sinn ergibt.",
+                            "en": "Each day, talk to the player whose name you learned last night. Find out what character they're claiming to be, so you can compare their claim to the previous player you learned and see if it makes sense."
+                        },
+                        {
+                            "de": "Wähle einen Spieler, dem du vertraust, und teile ihm jeden Tag deine Informationen mit. Das hilft dem guten Team zu glauben, dass du nicht gelogen oder deine Informationen geändert hast.",
+                            "en": "Choose one player you trust, and share your information with them every day. This helps the good team trust that you haven't lied or changed your information."
+                        },
+                        {
+                            "de": "Lüge über deine Rolle, um so lange wie möglich zu überleben. Je länger du lebst, desto mächtiger wird deine Information.",
+                            "en": "Lie about your role to stay alive as long as possible. The longer you live, the more powerful your information is."
+                        },
+                        {
+                            "de": "Suche nach anderen Charakteren, die den Charaktertyp erkennen, wie den Bibliothekar oder den Ausrufer. Weißt du, dass jemand definitiv ein Außenseiter ist oder kein Diener sein kann, grenzt das deine Information weiter ein und macht dich noch mächtiger.",
+                            "en": "Look for other characters that detect character type, like the Librarian and the Town Crier. If you know someone is definitely an Outsider, or cannot be a Minion, this narrows down your information and makes you even more powerful."
+                        }
+                    ],
+                    "bluffRoles": [
+                        "banshee",
+                        "farmer"
+                    ],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "banshee",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Banshee",
+                        "en": "Banshee"
+                    },
+                    "description": {
+                        "de": "Tötet dich der Dämon, erfahren das alle Spieler. Von da an darfst du zweimal pro Tag nominieren und bei jeder Nominierung zweimal abstimmen.",
+                        "en": "If the Demon kills you, all players learn this. From now on, you may nominate twice per day and vote twice per nomination."
+                    },
+                    "icon": "👻",
+                    "strategies": [
+                        {
+                            "de": "Lass dich vom Dämon töten, auf welchem Weg auch immer!",
+                            "en": "Get killed by the Demon, by any method that works for you!"
+                        },
+                        {
+                            "de": "Du wirst bei deinem Tod bestätigt. Nutze das. Sammle jede Information, die du bekommen kannst.",
+                            "en": "You get confirmed when you die – take advantage of this. Get hold of every bit of information you can."
+                        },
+                        {
+                            "de": "Sobald du tot bist, kannst du es dir leisten, immer den Dämon zu jagen. Diener zu töten ist nicht mehr so wichtig, da ihr nicht automatisch verliert, nur weil am Ende ausschließlich Böse übrig sind. Jage also jeden Tag den Dämon!",
+                            "en": "You can afford to always hunt Demons once you're dead. Killing Minions may no longer be as important as you can't automatically lose to having only evil players remaining alive. So gun for the Demon every day!"
+                        },
+                        {
+                            "de": "Nutze deine Nominierungen jeden Tag. So ist sichergestellt, dass ein guter Spieler nominiert. Und nutze deine Stimmen mindestens einmal am Tag. Du verschiebst die Abstimmungsmehrheit stark zugunsten des guten Teams.",
+                            "en": "Use your nominations every day. You can be assured that a good player is nominating. And use your votes at least once a day. You swing the voting majority very much in the good team's favour."
+                        },
+                        {
+                            "de": "Stellst du fest, dass du nachts gestorben bist, ohne dass der Erzähler es angekündigt hat, kläre mit dem Erzähler ab, dass deine Fähigkeit nicht ausgelöst hat, statt es einfach durch eine Nominierung zu testen.",
+                            "en": "If you find out that you died at night and the Storyteller didn't announce you, confirm with the Storyteller that your ability didn't trigger rather than just nominating to test it."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "bounty_hunter",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Kopfgeldjäger",
+                        "en": "Bounty Hunter"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn einen bösen Spieler. Stirbt der dir bekannte Spieler, erfährst du in dieser Nacht einen weiteren bösen Spieler. [1 Dorfbewohner ist böse]",
+                        "en": "You start knowing 1 evil player. If the player you know dies, you learn another evil player tonight. [1 Townsfolk is evil]"
+                    },
+                    "icon": "🎯",
+                    "strategies": [
+                        {
+                            "de": "Du kennst gleich am ersten Tag einen bösen Spieler! Nicht einmal die Information des Detektivs ist so stark! Du solltest es sofort allen erzählen und diesen üblen Schurken so schnell wie möglich hinrichten lassen.",
+                            "en": "You know who an evil player is, right off the bat on day 1! Not even the Investigator info is this strong! You should tell everyone about it immediately and get that filthy scoundrel of an evil player executed as soon as possible."
+                        },
+                        {
+                            "de": "Du weißt, wer ein böser Spieler ist, aber er weiß nicht, dass du es weißt. Vielleicht ist es an der Zeit, dich zurückzuhalten und zu beobachten, mit wem er spricht, ob er zunächst ohne Bluff wirkt und dann nach einem bestimmten Gespräch einen zu haben scheint.",
+                            "en": "You know who an evil player is, but they don't know you know. Maybe this is a time to sit back in the shadows and pay attention to who they talk to, whether they seem to start without a bluff and then get one after a certain conversation."
+                        },
+                        {
+                            "de": "Sobald du dich öffentlich als Kopfgeldjäger zu erkennen gibst, bist du ein Ziel für den Dämon. Wähle den Moment für deine Enthüllung also mit Bedacht.",
+                            "en": "Once you're public as a Bounty Hunter, you're a target for the Demon to kill. So choose your moment to make your information public with great care."
+                        },
+                        {
+                            "de": "Denk daran, dass du in diesem Spiel einen bösen Dorfbewohner erzeugt hast! Das ist nicht nur ein zusätzlicher böser Spieler mit zusätzlicher Nominierung und Stimme, er hat bei Bedarf auch einen kostenlosen Bluff in Form seines tatsächlichen Charakter-Tokens.",
+                            "en": "Remember you've created an evil Townsfolk in this game! Not only is this an extra evil player with an extra nomination and an extra vote, but also they have a free bluff in the character token they actually received if they want it."
+                        },
+                        {
+                            "de": "Achte darauf, welche bösen Charaktere im Skript sind. Du willst die Stadt nicht in einen Kreuzzug führen, um dein Ziel hinrichten zu lassen, nur um festzustellen, dass es der Goblin oder Boomdandy war, der dem bösen Team gerade das Spiel gewonnen hat!",
+                            "en": "Pay attention to what evil characters are on the script. You don't want to lead the town on a crusade to execute your target only to find out that they were a Goblin or Boomdandy that's just won the game for the evil team!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "cannibal",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Kannibale",
+                        "en": "Cannibal"
+                    },
+                    "description": {
+                        "de": "Du hast die Fähigkeit des zuletzt hingerichteten Spielers. War er böse, bist du vergiftet, bis ein guter Spieler durch Hinrichtung stirbt.",
+                        "en": "You have the ability of the recently killed executee. If they are evil, you are poisoned until a good player dies by execution."
+                    },
+                    "icon": "🍽️",
+                    "strategies": [
+                        {
+                            "de": "Richtet Leute hin! Auch wenn es nicht vorteilhaft ist, gute Spieler hinzurichten, mildert deine Fähigkeit den Schaden erheblich. Richtet die Stadt versehentlich einen Dorfbewohner hin, hilft es dem guten Team deutlich, dass du dessen Fähigkeit trotzdem übernehmen kannst.",
+                            "en": "Execute people! While it is not advantageous to execute good players, your ability reduces the sting of this by quite a lot. Even if the town executes a Townsfolk by accident, the fact that you can still pick up their ability should help the good team significantly."
+                        },
+                        {
+                            "de": "Achte besonders auf Spieler, die behaupten, Dorfbewohner mit Einmal-pro-Spiel-Fähigkeiten zu sein. Du kannst solche Dorfbewohner 'verzehren', ihre Fähigkeit einmal nutzen und im Spielverlauf weitere Dorfbewohner 'verspeisen'.",
+                            "en": "Keep a special eye out for players claiming to be Townsfolk with once-per-game abilities. You can eat such Townsfolk, use their once-per-game power, and keep chewing on more Townsfolk as the game goes on."
+                        },
+                        {
+                            "de": "Denk daran, dass dir zu keinem Zeitpunkt gesagt wird, welche Fähigkeit du hast! Vielleicht kannst du es anhand nächtlicher Ereignisse herausfinden.",
+                            "en": "Remember you're not told which ability you have at any time! You may be able to figure it out based on things happening at night."
+                        },
+                        {
+                            "de": "Sprich nach Möglichkeit mit Hingerichteten, bevor sie sterben, in der Hoffnung, genau zu erfahren, welche Fähigkeit du von ihnen übernehmen wirst.",
+                            "en": "Be sure to talk to executees before they die if you can, in the hopes that you can learn what exact ability you're going to be picking up from them."
+                        },
+                        {
+                            "de": "Vergiss nicht, dass böse Spieler dir bei ihrer Hinrichtung vorgetäuschte Fähigkeiten geben könnten. Dein Erzähler wird meist trotzdem versuchen, dich glauben zu lassen, du hättest die Fähigkeit, die der Böse behauptet hat.",
+                            "en": "Don't forget that evil players might give you fake abilities when executed. Your Storyteller will generally still try to make you think you have the ability the evil player claimed they had."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "choirboy",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Chorknabe",
+                        "en": "Choirboy"
+                    },
+                    "description": {
+                        "de": "Tötet der Dämon den König, erfährst du, welcher Spieler der Dämon ist. [+der König]",
+                        "en": "If the Demon kills the King, you learn which player is the Demon. [+the King]"
+                    },
+                    "icon": "🎶",
+                    "strategies": [
+                        {
+                            "de": "Der Chorknabe ist eine Falle für den Dämon. Nicht zu wissen, ob du im Spiel bist, lässt den Dämon deutlich vorsichtiger mit dem König umgehen.",
+                            "en": "The Choirboy is an ambush for the Demon. Not knowing whether you're in the game or not is going to make the Demon act much more cautiously around the King."
+                        },
+                        {
+                            "de": "Stirbst du, enthülle das nicht öffentlich, denn allein die Möglichkeit, dass du noch lebst, kann genug sein. Du kannst dein Geheimnis mit ins Grab nehmen.",
+                            "en": "If you die, don't reveal this publicly, because just the threat of you being alive can be enough. You can take your secret with you to the grave."
+                        },
+                        {
+                            "de": "Enthüllt sich der König, versuche, ihn diskret aufzusuchen, wenn möglich. Bist du dabei zu auffällig, könnte das dem Dämon verraten, dass du der Chorknabe bist.",
+                            "en": "If the King reveals themselves, try to visit them discreetly when you can. If you're too obvious in trying to seek out the King, this might signal to the Demon that you're the Choirboy."
+                        },
+                        {
+                            "de": "Enthüllt sich niemand als König, weißt du, dass trotzdem einer im Spiel sein sollte. Aus irgendeinem Grund enthüllt er sich nicht.",
+                            "en": "If no one comes out as the King, you know that there should still be one in play. For some reason they're not coming out."
+                        },
+                        {
+                            "de": "Tausche Charaktere mit einem anderen Spieler und lass ihn behaupten, der Chorknabe zu sein. Tötet der Dämon den falschen Chorknaben und dann den König, erfährst du, wer der Dämon ist.",
+                            "en": "Character swap with another player and let them claim to be the Choirboy. If the Demon kills the fake Choirboy and then kills the King, you learn who the Demon is."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "cult_leader",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Sektenführer",
+                        "en": "Cult Leader"
+                    },
+                    "description": {
+                        "de": "Jede Nacht nimmst du die Gesinnung eines lebenden Nachbarn an. Entscheiden sich alle guten Spieler, deiner Sekte beizutreten, gewinnt dein Team.",
+                        "en": "Each night, you become the alignment of an alive neighbor. If all good players choose to join your cult, your team wins."
+                    },
+                    "icon": "🔥",
+                    "strategies": [
+                        {
+                            "de": "Enthülle dich früh als Sektenführer, da deine Chancen, gut zu sein, früh im Spiel deutlich höher stehen.",
+                            "en": "Come out as the Cult Leader early, as your chances of being good are much higher early in the game."
+                        },
+                        {
+                            "de": "Bring andere Spieler dazu, Erkennungsfähigkeiten an deinen Nachbarn einzusetzen, um deine Behauptungen zu bestätigen. Lass die Zofe oder die Näherin nachts beide deiner Nachbarn wählen, um deine Gesinnungsbehauptungen zu verifizieren.",
+                            "en": "Get other players to use detection abilities on your neighbours to verify your claims. Get the Chambermaid or the Seamstress to pick both your neighbours at night, to verify your claims of alignment."
+                        },
+                        {
+                            "de": "Gib nicht zu, böse zu sein, bevor du wieder gut bist, sonst könntest du hingerichtet werden, während du in der bösen Gesinnung feststeckst.",
+                            "en": "Don't admit you are evil until you are good again, or else you might get executed and locked into evil."
+                        },
+                        {
+                            "de": "Sind sich die Spieler im Endspiel nicht sicher, wer der Dämon ist, hast du eine Siegbedingung, die als Verzweiflungstat dienen kann.",
+                            "en": "During the end game, if players are not sure about who the Demon is, you have a victory condition that can be a Hail Mary."
+                        },
+                        {
+                            "de": "Denk daran: Leben am letzten Tag nur noch drei Spieler und du bist einer davon, sitzt du direkt neben dem Dämon.",
+                            "en": "Remember on the final day, if there are only 3 players alive and you're one of them, you are next to the Demon."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "engineer",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Ingenieur",
+                        "en": "Engineer"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts, welche Diener oder welcher Dämon im Spiel sind.",
+                        "en": "Once per game, at night, choose which Minions or which Demon is in play."
+                    },
+                    "icon": "🔧",
+                    "strategies": [
+                        {
+                            "de": "Als Ingenieur kannst du grob eines von vier Dingen erreichen: Festlegen, welche Diener im Spiel sind, welche Diener nicht im Spiel sind, welcher Dämon im Spiel ist oder welcher Dämon nicht im Spiel ist.",
+                            "en": "If you are the Engineer, you can broadly accomplish one of four things: Deciding which Minions are in play, deciding which Minions are not in play, deciding which Demon is in play, deciding which Demon is not in play."
+                        },
+                        {
+                            "de": "Um zu verhindern, dass das böse Team (oder das gute!) dich vor dem Einsatz deiner Fähigkeit tötet, nutze sie in der ersten Nacht. Das garantiert, dass du zum Zug kommst.",
+                            "en": "To prevent the evil team (or the good team!) killing you before you use your ability, use your ability on the first night. This guarantees that you will get to act."
+                        },
+                        {
+                            "de": "Um die idealsten Diener oder den idealsten Dämon zu erschaffen, warte bis zur zweiten oder dritten Nacht und sorge in der Zwischenzeit für möglichst viel Diskussion.",
+                            "en": "To choose the most ideal Minions or Demon to create, wait until the second or third night, and generate as much discussion as you can in the meantime."
+                        },
+                        {
+                            "de": "Timing kann für den Ingenieur entscheidend sein. Manche bösen Fähigkeiten lassen sich komplett zunichtemachen, wenn du zum richtigen Zeitpunkt handelst.",
+                            "en": "Timing can be crucial for the Engineer. Some evil abilities can be entirely negated by you acting at the right time."
+                        },
+                        {
+                            "de": "Scheue dich nicht, Charaktere zu erschaffen, die laut eckiger Klammer, wie [dieser], Außenseiter hinzufügen. Eckige Klammern zeigen dem Erzähler an, welche Token beim Spielaufbau hinzugefügt oder entfernt werden sollen.",
+                            "en": "Don't be afraid to create characters that add Outsiders in square brackets, like [this]. Square brackets indicate to the Storyteller what tokens to add or remove during the game setup."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "farmer",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Bauer",
+                        "en": "Farmer"
+                    },
+                    "description": {
+                        "de": "Stirbst du nachts, wird ein lebender guter Spieler zum Bauern.",
+                        "en": "When you die at night, an alive good player becomes a Farmer."
+                    },
+                    "icon": "🌾",
+                    "strategies": [
+                        {
+                            "de": "Stirbst du nachts, bleib gelassen und warte, bis dich jemand als den neu erschaffenen Bauern anspricht.",
+                            "en": "If you die at night, play it cool and wait for somebody to approach you as the new Farmer that has been created."
+                        },
+                        {
+                            "de": "Der Bauer kann eine mächtige Falle für das böse Team sein. Wirst du nachts zum Bauern, wende dich an den zuletzt verstorbenen Spieler und offenbare ihm, dass du jetzt der Bauer bist. Diese Interaktion lässt sich nur schwer vortäuschen, sodass ihr beide einander vertrauen könnt.",
+                            "en": "The Farmer can be a powerful trap for the evil team. If you turn into the Farmer at night, reach out to the player that most recently died and reveal to them that you are a Farmer now. It's very difficult to fake this interaction, meaning the two of you can trust each other."
+                        },
+                        {
+                            "de": "Willst du überleben, enthülle dich als Bauer und fordere den Dämon offen heraus, dich nachts zu töten. Das ist besonders wirksam, wenn es keine anderen nächtlichen Todesursachen im Spiel gibt.",
+                            "en": "If you feel like you want to survive, come out as the Farmer, blatantly daring the Demon to kill you at night. This is especially effective if there are no other sources of deaths by night in the game."
+                        },
+                        {
+                            "de": "Versuche, dich nicht sofort öffentlich zu enthüllen. Eine große Gruppe von Bauern aufzubauen ist deutlich mächtiger als eine kleine.",
+                            "en": "Try not to come out right away publically as building up a large group of Farmers is much more powerful than a small group of Farmers."
+                        },
+                        {
+                            "de": "Vermeide eine Hinrichtung um jeden Preis, da deine Fähigkeit nur bei einem nächtlichen Tod ausgelöst wird.",
+                            "en": "Avoid execution at all costs as your ability only triggers if you die at night."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "fisherman",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Fischer",
+                        "en": "Fisherman"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel darfst du tagsüber den Erzähler aufsuchen, um dir Rat zu holen, der deinem Team zum Sieg verhilft.",
+                        "en": "Once per game, during the day, visit the Storyteller for some advice to help your team win."
+                    },
+                    "icon": "🎣",
+                    "strategies": [
+                        {
+                            "de": "Frag dich, warum du genau diesen Rat bekommen hast. Auch wenn er unerwartet kommt oder dich auf einen völlig anderen Weg schickt, denk daran: Der Erzähler weiß alles.",
+                            "en": "Ask yourself why you got the advice you got. Even if it's something you didn't expect, or that sends you down a totally different path than the one you were following, remember that the Storyteller knows all."
+                        },
+                        {
+                            "de": "Befolge den Rat. Der Fischer liefert keine Information, sondern einen Rat, der dir zum Sieg verhelfen soll. Lautet der Rat 'Richte deine Nachbarn im Uhrzeigersinn hin', dann tue es einfach.",
+                            "en": "Follow the advice. The Fisherman does not provide information, it provides advice to help you win. If the advice is 'execute your clockwise neighbour', just do it."
+                        },
+                        {
+                            "de": "Nutze deine Fähigkeit sofort. Riskiere nicht, vom Dämon getötet oder hingerichtet zu werden, bevor du deinen Rat erhalten hast.",
+                            "en": "Use your ability immediately. Don't risk dying to the Demon or getting executed before you can receive your advice."
+                        },
+                        {
+                            "de": "Warte mit dem Einsatz deiner Fähigkeit so lange wie möglich. Das ist riskant, aber je länger du wartest, desto genauer kann dir der Erzähler den Rat geben, den du zum Sieg brauchst.",
+                            "en": "Hold off on using your ability for as long as possible. This is risky, but the longer you wait the more the storyteller will be able to give you the exact type of advice you need to win."
+                        },
+                        {
+                            "de": "Achte genau auf die Worte des Erzählers. Wirkt etwas mehrdeutig, deutet er womöglich etwas an, ohne es direkt auszusprechen.",
+                            "en": "Pay attention to the specific words that the Storyteller uses. If something seems a bit ambiguous, they may be hinting at something without outright saying it."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "general",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "General",
+                        "en": "General"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du, welche Gesinnung nach Einschätzung des Erzählers gerade gewinnt: Gut, böse oder keine von beiden.",
+                        "en": "Each night, you learn which alignment the Storyteller believes is winning: Good, evil, or neither."
+                    },
+                    "icon": "🎖️",
+                    "strategies": [
+                        {
+                            "de": "Denk daran, dass deine Rolle mit der persönlichen Einschätzung des Erzählers zusammenhängt. Diese Einschätzung wird zwangsläufig von mehr als nur der reinen Spielmechanik beeinflusst.",
+                            "en": "Keep in mind that your role interacts with the personal opinion of the Storyteller. This opinion will inevitably be influenced by more than just mechanics."
+                        },
+                        {
+                            "de": "Achte darauf, wie sich deine Information von Nacht zu Nacht verändert. Überlebst du lange genug, ergibt sich quasi ein Verlaufsdiagramm, wie sich die Erfolgsaussichten des guten Teams im Spiel entwickelt haben.",
+                            "en": "Take note of how your information changes from night to night. If you can survive long enough, you will essentially have a line graph showing how the good team's fortunes have altered over the course of play."
+                        },
+                        {
+                            "de": "Achte darauf, was andere Spieler sagen, besonders auf den Gruppenkonsens.",
+                            "en": "Pay attention to what other players are saying, particularly group consensus."
+                        },
+                        {
+                            "de": "Wechselt deine Information innerhalb von zwei Nächten von 'Gute gewinnen' zu 'Böse gewinnen' oder umgekehrt, ist das äußerst nützlich.",
+                            "en": "If your information changes from 'good is winning' to 'evil is winning', or vice versa, over the course of two nights, this is extremely useful."
+                        },
+                        {
+                            "de": "Erfährst du durchgehend, dass das böse Team gewinnt, lass es das gute Team wissen und handle sofort entgegengesetzt.",
+                            "en": "If you consistently get information that the evil team is winning, let the good team know, and take immediate, contradictory action."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "high_priestess",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Hohepriesterin",
+                        "en": "High Priestess"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du, mit welchem Spieler du nach Einschätzung des Erzählers am meisten reden solltest.",
+                        "en": "Each night, learn which player the Storyteller believes you should talk to most."
+                    },
+                    "icon": "🧿",
+                    "strategies": [
+                        {
+                            "de": "Sprich jeden Tag so schnell wie möglich mit der Person, die dir der Erzähler zeigt. Der Erzähler hält sie für die wichtigste Person, mit der du reden solltest. Suche sie also sofort auf, um Vertrauen zu gewinnen und ihre Information zu nutzen, um den Rest deines Tages zu gestalten.",
+                            "en": "Talk to the person the Storyteller gives you as soon as possible every day. The Storyteller believes they're the most important person for you to talk to, so you should get hold of them immediately in order to try to gain trust and use their information to dictate how you should approach the rest of your day."
+                        },
+                        {
+                            "de": "Sag der Person, die du gesehen hast, dass du die Hohepriesterin bist und sie erfahren hast, und finde heraus, ob sie einen guten Grund kennt, warum sie dir gezeigt wurde. Deine Information kann sehr vage sein, aber vielleicht hat die gezeigte Person gute Theorien, basierend auf dem, was sie durch ihren eigenen Charakter weiß, was sie dir und dem guten Team allgemein bieten kann.",
+                            "en": "Tell the person you saw that you're the High Priestess and learnt them, see if they know a good reason why they might have been shown. Your information can be very nebulous but it's possible that the player you saw has good theories based on whatever they've gained from their own character as to what they can offer to you and to the good team more widely."
+                        },
+                        {
+                            "de": "In der ersten Nacht ist der dir gezeigte Spieler höchstwahrscheinlich entweder ein guter Spieler, der bereits Informationen hat, die er mit dir teilen kann, oder ein Diener, bei dem du soziale Hinweise sammeln oder ihn ohne Bluff in die Falle locken könntest.",
+                            "en": "On the first night, the player you learn is most likely either a good player who already has information so that they can share it with you or a Minion who you might be able to get a social read from or trap without a bluff."
+                        },
+                        {
+                            "de": "Hat dir der Erzähler zweimal hintereinander denselben Spieler gezeigt? Wahrscheinlich hat sich das, was der Erzähler dir aus diesem Gespräch mitgeben wollte, noch nicht ergeben. Versuche es also mit offenem Geist erneut!",
+                            "en": "Did the Storyteller give you the same player twice in a row? Most likely what the ST wanted you to get from that conversation didn't happen, so try again with an open mind!"
+                        },
+                        {
+                            "de": "Letztendlich ist die Hohepriesterin ein großer Gewinn, selbst wenn du nie genau herausfindest, warum dich der Erzähler zu einem bestimmten Spieler geschickt hat.",
+                            "en": "At the end of the day, the High Priestess is a great value-add even if you don't work out exactly why the Storyteller sent you to any given player."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "huntsman",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Jäger",
+                        "en": "Huntsman"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts einen lebenden Spieler: Ist es die Maid, wird sie zu einem nicht im Spiel befindlichen Dorfbewohner. [+die Maid]",
+                        "en": "Once per game, at night, choose a living player: the Damsel, if chosen, becomes a not-in-play Townsfolk. [+the Damsel]"
+                    },
+                    "icon": "🦌",
+                    "strategies": [
+                        {
+                            "de": "Warte mit dem Einsatz deiner Fähigkeit, bis du dir wirklich sicher bist. Du hast nur eine Gelegenheit, es richtig zu machen, und die Jagd selbst macht viel Spaß. Versuche, dich mit Charakteren zusammenzutun, die etwas über Charaktere wie den Träumer erfahren können.",
+                            "en": "Wait to use your ability until you're really sure. You only have one opportunity to get it right and there is a lot of fun to be had during the hunting. Try to partner up with characters that can learn about characters like the Dreamer."
+                        },
+                        {
+                            "de": "Die Maid ist wahrscheinlich nervös und paranoid und versucht vielleicht sogar, sich töten zu lassen. Setze deine Fähigkeit bei Spielern ein, die verschlagen oder still wirken. Sie könnten die Maid sein.",
+                            "en": "The Damsel is likely to be flighty and paranoid, and may even be trying to get themselves killed. Use your ability on people who seem shifty or quiet as they might be a Damsel."
+                        },
+                        {
+                            "de": "Überlebe um jeden Preis. Du kannst behaupten, deine Fähigkeit bereits genutzt oder deine Maid bereits gefunden zu haben, wodurch du keine Bedrohung mehr für die Bösen darstellst.",
+                            "en": "Stay alive at any cost. You can claim you've used your ability already, or that you've already found your Damsel, meaning you're no longer a threat to evil."
+                        }
+                    ],
+                    "bluffRoles": [
+                        "damsel"
+                    ],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "king",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "König",
+                        "en": "King"
+                    },
+                    "description": {
+                        "de": "Jede Nacht erfährst du, sobald die Toten die Lebenden erreichen oder übertreffen, einen lebenden Charakter. Der Dämon weiß, dass du der König bist.",
+                        "en": "Each night, if the dead equal or outnumber the living, you learn 1 alive character. The Demon knows you are the King."
+                    },
+                    "icon": "👑",
+                    "strategies": [
+                        {
+                            "de": "Der König ist einer der wenigen Charaktere, die sich früh und selbstbewusst enthüllen können. Der Dämon weiß, wer der König ist, und weiß, dass er eine mögliche Falle sein könnte, wenn er zu früh getötet wird. Da der Dämon den König nur töten kann, wenn er sich sicher ist, dass der Chorknabe aus dem Weg ist, überlebt der König wahrscheinlich bis ins Endspiel.",
+                            "en": "The King is one of the few characters who can come out early and confidently. The Demon knows who the King is and knows they might be a possible trap if killed too early in the game. Because the Demon can only kill the King if they're confident the Choirboy is out of the way, the King is likely to survive to the end game."
+                        },
+                        {
+                            "de": "Der König kann auch heimlich abwarten. Er bekommt am Ende des Spiels sehr gute Informationen, und obwohl sich Könige oft enthüllen, kann Stillschweigen eine gute Möglichkeit sein, den Dämon zu verwirren.",
+                            "en": "The King can also wait secretly. The King gets a lot of really good information at the end of the game, and while Kings often come out, staying silent might be a good way to throw the Demon off."
+                        },
+                        {
+                            "de": "Der Schutz des Königs vor dem Dämon hält an, solange der Chorknabe lebt. Suche einen anderen guten Spieler und lass andere heimlich wissen, dass er der Chorknabe ist.",
+                            "en": "The King's protection from the Demon lasts as long as the Choirboy is alive. Find another good player and secretly let others know that they are the Choirboy."
+                        },
+                        {
+                            "de": "Da die Information des Königs am Spielende sehr mächtig sein kann und Könige Hauptverdächtige für den Dämon sind, ist die Chance, dass ein öffentlicher König das Endspiel überlebt, ziemlich gering. Enthüllst du dich, konzentriere dich darauf, mit deiner Position einen vertrauenswürdigen Hofstaat aufzubauen, statt aufs Überleben zu setzen.",
+                            "en": "Because the King's information at the end of the game can be very powerful and because Kings are prime suspects of being the Demon, the chance that a public King survives to the end game is quite low. If you go public, focus on using your position to form a trusted court around you rather than surviving."
+                        },
+                        {
+                            "de": "Es macht viel Spaß, der König zu sein und Hof zu halten. Lass andere Spieler zu dir kommen und dir ihre Geheimnisse erzählen, statt selbst wie ein Bauer durch den Hof zu wandern.",
+                            "en": "There is a lot of fun in being the King and holding court. Make other players come to you and tell you their secrets, rather than wandering around the court like a peasant."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "knight",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Ritter",
+                        "en": "Knight"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn zwei Spieler, die nicht der Dämon sind.",
+                        "en": "You start knowing 2 players that are not the Demon."
+                    },
+                    "icon": "♞",
+                    "strategies": [
+                        {
+                            "de": "Du weißt, dass die beiden dir gezeigten Spieler nicht der Dämon sind. Überleben beide bis in die letzten drei, kennst du zwei Spieler, die nicht der Dämon sind, und weißt damit, wer der Dämon ist. Du kannst das Spiel mit dieser Information gewinnen!",
+                            "en": "You know the two players you learnt aren't the Demon. If both of them survive to the final three, you know two players that aren't the Demon and therefore know who the Demon is and can win the game with your information!"
+                        },
+                        {
+                            "de": "Verbirg deine Information vor der Stadt. Der Dämon wird aktiv versuchen, die dir gezeigten Spieler zu töten, um am letzten Tag nicht enttarnt zu werden. Verrätst du niemandem, wen du erfahren hast, weiß der Dämon nicht, wen er töten soll.",
+                            "en": "Hide what you learnt from the town - the Demon is going to actively want to kill the players you saw to avoid getting found out on the final day, so not telling people who you learnt means the Demon doesn't know who to kill."
+                        },
+                        {
+                            "de": "Enthülle deine Information so früh wie möglich, um das gute Team davon zu überzeugen, den dir bekannten Spielern zu vertrauen.",
+                            "en": "Come out with your information as early as possible to try to convince the good team to trust the players you know."
+                        },
+                        {
+                            "de": "Suche nach Quellen für Trunkenheit oder Gift. Du musst wissen, ob deine Information stimmt! Vermutest du, in der ersten Nacht betrunken gemacht oder vergiftet worden zu sein, willst du wahrscheinlich beide dir gezeigten Spieler hinrichten lassen, da sie eher der Dämon sein könnten.",
+                            "en": "Hunt for sources of drunk or poison. You need to know if your information is true! If you suspect you were made drunk or poisoned on the first night, you probably want to kill both players that you saw as they're more likely to be the Demon."
+                        },
+                        {
+                            "de": "Enthülle die dir gezeigten Spieler nur, wenn sie nominiert werden, um zu verhindern, dass sie hingerichtet werden.",
+                            "en": "Only reveal the players you learnt when they are nominated, to help keep them from being executed."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "lycanthrope",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Lykanthrop",
+                        "en": "Lycanthrope"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen lebenden Spieler. Ist er gut, stirbt er und der Dämon tötet in dieser Nacht nicht. Ein guter Spieler wird als böse angezeigt.",
+                        "en": "Each night (not the first night), choose an alive player. If good, they die & the Demon doesn't kill tonight. One good player registers as evil."
+                    },
+                    "icon": "🐺",
+                    "strategies": [
+                        {
+                            "de": "Versuche, gute Spieler zu identifizieren, deren Tod keinen katastrophalen Nutzenverlust für das gute Team bedeutet. Indem du sie tötest und als gut identifizierst, kannst du einen Vertrauenskreis unter deinen Verbündeten aufbauen.",
+                            "en": "Try to identify good players whose death will not cause a catastrophic loss of utility to the good team. By killing them and identifying them as good, you can begin to build a circle of trust among your allies."
+                        },
+                        {
+                            "de": "Hüte dich vor Charakteren, die als andere Gesinnung registrieren können, wie den Spion oder den Einsiedler. Sie könnten trotz deiner Wahl in der Nacht sterben oder überleben und so deine Information verfälschen.",
+                            "en": "Beware of characters who can register as different alignments, such as the Spy and the Recluse. They may die in the night or live through the night despite you choosing them, confusing your information."
+                        },
+                        {
+                            "de": "Um Vertrauen bei anderen guten Spielern aufzubauen und möglichst viele Informationen mit dem guten Team zu teilen, enthülle dich am ersten Tag öffentlich als Lykanthrop. Da du bestimmst, wer nachts stirbt, kannst du nur durch eine Hinrichtung des guten Teams sterben.",
+                            "en": "To build trust with other good players and to share as much information with the good team as possible, publicly claim to be the Lycanthrope on the first day. Since you choose who dies at night, the only way that you can die is if the good team executes you."
+                        },
+                        {
+                            "de": "Hab keine Angst davor, nachts gute Spieler anzugreifen. Greifst du einen bösen Spieler an, kann der Dämon trotzdem einen guten Spieler angreifen.",
+                            "en": "Don't be afraid to attack good players at night. If you attack an evil player, this allows the Demon to attack a good player anyway."
+                        },
+                        {
+                            "de": "Bist du dir ziemlich sicher, dass ein bestimmter Spieler böse ist, und es macht dir nichts aus, zu sterben, um das herauszufinden, greife ihn nachts an.",
+                            "en": "If you are fairly certain that a particular player is evil, and you don't mind dying to learn whether or not you are correct, attack them at night."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "magician",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Magier",
+                        "en": "Magician"
+                    },
+                    "description": {
+                        "de": "Der Dämon hält dich für einen Diener. Diener halten dich für den Dämon.",
+                        "en": "The Demon thinks you are a Minion. Minions think you are a Demon."
+                    },
+                    "icon": "🪄",
+                    "strategies": [
+                        {
+                            "de": "Wirke so böse wie möglich. Triff schlechte Entscheidungen, wen du nominierst. Stimme wahllos ab. Behaupte, vertrauenswürdige Spieler seien unzuverlässig, oder umgekehrt. Die Bösen halten dich ohnehin für möglicherweise böse. Wirkst du böser als die anderen, glauben sie vielleicht, du seist der Böse, und der Magier stecke woanders.",
+                            "en": "Look as evil as you can. Make poor decisions on who to nominate. Vote haphazardly. Say that trustworthy players are untrustworthy, or vice versa. The evil players think that you might be evil, so if you act more evil than the others, they may believe that you are the evil player, and the Magician is elsewhere."
+                        },
+                        {
+                            "de": "Böse, die dich für böse halten, lassen dich tendenziell am Leben. Die Diener denken, du könntest der Dämon sein. Wirst du nominiert, achte darauf, wer nicht für dich stimmt oder Angst zu haben scheint, für dich zu stimmen. Vielleicht hast du damit Diener gefunden.",
+                            "en": "Evil players that believe that you are evil will tend to keep you alive. The Minions think that you might be the Demon. If you are nominated, pay attention to who doesn't vote for you, or who seems afraid to vote for you. You may have found some Minions."
+                        },
+                        {
+                            "de": "Wähle einen anderen Charakter zum Bluffen oder schweige so lange wie möglich darüber, wer du bist. Erfährt das böse Team, dass du der Magier bist, erfahren die Diener, wer der echte Dämon ist, und der Dämon erfährt, wer die echten Diener sind.",
+                            "en": "Choose a different character to bluff as, or stay silent about who you are for as long as possible. If the evil team learns that you are the Magician, the Minions will learn who the real Demon is and the Demon will learn who the real Minions are."
+                        },
+                        {
+                            "de": "Bleib so lange wie möglich am Leben. Lass dich nicht hinrichten. Der Dämon wird dich nachts wahrscheinlich nicht töten, da er dich für einen Diener hält. Dein Überleben liegt also an dir und dem guten Team.",
+                            "en": "Stay alive as long as possible. Don't get executed. The Demon probably won't kill you at night, because they think that you are a Minion. So staying alive is up to you and the good team."
+                        },
+                        {
+                            "de": "Das ideale Ziel des Magiers ist es, die Bösen dazu zu bringen zu glauben, der Magier sei tatsächlich böse, und ihm zu verraten, wer die anderen Bösen sind.",
+                            "en": "The ideal goal of the Magician is to trick the evil players into believing that the Magician is in fact evil, and telling the Magician who the other evil players are."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "nightwatchman",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Nachtwächter",
+                        "en": "Nightwatchman"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel wählst du nachts einen Spieler: Er erfährt, dass du der Nachtwächter bist.",
+                        "en": "Once per game, at night, choose a player: they learn you are the Nightwatchman."
+                    },
+                    "icon": "🔦",
+                    "strategies": [
+                        {
+                            "de": "Als Nachtwächter sind die zwei wichtigsten Fragen, die du dir stellen solltest: 'Wann sollte ich meine Fähigkeit einsetzen?' und 'Bei wem sollte ich sie einsetzen?'.",
+                            "en": "As the Nightwatchman, the two most important questions for you to ask yourself are \"When should I use my ability?\" and \"On whom should I use my ability?\"."
+                        },
+                        {
+                            "de": "Deine Fähigkeit spät im Spiel einzusetzen ist riskanter, da du sowohl Geschick als auch Glück brauchst, um so lange zu überleben, aber deutlich nützlicher. In Extremfällen kann es das Spiel entscheiden.",
+                            "en": "Using your ability late in the game is riskier, because you will need both skill and luck to stay alive to get to that point, but much more useful. In extreme cases, it can win the game."
+                        },
+                        {
+                            "de": "Bei der Wahl des Spielers willst du fast immer jemanden wählen, der gut ist und als gut bestätigt werden kann.",
+                            "en": "When deciding which player to choose, you almost always want to choose someone who is good and who can be confirmed as good."
+                        },
+                        {
+                            "de": "Bist du ein guter Spieler, der weiß, wer der Nachtwächter ist, kannst du diese Information sofort am nächsten Morgen enthüllen oder bis ins späte Spiel damit warten.",
+                            "en": "If you are a good player that knows who the Nightwatchman is, you can reveal this information immediately the next dawn, or wait until the late game to do so."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "noble",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Adliger",
+                        "en": "Noble"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn drei Spieler, von denen genau einer böse ist.",
+                        "en": "You start knowing 3 players, 1 and only 1 of which is evil."
+                    },
+                    "icon": "🎗️",
+                    "strategies": [
+                        {
+                            "de": "Enthülle deine Information sofort. Sagst du der Gruppe, dass du der Adlige bist und welche drei Spieler du erfahren hast, kann die Gruppe diese Information nutzen.",
+                            "en": "Come out with your information right away. If you tell the group that you are the Noble, and which three players you learned, the group can use this information."
+                        },
+                        {
+                            "de": "Warte mit der Enthüllung deines Wissens bis kurz vor Spielende. Wahrscheinlich hat dir der Erzähler einen Diener gezeigt, aber nicht den Dämon.",
+                            "en": "Wait until the game is nearly over to reveal what you know. It is likely that the Storyteller showed you one player that was a Minion, and did not show you the Demon player."
+                        },
+                        {
+                            "de": "Deine Information ist für sich allein nicht besonders hilfreich. Zu wissen, dass einer von drei Spielern böse ist, nützt wenig, bis du sie mit dem Wissen anderer Spieler kombinieren kannst.",
+                            "en": "Your information isn't great by itself. Knowing that one of three players is evil won't help you much until you are able to combine your information with what other players know."
+                        },
+                        {
+                            "de": "Denk daran, dass genau einer der dir bekannten Spieler böse sein muss. Anders als der Detektiv, der zwei böse Spieler erfahren könnte, erfährt der Adlige genau einen bösen Spieler.",
+                            "en": "Remember that exactly one of the players you know must be evil. Unlike the Investigator, who could learn two evil players, the Noble must learn exactly one evil player."
+                        },
+                        {
+                            "de": "Teste drei verschiedene Theorien. Nimmst du an, Spieler eins sei böse, was bedeutet das für die anderen Spieler im Spiel? Ergibt das Sinn?",
+                            "en": "Test three different theories. If you assume that player one is evil, then what does that imply about the other players in the game? Does this make sense?"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "pixie",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Fee",
+                        "en": "Pixie"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn einen im Spiel befindlichen Dorfbewohner. Warst du wahnhaft davon überzeugt, dieser Charakter zu sein, erhältst du seine Fähigkeit, sobald er stirbt.",
+                        "en": "You start knowing 1 in-play Townsfolk. If you were mad that you were this character, you gain their ability when they die."
+                    },
+                    "icon": "🧚",
+                    "strategies": [
+                        {
+                            "de": "Sei so wahnhaft wie möglich der Dorfbewohner, von dem du weißt, dass er im Spiel ist. Behaupte, dieser Charakter zu sein. Gib die Information, die dieser Charakter hätte. Behaupte, seine Fähigkeit zu nutzen. Behaupte laut und oft, dass der andere Spieler lügt. Bring ihn mit allen Mitteln zur Hinrichtung.",
+                            "en": "Be as mad as possible as the Townsfolk you know is in play. Claim to be that character. Give the information that character would know. Claim to use your ability. Claim, loudly and often, that the other player is lying. Get them killed by any means necessary."
+                        },
+                        {
+                            "de": "Sei von der ersten Minute, dem ersten Tag an wahnhaft der doppelte Charakter, und halte die Täuschung an jedem folgenden Tag aufrecht.",
+                            "en": "Be mad as the duplicate character from minute one, day one, and keep up the charade for every following day."
+                        },
+                        {
+                            "de": "Sobald du die Fähigkeit deines doppelten Charakters erhalten hast, kannst du dich gefahrlos öffentlich als Fee enthüllen. Die neue Fähigkeit steht jetzt fest, nutze sie also so oft du willst.",
+                            "en": "Once you have gained the ability of your duplicate character, you can safely come out publicly as the Pixie. You've got the new ability locked in now, so use it as much as you want."
+                        },
+                        {
+                            "de": "Passe deine Feen-Strategie an, je nachdem, welcher Charakter dir in der ersten Nacht gezeigt wird. Wird dir der Detektiv gezeigt, sorge dafür, dass er möglichst schnell stirbt, damit ihr beide eure Information so früh wie möglich erfahrt.",
+                            "en": "Change up your Pixie strategy based on which character you are shown on the first night. If you are shown the Investigator then get them killed as soon as possible, so that you can both learn your information as early as possible."
+                        },
+                        {
+                            "de": "Vergiss nicht, dass Einmal-pro-Spiel-Rollen und Du-weißt-zu-Beginn-Rollen, wie die Näherin bzw. der Bibliothekar, ihre Fähigkeit vielleicht schon genutzt haben. Richtest du sie hin, bestätigst du nicht nur, dass sie sind, wer sie behaupten, sondern nutzt ihre Fähigkeit auch ein zweites Mal für neue Informationen.",
+                            "en": "Don't forget that once-per-game roles and 'you start knowing' roles, such as the Seamstress and the Librarian respectively, may have already used their abilities. By executing them, not only will you confirm that they are who they claim to be, but you will also get a second use of their ability, gaining new information."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "poppy_grower",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Mohnbauer",
+                        "en": "Poppy Grower"
+                    },
+                    "description": {
+                        "de": "Diener und Dämon kennen einander nicht. Stirbst du, erfahren sie in dieser Nacht, wer der jeweils andere ist.",
+                        "en": "Minions & Demons do not know each other. If you die, they learn who each other are that night."
+                    },
+                    "icon": "🌺",
+                    "strategies": [
+                        {
+                            "de": "Halte es geheim, halte es sicher. Die größte Stärke des Mohnbauers ist die Paranoia, die entsteht, weil dem bösen Team seine größte Stärke verwehrt bleibt.",
+                            "en": "Keep it secret keep it safe. The Poppy Grower's biggest strength is the paranoia they create by denying the evil team their greatest strength."
+                        },
+                        {
+                            "de": "Als Mohnbauer bist du im Grunde im Alleingang dafür verantwortlich, dass sich das böse Team nicht koordinieren kann. Achte besonders auf zwei Spieler, die behaupten, derselbe Charakter zu sein.",
+                            "en": "As the Poppy Grower, you are essentially single-handedly responsible for the evil team's lack of ability to coordinate. Take special notice of any two players who are claiming to be the same character."
+                        },
+                        {
+                            "de": "Achte am ersten Tag darauf, wer sich unter die Leute mischt und wer sich still zurückhält. Diener, die von ihrem Team abgeschnitten sind, sind besonders vorsichtig, da sie zu Beginn keine Informationen haben.",
+                            "en": "On the first day, pay attention to who mingles and who keeps quietly to themselves. Minions, being cut off from the rest of their team, will be extra cautious because they will have no information to start with."
+                        },
+                        {
+                            "de": "Das böse Team wird dich wahrscheinlich als wichtiges nächtliches Ziel betrachten. Sei sehr vorsichtig, wem du deine Rolle anvertraust.",
+                            "en": "You are likely to be seen by the evil team as an important target for death in the night. Be very careful about who you share your role with."
+                        },
+                        {
+                            "de": "Vertraue jeden Tag einem neuen Spieler deine Rolle an. Stirbst du früh im Spiel nachts, ist es gut möglich, dass genau einer der Eingeweihten der Dämon ist.",
+                            "en": "Each day, share your role with one new player. If you die at night early in the game, it's a good chance that one of the people you confided with is actually the Demon specifically."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "preacher",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Prediger",
+                        "en": "Preacher"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler: Ist es ein Diener, erfährt er das. Alle so gewählten Diener verlieren ihre Fähigkeit, so lange du lebst und nicht betrunken oder vergiftet bist.",
+                        "en": "Each night, choose a player: a Minion, if chosen, learns this. All chosen Minions have no ability, as long as you are alive, sober and healthy."
+                    },
+                    "icon": "📖",
+                    "strategies": [
+                        {
+                            "de": "Die Fähigkeit des Predigers kann Diener-Fähigkeiten abschalten. Der Diener merkt das, bekommt seine Fähigkeit aber zurück, sobald du tot bist. Da du nicht weißt, ob du einen Diener getroffen hast, beobachte dein Ziel am nächsten Tag genau, ob sich sein Verhalten ändert.",
+                            "en": "The Preacher's ability can turn Minion abilities off. They learn this but will get it back as soon as you're dead. While you don't know whether you've successfully hit a Minion or not, watch your targets carefully the next day and see if their behaviour changes."
+                        },
+                        {
+                            "de": "Sei vorsichtig damit, dich als Prediger zu enthüllen! Deine Fähigkeit ist dem bösen Team ein Dorn im Auge, da sie ihren Boomdandy entschärft oder ihren Mezepheles überlistet.",
+                            "en": "Be careful about revealing that you are the Preacher! Your ability is a thorn in the side of the evil team, defusing their Boomdandy or outsmarting their Mezepheles."
+                        },
+                        {
+                            "de": "Verhält sich ein Spieler verdächtig und hält sich zurück, ist er ein gutes Ziel für dich. Du hast nichts zu verlieren, wenn du einen Schuss ins Blaue wagst!",
+                            "en": "If a player is acting suspicious and they're keeping to themselves, that's a good target for you. You have nothing to lose for taking the shot in the dark!"
+                        },
+                        {
+                            "de": "Höre am ersten Tag genau hin, wer sich öffentlich äußert. Denk daran, dass Diener keine Bluffs erhalten und sich meist als Letzte öffentlich enthüllen.",
+                            "en": "On the first day, listen carefully for people who are making public claims. Remember that Minions do not get bluffs and tend to be the last to come out publicly."
+                        },
+                        {
+                            "de": "Musst du zwischen zwei möglichen Dienern wählen, wähle den, der aktuell den meisten Schaden anrichtet.",
+                            "en": "If you have to pick between two potential Minions, pick the one doing the most ongoing damage."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "princess",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Prinzessin",
+                        "en": "Princess"
+                    },
+                    "description": {
+                        "de": "Hast du an deinem ersten Tag einen Spieler nominiert und wurde er hingerichtet, tötet der Dämon in dieser Nacht nicht.",
+                        "en": "On your 1st day, if you nominated & executed a player, the Demon doesn't kill tonight."
+                    },
+                    "icon": "👸",
+                    "strategies": [
+                        {
+                            "de": "Verlange Aufmerksamkeit von deinen treuen Untertanen – ich meine, Mitspielern! Willst du diejenige sein, die einen Spieler nominiert und hinrichten lässt, teile deinen Plan vorher allen mit, damit sie mit dir stimmen und dir helfen, dein Ziel zu erreichen.",
+                            "en": "Demand attention from your loyal subjects, I mean, fellow players! If you want to be the one who nominates and executes a player, let everyone know your plan in advance so they'll vote with you & help you achieve your goal."
+                        },
+                        {
+                            "de": "Nutze deine Fähigkeit nicht. Bleib still, warte ab und schau, ob ein anderer Spieler behauptet, die Prinzessin zu sein.",
+                            "en": "Don't use your ability. Stay quiet, wait, and see if a different player tries to claim that they are the Princess."
+                        },
+                        {
+                            "de": "Kannst du deine Fähigkeit nutzen, ohne dass jemand stirbt? Suche nach Gründen, warum eine Hinrichtung scheitern könnte, etwa durch die Teedame oder den Seemann.",
+                            "en": "Can you use your ability without killing a player? Look for reasons someone might not die to execution, like a Tea Lady or a Sailor."
+                        },
+                        {
+                            "de": "Sei freundlich! Jemanden am ersten Tag zur Hinrichtung zu drängen kann sozial heikel sein. Denk an Regel 4: Töte mit Anstand und stirb mit Würde.",
+                            "en": "Be kind! Pushing to get someone killed on the first day can be socially tricky. Remember Rule 4: Kill with grace and die with dignity."
+                        },
+                        {
+                            "de": "Sei ehrlich und offen. Je sympathischer und guter du wirkst, desto eher glauben dir die anderen und folgen deinem Plan.",
+                            "en": "Be honest and forthcoming. The more socially good you seem, the more people will believe you and choose to go forward with your plan."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "shugenja",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Shugenja",
+                        "en": "Shugenja"
+                    },
+                    "description": {
+                        "de": "Du erfährst zu Beginn, ob dein nächstgelegener böser Spieler im oder gegen den Uhrzeigersinn sitzt. Bei gleichem Abstand ist diese Information beliebig.",
+                        "en": "You start knowing if your closest evil player is clockwise or anti-clockwise. If equidistant, this info is arbitrary."
+                    },
+                    "icon": "🧭",
+                    "strategies": [
+                        {
+                            "de": "Generell lohnt es sich meist anzunehmen, dass deine Information nicht durch Gleichabstand beliebig ist, da das deutlich unwahrscheinlicher ist, als tatsächlich eine der beiden Richtungen zu erfahren.",
+                            "en": "In general, it's usually worth assuming that your information isn't arbitrary due to equidistance as this is far less likely than to actually get one direction or the other."
+                        },
+                        {
+                            "de": "Erfährst du zum Beispiel 'im Uhrzeigersinn', kannst du wahrscheinlich dem Spieler direkt gegen den Uhrzeigersinn von dir vertrauen. Suche vorrangig den Kontakt zu ihm und baut gegenseitiges Vertrauen auf.",
+                            "en": "If you learn clockwise, for example, you can most likely trust the player immediately anti-clockwise from you. Make it a priority to engage with them and build mutual trust."
+                        },
+                        {
+                            "de": "Hast du nach einiger Zeit den Eindruck, dass beide deine Nachbarn gut sind, geh einen Schritt weiter und schau, was dir das nächste Nachbarpaar sagt.",
+                            "en": "If you feel like both your neighbours are good after some time getting a read, move one step further out and see what that next set of neighbours tells you."
+                        },
+                        {
+                            "de": "Enthülle deine Information früh. Das erlaubt anderen Spielern, ihre Fähigkeiten entsprechend einzusetzen, basierend darauf, wem sie in deiner Nähe vertrauen, und deine Information zu nutzen, um Kandidaten einzugrenzen.",
+                            "en": "Reveal your information early. This allows other players to target their abilities accordingly based on who they trust near you and try to use your information to narrow down candidates."
+                        },
+                        {
+                            "de": "Findest du einen bösen Spieler in der dir genannten Richtung, hast du damit mindestens einen Spieler in der anderen Richtung bestätigt. Diesem Spieler kannst du jetzt uneingeschränkt vertrauen.",
+                            "en": "If you find an evil player in the direction you were given, you've confirmed at least one player in the other direction. You can now trust this player implicitly."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "steward",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Verwalter",
+                        "en": "Steward"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn einen guten Spieler.",
+                        "en": "You start knowing 1 good player."
+                    },
+                    "icon": "🗝️",
+                    "strategies": [
+                        {
+                            "de": "Du kennst einen Spieler, der weder der Dämon noch ein Diener ist. Das ist eine großartige Information! Du kannst darauf vertrauen, dass er im Sinne deines Teams handelt, und nur Trunkenheit oder Vergiftung können seine Information verfälschen.",
+                            "en": "You know a player who is neither the Demon or a Minion. This is great info! You can trust they are acting with good intent for your team and the only thing that can mess with their information is drunkenness and poisoning."
+                        },
+                        {
+                            "de": "Enthülle dich sofort öffentlich. Wissen alle, dass ihr beide gut seid, können sie das sofort in ihre Überlegungen und Fähigkeitswahl einbeziehen.",
+                            "en": "Come out publicly straight away. If everyone knows that you two are both good, they can factor it into their worldbuilding and their ability choices straight away."
+                        },
+                        {
+                            "de": "Sprich mit dem dir bekannten Spieler und halte deine Information geheim, um ihn am Leben zu halten. Erfährt der Dämon von deiner Information und glaubt sie, wird es für ihn riskant, diesen Spieler bis in die letzten drei am Leben zu lassen.",
+                            "en": "Talk to the player you know and keep your information a secret to help keep them alive. If the Demon hears about your information and believes you, then the player you know is a risk for them to keep alive to the final three."
+                        },
+                        {
+                            "de": "Ist deine Information einmal bekannt, sorge dafür, dass sie in die Überlegungen der anderen einfließt! Du weißt, dass du gut bist und dieser eine Spieler auch. Jedes Szenario, in dem einer von euch böse ist, müsste also beide von euch böse sein lassen.",
+                            "en": "Once your information is known, make people take it into account in their worldbuilding! You know you're good and that this one player is good, so any world involving either of you being evil must involve both of you being evil."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "village_idiot",
+                    "team": "townsfolk",
+                    "name": {
+                        "de": "Dorftrottel",
+                        "en": "Village Idiot"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler: Du erfährst seine Gesinnung. [+0 bis +2 Dorftrottel. Einer der zusätzlichen ist betrunken]",
+                        "en": "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]"
+                    },
+                    "icon": "🤪",
+                    "strategies": [
+                        {
+                            "de": "Finde deine Mit-Dorftrottel. Am einfachsten findest du heraus, wer von euch betrunken ist, indem ihr eure Informationen vergleicht und schaut, wo sie übereinstimmen oder widersprechen. Bist du der einzige Dorftrottel, weißt du, dass du nüchtern bist!",
+                            "en": "Find your fellow idiots. The easiest way for you to find out which of you is drunk is to compare your information and spot where there are agreements and disagreements. And, if you're the only Village Idiot out there, you know you're sober!"
+                        },
+                        {
+                            "de": "Stimme dich mit anderen Dorftrotteln ab, denselben Spieler zu wählen. Das kann helfen herauszufinden, wer von euch betrunken ist (falls eine Information abweicht), oder ob mehrere Spieler den Dorftrottel bluffen.",
+                            "en": "Collaborate with other Village Idiots to all choose the same player. This can help determine which of you is drunk (if one person's information differs), or whether there are multiple people bluffing as Village Idiots."
+                        },
+                        {
+                            "de": "Seid ihr genau zu zweit und habt noch nicht herausgefunden, wer betrunken ist, wählt unterschiedliche Spieler, damit ihr trotzdem Informationen erhaltet.",
+                            "en": "If there are exactly two of you and you haven't been able to work out who's drunk, make sure to choose different players so you still get information."
+                        },
+                        {
+                            "de": "Denk daran, dass drei Dorftrottel-Behauptungen niemanden von euch als gut beweisen. Sei dir bewusst, dass Böse bluffen könnten.",
+                            "en": "Remember that there being three Village Idiot claims doesn't prove any of you good. Be aware of evil players bluffing."
+                        },
+                        {
+                            "de": "Warte eine Weile, bevor du dich als Dorftrottel enthüllst. Behaupten drei oder mehr andere Spieler, der Dorftrottel zu sein, weißt du, dass mindestens einer von ihnen lügt.",
+                            "en": "Wait a while before revealing you are a Village Idiot. If three or more other players claim to be a Village Idiot, you'll know at least one of them is lying."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "damsel",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Maid",
+                        "en": "Damsel"
+                    },
+                    "description": {
+                        "de": "Alle Diener wissen, dass eine Maid im Spiel ist. Errät ein Diener (einmal) öffentlich, dass du die Maid bist, verliert dein Team.",
+                        "en": "All Minions know a Damsel is in play. If a Minion publicly guesses you (once), your team loses."
+                    },
+                    "icon": "👗",
+                    "strategies": [
+                        {
+                            "de": "Erzähle niemandem, dass du die Maid bist! Deute es nicht einmal an! Glaubt ein böser Spieler, dass du die Maid bist, und errät das korrekt, gewinnt das böse Team.",
+                            "en": "Don't tell anyone that you are the Damsel! Don't even hint that you might be! If an evil player believes that you are the Damsel, then correctly guesses that you are the Damsel, the evil team wins."
+                        },
+                        {
+                            "de": "Erzähle ein, zwei vertrauenswürdigen Spielern, dass du die Maid bist, damit die Gruppe nicht zu viel Druck ausübt, dich zu enthüllen. Sei dir aber sehr sicher, dass diese ein, zwei Spieler gut sind, bevor du es ihnen erzählst.",
+                            "en": "Tell one or two trusted players that you are the Damsel, so that the group doesn't put too much pressure on you to reveal who you are. You'll want to make very sure that these one or two players are good before telling them though."
+                        },
+                        {
+                            "de": "Die Diener wissen, dass du im Spiel bist. Achte darauf, welche Spieler ungewöhnlich aufmerksam beobachten und zuhören.",
+                            "en": "The Minions know you're in play. Be attentive to which players are watching and listening more than usual."
+                        },
+                        {
+                            "de": "Vermutest du einen Jäger, mach ihn zu deiner obersten Priorität. Verwandelst du dich in einen Dorfbewohner, erhältst du eine coole Fähigkeit und kannst nicht mehr von den Dienern genannt werden.",
+                            "en": "If you suspect there's a Huntsman, make them your number one priority. If you transform into a townsfolk, you gain a cool ability, and you can't be named by the Minions anymore."
+                        },
+                        {
+                            "de": "Wirst du getötet (nachts oder durch Hinrichtung), hast du keine Fähigkeit mehr und kannst dich enthüllen. Sei aber vorsichtig, zu eifrig auf eine Hinrichtung hinzuarbeiten. Die Diener werden darauf achten!",
+                            "en": "If you are killed (at night or by execution), you will no longer have an ability and can come out. Be wary about being too eager to get executed, though. Minions will be on the watch for that!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "golem",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Golem",
+                        "en": "Golem"
+                    },
+                    "description": {
+                        "de": "Du darfst nur einmal pro Spiel nominieren. Tust du es und der Nominierte ist nicht der Dämon, stirbt er.",
+                        "en": "You may only nominate once per game. When you do, if the nominee is not the Demon, they die."
+                    },
+                    "icon": "🗿",
+                    "strategies": [
+                        {
+                            "de": "Willst du beweisen, dass du der Golem bist, nominiere einen Spieler, von dem du weißt, dass er nicht der Dämon ist. Dieser Spieler stirbt und das gute Team vertraut nun darauf, dass du der Golem bist.",
+                            "en": "If you want to prove that you are the Golem, nominate a player that you know is not the Demon. That player will die, and the good team now has faith that you are the Golem."
+                        },
+                        {
+                            "de": "Willst du herausfinden, ob ein Spieler der Dämon ist, nominiere ihn. Stirbt er nicht, weißt du, dass er der Dämon ist.",
+                            "en": "If you want to find out whether a player is the Demon or not, nominate them. If they don't die, you will know that they are the Demon."
+                        },
+                        {
+                            "de": "Willst du einen Diener aus dem Spiel entfernen, warte geduldig und nominiere erst, wenn du glaubst, einen Diener gefunden zu haben. Auch Diener können durch deine Fähigkeit sterben, was außerordentlich hilfreich sein kann.",
+                            "en": "If you want to remove a Minion from the game, wait patiently and only nominate when you think you have found out who a Minion is. Minions can still die from your ability, and this can be extraordinarily helpful."
+                        },
+                        {
+                            "de": "Wenn möglich, hebe dir deine Fähigkeit für den letzten Tag auf. Leben nur noch zwei andere Spieler, hast du eine fünfzigprozentige Chance, den Dämon zu treffen und zu erfahren, wer er ist.",
+                            "en": "If you can, save your ability for the final day. If there are only two other players alive, you have a fifty percent chance of picking the Demon, and learning who the Demon is."
+                        },
+                        {
+                            "de": "Erwäge, gar nicht zu nominieren. Das macht zwar weniger Spaß (buh!), aber manchmal ist es am besten, Spieler am Leben zu lassen (juhu!).",
+                            "en": "Consider not nominating at all. Whilst this is less fun (boo!), sometimes it is best to keep players alive (yay!)."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "hatter",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Hutmacher",
+                        "en": "Hatter"
+                    },
+                    "description": {
+                        "de": "Bist du heute oder in dieser Nacht gestorben, dürfen die Diener- und Dämonen-Spieler neue Diener- und Dämonen-Charaktere wählen.",
+                        "en": "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be."
+                    },
+                    "icon": "👒",
+                    "strategies": [
+                        {
+                            "de": "Stirb nicht! Sobald du stirbst, kann sich das böse Team zu genau der Kombination aufrüsten, die es für am wirksamsten hält, unabhängig von der bisherigen Spielbalance.",
+                            "en": "Don't die! As soon as you die, the evil team gets to power up to become the exact combination they think will be most effective, regardless of the prior game balance."
+                        },
+                        {
+                            "de": "Stirb so früh wie möglich! Je früher du stirbst, desto weniger Zeit hat das böse Team, herauszufinden, welche Charaktere gegen die des guten Teams am wirksamsten sind.",
+                            "en": "Die as early as possible! The sooner you die, the less time the evil team have to work out which characters are going to be most effective against the characters arrayed on the good team."
+                        },
+                        {
+                            "de": "Die Spielmitte ist der schlechteste Zeitpunkt für deinen Tod. Gerade wenn das gute Team seine Informationen zu verstehen beginnt und Böse aufspürt, kann deine Fähigkeit diese Informationen komplett durcheinanderbringen.",
+                            "en": "Mid-game is the worst time for you to die. Just as the good team are getting to grips with their information and tracking down evil players, your ability can completely switch that information around."
+                        },
+                        {
+                            "de": "Erzähle am Tag nach deinem Tod allen, dass du der Hutmacher warst! Sie müssen ihre Entscheidungen an eine mögliche Charakteränderung im bösen Team anpassen.",
+                            "en": "The day after you die, tell everyone that you were the Hatter! They need to adjust their choices accordingly to adjust to a potential change of characters on the evil team."
+                        },
+                        {
+                            "de": "Versuche nach deinem Tod anhand von Veränderungen im Spielverlauf seit dem frühen Spiel herauszufinden, in welche Charaktere sich die Diener/Dämonen verwandelt haben.",
+                            "en": "After you die, try to see if you can spot what the Minions/Demons have changed to based on game state changes from the early game."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "heretic",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Ketzer",
+                        "en": "Heretic"
+                    },
+                    "description": {
+                        "de": "Wer gewinnt, verliert, und wer verliert, gewinnt. Selbst wenn du tot bist.",
+                        "en": "Whoever wins, loses & whoever loses, wins, even if you are dead."
+                    },
+                    "icon": "⚡",
+                    "strategies": [
+                        {
+                            "de": "Es ist für das böse Team extrem gefährlich zu erfahren, dass ein Ketzer im Spiel ist. Glaubt dir der Dämon, könnte er sich nachts selbst töten, das Spiel verlieren und dadurch gewinnen. Sei sehr vorsichtig, wem du dich offenbarst.",
+                            "en": "It is extremely dangerous for the evil team to learn that there is a Heretic in play. If the Demon believes you, they may kill themself at night, losing the game, and therefore winning the game. Be very careful who you reveal yourself to."
+                        },
+                        {
+                            "de": "Erwäge, dich erst am letzten Tag als Ketzer zu enthüllen. Das ist riskant, da man dir vielleicht nicht glaubt, aber besser, als dass sich der Dämon nachts selbst tötet und dem bösen Team sofort das Spiel schenkt.",
+                            "en": "Consider waiting until the final day of the game to out yourself as the Heretic. This is risky, because people may not believe you, but it's better than having the Demon kill themself in the night and immediately win the game for evil."
+                        },
+                        {
+                            "de": "Suche gute Spieler, die dich als Ketzer bestätigen können, und arbeite mit ihnen zusammen, um das, was normalerweise eine Niederlage wäre, zu inszenieren.",
+                            "en": "Search for good players who are able to confirm you as the Heretic, then work with them to orchestrate what would normally be a loss."
+                        },
+                        {
+                            "de": "Leben nur noch drei Spieler, ist es sicher, dich als Ketzer zu enthüllen, da das Spiel vor Einbruch der Nacht endet. Für das gute Team kann das eine absolut entscheidende Information sein.",
+                            "en": "When just three players are left alive, it is safe to reveal that you are the Heretic, since the game will end before nightfall. The good team may find this to be absolutely crucial information."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "hermit",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Klausner",
+                        "en": "Hermit"
+                    },
+                    "description": {
+                        "de": "Du hast alle Fähigkeiten der Außenseiter. [-0 oder -1 Außenseiter]",
+                        "en": "You have all Outsider abilities. [-0 or -1 Outsider]"
+                    },
+                    "icon": "🏔️",
+                    "strategies": [],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "ogre",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Oger",
+                        "en": "Ogre"
+                    },
+                    "description": {
+                        "de": "In deiner ersten Nacht wählst du einen Spieler (nicht dich selbst): Du nimmst dessen Gesinnung an (ohne zu wissen, welche), selbst wenn du betrunken oder vergiftet bist.",
+                        "en": "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned."
+                    },
+                    "icon": "👹",
+                    "strategies": [
+                        {
+                            "de": "Es ist zu deinem Vorteil, deinem Freund früh zu sagen, dass du ihn gewählt hast, und ehrlich zu ihm zu sein, damit er dir glaubt.",
+                            "en": "It is to your advantage to tell your friend that you've picked them early, and be honest with them, so they believe you."
+                        },
+                        {
+                            "de": "Glaubt dir dein Freund nicht, bleib hartnäckig. Versichere ihm, die Wahrheit zu sagen, und suche gesinnungserkennende Charaktere wie die Empathin, um dein Argument noch überzeugender zu machen.",
+                            "en": "If your friend does not believe you, be persistent. Assure them that you're telling the truth, and seek out characters that detect alignment, such as the Empath, to make your argument even more compelling."
+                        },
+                        {
+                            "de": "Stimme genauso ab wie dein Freund! Ist er böse, stimmt er so, dass es deinem Team hilft; ist er gut, stimmt er wahrscheinlich so, wie er glaubt, dass es seinem Team hilft.",
+                            "en": "Vote the same as your friend! If your friend is evil, they will vote in a way that helps your team; if your friend is good, they are likely to vote in a way that they believe helps your team."
+                        },
+                        {
+                            "de": "Stimme nie gegen deinen Freund. Er könnte gut sein. Er könnte böse sein. Du weißt es nicht. So oder so hast du, wenn er stirbt, gerade einen Teamkollegen getötet.",
+                            "en": "Never vote for your friend. They may be good. They may be evil. You don't know. But either way, if they die, you have just killed a teammate."
+                        },
+                        {
+                            "de": "Bring deinen Freund dazu, alles zu offenbaren, was er weiß. Du selbst erhältst keine Informationen, musst dich also auf andere Charaktere verlassen, die entscheidende Informationen teilen.",
+                            "en": "Get your friend to reveal everything they know. You don't get information, so you'll have to rely on other characters to share crucial information in the game."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "plague_doctor",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Pestarzt",
+                        "en": "Plague Doctor"
+                    },
+                    "description": {
+                        "de": "Stirbst du, erhält der Erzähler die Fähigkeit eines Dieners.",
+                        "en": "When you die, the Storyteller gains a Minion ability."
+                    },
+                    "icon": "😷",
+                    "strategies": [
+                        {
+                            "de": "Überzeuge die Stadt, dich am Leben zu lassen! Du willst dem bösen Team keine zusätzliche Fähigkeit schenken. Je länger du lebst, desto weniger schadet deine Fähigkeit dem guten Team.",
+                            "en": "Convince the town to keep you alive! You don't want to give the evil team an extra ability. The longer you live, the less damaging your ability will be to the good team."
+                        },
+                        {
+                            "de": "Stirbst du, sag sofort allen, wer du bist. Zu wissen, dass du der Pestarzt bist, ist für das gute Team extrem wichtig, da deine Fähigkeit bei deinem Tod aktiviert wird.",
+                            "en": "If you die, tell everyone who you are immediately. Knowing you're the Plague Doctor is extremely important for the good team, since your ability activates on death."
+                        },
+                        {
+                            "de": "Suche nach deinem Tod nach der Diener-Fähigkeit, die durch deinen Tod ins Spiel gekommen ist. Kannst du eine öffentlich sichtbare Fähigkeit benennen oder einem guten Mitspieler Hinweise darauf zeigen, hilft das zu beweisen, dass du der Pestarzt warst.",
+                            "en": "When you die, look for the Minion ability that came into play as a result of your death. If you can point out a publicly visible ability, or show evidence of an ability to a good teammate, this helps prove you are the Plague Doctor."
+                        },
+                        {
+                            "de": "Denk über deinen Erzähler nach! Gibt es eine Fähigkeit, von der du glaubst, dass dein Erzähler sie gerne einsetzen würde, kannst du das nutzen, um herauszufinden, welche Diener-Fähigkeit bei deinem Tod ins Spiel kam.",
+                            "en": "Meta your Storyteller! If there's an ability you think your Storyteller will want to use, you can use that to figure out which Minion ability entered play when you died."
+                        }
+                    ],
+                    "bluffRoles": [
+                        "banshee",
+                        "farmer",
+                        "sage",
+                        "knight",
+                        "king",
+                        "ravenkeeper"
+                    ],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "politician",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Politiker",
+                        "en": "Politician"
+                    },
+                    "description": {
+                        "de": "Warst du der Spieler, der am meisten für die Niederlage deines Teams verantwortlich war, wechselst du die Gesinnung und gewinnst – selbst wenn du tot bist.",
+                        "en": "If you were the player most responsible for your team losing, you change alignment & win, even if dead."
+                    },
+                    "icon": "🎙️",
+                    "strategies": [
+                        {
+                            "de": "Enthülle deinen Bluff am ersten Tag und bleib dabei. Weiche nicht von deiner Behauptung ab, ändere deine Geschichte nicht – bleib eine gleichbleibende, verlässliche Quelle falscher Informationen.",
+                            "en": "Come out with a bluff on day 1, and then stick with it. Don't deviate from your claim, don't change up your story, remain a consistent, static source of false information."
+                        },
+                        {
+                            "de": "Erfinde falsche Informationen und geh gezielt gegen einen bestimmten Spieler vor. Gib vor, der Detektiv, die Wahrsagerin oder der Kopfgeldjäger zu sein und stelle einen anderen Spieler als böse hin.",
+                            "en": "Make up some false information, and go hard after a specific player. Pretend to be an Investigator, a Fortune Teller, a Bounty Hunter, and set up another player as evil."
+                        },
+                        {
+                            "de": "Achte auf Sieg- oder Niederlagebedingungen von Charakteren. Versuche dann, sie auszulösen. Gelingt es dir, die Hinrichtung eines Goblins, eines guten Zwillings oder eines zweiten guten Spielers in einem Leviathan-Spiel herbeizuführen, ist dein Sieg so gut wie sicher.",
+                            "en": "Pay attention to character win or lose conditions. Then try and trigger them. If you can engineer the execution of a Goblin, or a good Twin, or a second good player in a Leviathan game, your victory is all but assured."
+                        },
+                        {
+                            "de": "Versuche, gesinnungserkennende (aber nicht charaktererkennende) Charaktere in deine Pläne einzubinden. Überzeuge eine Näherin, dich mit einem bestätigten guten Spieler zu vergleichen oder ein Mondkind, dich nach seinem Tod zu wählen.",
+                            "en": "Try and catch characters who detect alignment (but not character) in your schemes. Convince a Seamstress to check you against a confirmed good player, or a Moonchild to choose you after they die."
+                        },
+                        {
+                            "de": "Erzwinge am letzten Tag ein Unentschieden bei der Abstimmung, auch wenn du tot bist. Das ist GEMEIN, aber es funktioniert! Richtet das gute Team am letzten Tag niemanden hin und tötet der Dämon in dieser Nacht, gewinnt das böse Team.",
+                            "en": "Tie the vote on the final day. Even if you are dead. This is MEAN, but it works! If the good team doesn't execute on the final day, and then the Demon kills that night, evil will win."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "puzzlemaster",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Rätselmeister",
+                        "en": "Puzzlemaster"
+                    },
+                    "description": {
+                        "de": "Ein Spieler ist betrunken, selbst wenn du stirbst. Rätst du (einmal), wer es ist, erfährst du den Dämon – rätst du falsch, erhältst du eine falsche Information.",
+                        "en": "1 player is drunk, even if you die. If you guess (once) who it is, learn the Demon player, but guess wrong & get false info."
+                    },
+                    "icon": "🧩",
+                    "strategies": [
+                        {
+                            "de": "Du bist der mächtigste Außenseiter, den es gibt. Findest du den Betrunkenen, löst du das Spiel! Behandle dich selbst wie einen Dorfbewohner. Bleib so lange wie möglich am Leben und nutze deine Fähigkeit unbedingt vor deinem Tod.",
+                            "en": "You are the most powerful Outsider that exists. If you find the drunk, you solve the game! Treat yourself as if you are a Townsfolk. Stay alive as long as you can and make sure you use your ability before you die."
+                        },
+                        {
+                            "de": "Enthülle dich nicht sofort als Rätselmeister, sonst wird dich der Dämon wahrscheinlich töten. Rätselmeister sind für Dämonen besonders beängstigend, da diese jeden Charakter fürchten, der ihre Identität erfahren kann.",
+                            "en": "Don't come out as the Puzzlemaster immediately, or the Demon will likely kill you. Puzzlemasters are particularly scary to Demons, who tend to be afraid of any character that can learn who they are."
+                        },
+                        {
+                            "de": "Die meisten Charaktere profitieren davon, aktiv zu werden und mit anderen zu reden – zu sprechen und zu überzeugen. Der Rätselmeister ist am besten, wenn du das Gegenteil tust. Bleib still. Beobachte. Höre zu.",
+                            "en": "Most characters have an incentive to get up, get active, and talk to people - to speak and convince. The Puzzlemaster is best when you do the opposite. Stay silent. Watch. Listen."
+                        },
+                        {
+                            "de": "Hast du wirklich keine Ahnung, wer betrunken ist, rate dich selbst! Da du mit ziemlicher Sicherheit nicht der Betrunkene bist, erfährst du so zumindest einen Spieler, der nicht der Dämon ist.",
+                            "en": "If you genuinely have zero clue who is drunk, guess yourself! Given that you are almost certainly not the drunk, you'll learn a player who isn't the demon."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "snitch",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Petze",
+                        "en": "Snitch"
+                    },
+                    "description": {
+                        "de": "Jeder Diener erhält drei Bluff-Charaktere.",
+                        "en": "Each Minion gets 3 bluffs."
+                    },
+                    "icon": "🐀",
+                    "strategies": [
+                        {
+                            "de": "Ermutige alle Spieler, früh mitzuteilen, welcher Charakter sie sind. Versuche, entweder alle zur Wahrheit oder alle zum Schweigen zu bewegen.",
+                            "en": "Encourage all players to share information about which character they are, and do so early. See if you can get every player to reveal the truth, or to stay silent."
+                        },
+                        {
+                            "de": "Enthüllst du dich früh im Spiel als Petze und erklärst dem guten Team, dass das böse Team ohnehin schon sichere Bluffs hat, sollte das die Guten hoffentlich ermutigen, ihre Informationen so früh wie möglich zu teilen.",
+                            "en": "If you reveal that you are the Snitch early in the game, and explain to the good team that the evil team already have safe bluffs, then this should hopefully encourage the good team to start sharing their information as early as possible."
+                        },
+                        {
+                            "de": "Sei so aktiv wie möglich. Bringe die Gruppe dazu, so viel wie möglich miteinander zu kommunizieren. Du weißt etwas. Zwar ist deine Information nicht besonders wertvoll, aber sie ist trotzdem eine Information.",
+                            "en": "Be as active as you can. Get the group communicating with each other as much as you can. You know something. Yes, the information that you know is not great information, but it is information nonetheless."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "zealot",
+                    "team": "outsider",
+                    "name": {
+                        "de": "Fanatiker",
+                        "en": "Zealot"
+                    },
+                    "description": {
+                        "de": "Sind fünf oder mehr Spieler am Leben, musst du bei jeder Nominierung mit abstimmen.",
+                        "en": "If there are 5 or more players alive, you must vote for every nomination."
+                    },
+                    "icon": "🙌",
+                    "strategies": [
+                        {
+                            "de": "Beteilige dich aktiv an Gesprächen darüber, wer nominiert werden sollte. Zwar musst du bei jeder Nominierung mit abstimmen, aber du kannst Einfluss auf Hinrichtungen nehmen, indem du andere Spieler überzeugst, Personen zu nominieren, über die du lieber abstimmst.",
+                            "en": "Actively take part in conversations about who should be nominated. While you must vote on every nomination, you can gain agency over executions by convincing other players to nominate people you'd prefer to vote on."
+                        },
+                        {
+                            "de": "Erzähle allen, dass du der Fanatiker bist. Wissen andere Spieler, dass du bei jeder Nominierung mit abstimmst, hilft ihnen das bei der Entscheidung, wen sie wählen wollen.",
+                            "en": "Tell everyone you are the Zealot. If other players are aware that you will be voting on every nomination, that will help them decide who they want to vote for."
+                        },
+                        {
+                            "de": "Sei dir bewusst, dass andere dich verdächtig finden könnten, weil du bei allem mit abstimmst.",
+                            "en": "Be aware that people might find you suspicious because you are voting on everything."
+                        },
+                        {
+                            "de": "Lebst du noch gegen Ende des Spiels, hol das Beste aus dem letzten Tag heraus! Es ist wahrscheinlich das erste Mal im Spiel, dass du selbst über deine Stimme entscheiden kannst.",
+                            "en": "If you are alive towards the end of the game, make the most of the final day! It's likely the first time in the game that you will have agency over your own votes."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "boffin",
+                    "team": "minion",
+                    "name": {
+                        "de": "Tüftler",
+                        "en": "Boffin"
+                    },
+                    "description": {
+                        "de": "Der Dämon hat (selbst wenn betrunken oder vergiftet) die Fähigkeit eines nicht im Spiel befindlichen guten Charakters. Ihr beide wisst, welche.",
+                        "en": "The Demon (even if drunk or poisoned) has a not-in-play good character's ability. You both know which."
+                    },
+                    "icon": "🔬",
+                    "strategies": [
+                        {
+                            "de": "Stimme dich mit deinem Dämon ab, egal welche Fähigkeit er hat! Hat der Dämon die Fähigkeit der Jungfrau, finde einen mächtigen guten Dorfbewohner, der ihn nominiert.",
+                            "en": "Coordinate with your Demon, no matter what ability they have! If the Demon has the Virgin ability, find a powerful good Townsfolk to nominate them."
+                        },
+                        {
+                            "de": "Belaste gute Spieler mit bestätigbaren Fähigkeiten. Vermutet das gute Team einen Tüftler im Spiel, konstruiere Szenarien, in denen der bestätigte Nachtwächter oder Professor eigentlich der Dämon mit einer guten Fähigkeit ist.",
+                            "en": "Frame good players who have confirmable abilities. If the good team thinks there is a Boffin in play, build worlds where the confirmed Nightwatchman or Professor is really the Demon with a good character's ability."
+                        },
+                        {
+                            "de": "Bleib am Leben! Der Dämon kann die gute Charakter-Fähigkeit nur nutzen, solange du lebst!",
+                            "en": "Stay alive! The Demon only gets to use their good character ability as long as you live!"
+                        },
+                        {
+                            "de": "Behaupte als Dämon, der Charakter zu sein, dessen Fähigkeit du hast. (Besonders wenn sie bestätigbar ist!)",
+                            "en": "As the Demon, claim to be the character whose ability you have. (Especially if you have a confirmable ability!)"
+                        },
+                        {
+                            "de": "Nutze deine Fähigkeit als Dämon, um der Stadt heimlich zu schaden. Nutze die Höflings-Fähigkeit, um die Information eines guten Spielers zu verfälschen! Nutze die Philosophen-Fähigkeit, um einen guten Charakter im Spiel ohne dessen Wissen betrunken zu machen!",
+                            "en": "As the Demon, use your ability to secretly hurt the town. Use the Courtier ability to mess up a good player's information! Use the Philosopher ability to drunk an in-play good character without their knowledge!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "boomdandy",
+                    "team": "minion",
+                    "name": {
+                        "de": "Boomdandy",
+                        "en": "Boomdandy"
+                    },
+                    "description": {
+                        "de": "Wirst du hingerichtet, sterben alle bis auf drei Spieler. Nach einem Countdown von 10 bis 1 stirbt der Spieler, auf den die meisten Spieler zeigen.",
+                        "en": "If you are executed, all but 3 players die. After a 10 to 1 countdown, the player with the most players pointing at them, dies."
+                    },
+                    "icon": "💥",
+                    "strategies": [
+                        {
+                            "de": "Lass dich so früh wie möglich hinrichten. Je früher du hingerichtet wirst, desto weniger Informationen hat das gute Team gesammelt und desto zufälliger müssen sie raten, wenn es Zeit ist, auf einen von drei Spielern zu zeigen.",
+                            "en": "Get executed as early as you can. The earlier that you are executed, the less information that the good team will have collected, and the more randomly they will be guessing when it comes time to point to 1 in 3 players."
+                        },
+                        {
+                            "de": "Bluffe so absurd wie möglich. Durchschauen die Guten deinen Bluff und richten dich hin, ist das großartig.",
+                            "en": "Bluff as ridiculously as you can. If the good players see through your bluff and execute you, that's great."
+                        },
+                        {
+                            "de": "Mach absichtlich einen Fehler in deinem Bluff, damit es so aussieht, als wärst du ein Böser, der einen guten Spieler blufft und dessen Fähigkeit missverstanden hat.",
+                            "en": "Deliberately make a mistake with your bluff, so that it looks like you are an evil player bluffing as a good player that has misunderstood the good character's ability."
+                        },
+                        {
+                            "de": "Erzähle deinen anderen bösen Mitspielern, dass du der Boomdandy bist. Tue das so früh wie möglich, damit sie bei jeder Gelegenheit für dich stimmen.",
+                            "en": "Tell your other evil players that you are the Boomdandy. Do it as early as possible, so that they know to vote for you at every opportunity."
+                        },
+                        {
+                            "de": "Nach deiner Explosion wissen alle, dass du ein Diener bist. Zeig ruhig auf einen beliebigen Spieler, auch den Dämon. Zeige aber im allerletzten Moment immer auf einen Nicht-Dämon, da jede Stimme zählt.",
+                            "en": "After exploding, everyone will know you are a Minion. Feel free to point at any player you wish, even the Demon. Make sure that you always point at a non-Demon player at the very last second though, since every vote counts."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "fearmonger",
+                    "team": "minion",
+                    "name": {
+                        "de": "Panikmacher",
+                        "en": "Fearmonger"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du einen Spieler: Nominierst und richtest du ihn hin, verliert sein Team. Alle Spieler erfahren, wenn du einen neuen Spieler wählst.",
+                        "en": "Each night, choose a player: if you nominate & execute them, their team loses. All players know if you choose a new player."
+                    },
+                    "icon": "😱",
+                    "strategies": [
+                        {
+                            "de": "Wähle in der ersten Nacht einen beliebigen Spieler. Es ist unwahrscheinlich, dass du am ersten Tag den gewünschten Spieler nominieren und hinrichten lassen kannst, ohne die im Spiel befindlichen Charaktere zu kennen – sei also nicht zu wählerisch.",
+                            "en": "On the first night, choose any player. It is unlikely that you will be able to nominate and execute the player that you want on the first day without knowing which characters are in play, so don't get too fussy."
+                        },
+                        {
+                            "de": "Glaubst du nicht, über deine Panikmacher-Fähigkeit zu gewinnen, wähle jede Nacht einen neuen Spieler! Wird das gute Team ständig daran erinnert, dass ein Panikmacher im Spiel ist, stimmt es deutlich seltener für belanglos wirkende Nominierungen.",
+                            "en": "If you don't think that you are likely to win via your Fearmonger ability, choose a new player every night! If the good team is constantly reminded that a Fearmonger is in play, they are much less likely to vote for frivolous-seeming nominations."
+                        },
+                        {
+                            "de": "Es ist ziemlich unwahrscheinlich, dass das böse Team direkt durch die Fähigkeit des Panikmachers gewinnt. In den meisten Spielen liegt der Nutzen eines Panikmachers in der Paranoia und übertriebenen Vorsicht des guten Teams beim Abstimmen.",
+                            "en": "It is quite unlikely that the evil team will win directly via the Fearmonger's ability. In most games, the benefit of having a Fearmonger comes from the paranoia and over-cautiousness of the good team when they vote."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "goblin",
+                    "team": "minion",
+                    "name": {
+                        "de": "Goblin",
+                        "en": "Goblin"
+                    },
+                    "description": {
+                        "de": "Behauptest du bei einer Nominierung öffentlich, der Goblin zu sein und wirst an diesem Tag hingerichtet, gewinnt dein Team.",
+                        "en": "If you publicly claim to be the Goblin when nominated & are executed that day, your team wins."
+                    },
+                    "icon": "👺",
+                    "strategies": [
+                        {
+                            "de": "Der Goblin hat nur eine einzige Aufgabe. Die Stadt dazu bringen, seinen Bluff aufzudecken und ihn hinzurichten! Gelingt es dir, dich hinrichten zu lassen, heiligt der Zweck die Mittel!",
+                            "en": "The Goblin has one job, and one job only. Get the town to call their bluff and execute them! If you can successfully get the town to take you out, the ends justify the means!"
+                        },
+                        {
+                            "de": "Behaupte, der Goblin zu sein! Warte am besten, bis dir wirklich eine Hinrichtung droht, aber danach: Nutze es!",
+                            "en": "Claim to be the Goblin! Perhaps best to wait until you're actually under threat of execution, but afterwards, go for it!"
+                        },
+                        {
+                            "de": "Um durch Hinrichtung zu gewinnen, musst du trotz deiner öffentlichen Behauptung wie der Dämon wirken. Verhalte dich zu Spielbeginn dämonisch, um das zu fördern.",
+                            "en": "In order to be executed to win, you'll need to make yourself look like the Demon in spite of your public claim. Try doing Demon-y behaviours at the start of the game to encourage this."
+                        },
+                        {
+                            "de": "Vergiss nicht, dass du bei jeder Nominierung öffentlich behaupten musst, der Goblin zu sein, damit deine Fähigkeit zählt! Der Goblin ist, anders als sein Verwandter der Cerenovus, nicht vom Wahn betroffen.",
+                            "en": "Don't forget that for your ability to count, you must make a public claim each time you're nominated! The Goblin is not affected by madness like their cousin the Cerenovus."
+                        },
+                        {
+                            "de": "Hüte dich vor dem Koch, dem Uhrmacher und ähnlichen Charakteren! Glaubt die Stadt, dass du der Goblin bist, kann sie deine Anwesenheit nutzen, um deinen Dämon aufzuspüren!",
+                            "en": "Beware of the Chef and the Clockmaker, and others of their ilk! If the town believes you are a Goblin, they can use your presence to track down your Demon!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "harpy",
+                    "team": "minion",
+                    "name": {
+                        "de": "Harpyie",
+                        "en": "Harpy"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählst du zwei Spieler: Am nächsten Tag glaubt der erste wahnhaft, dass der zweite böse ist, oder einer von beiden (oder beide) könnten sterben.",
+                        "en": "Each night, choose 2 players: tomorrow, the 1st player is mad that the 2nd is evil, or one or both might die."
+                    },
+                    "icon": "🦅",
+                    "strategies": [
+                        {
+                            "de": "Wähle jede Nacht dieselben zwei Spieler. Der wiederholte Versuch eines guten Spielers, einen anderen böse aussehen zu lassen, kann deinem Team nur helfen und das gute Team auf die falschen Personen lenken.",
+                            "en": "Choose the same two players every night. The repeated effort of one good player to get another seen as evil can only help your team, misleading the good team into focusing on the wrong people."
+                        },
+                        {
+                            "de": "Verteile die Aufmerksamkeit und wähle jede Nacht andere Spieler! Nach dem ersten Tag wissen die Leute, dass eine Harpyie im Spiel ist, können aber nie sicher sein, ob jemand einen anderen wirklich für böse hält oder ob es an dir liegt.",
+                            "en": "Share the love and choose different players every night! People will know there's a Harpy in play after the first day, but they can never be certain whether someone genuinely thinks another player is evil or whether it's because of you."
+                        },
+                        {
+                            "de": "Wähle einen vertrauenswürdigen toten Spieler und lass ihn wahnhaft glauben, ein lebender Spieler sei böse. Argumente toter Spieler, wen sie hinrichten lassen wollen, tragen oft mehr Gewicht.",
+                            "en": "Choose a trusted dead player, and make them mad that a living player is evil. Arguments from dead players about who they'd like to execute often carry more weight."
+                        },
+                        {
+                            "de": "Wähle deinen Dämon! Der Erzähler wird deine Fähigkeit wahrscheinlich nicht dazu nutzen, den Dämon zu töten, sodass du gute Chancen hast, unbeschadet davonzukommen.",
+                            "en": "Choose your Demon! The Storyteller is unlikely to use your ability to kill the Demon, so you have good odds of getting through unscathed."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "marionette",
+                    "team": "minion",
+                    "name": {
+                        "de": "Marionette",
+                        "en": "Marionette"
+                    },
+                    "description": {
+                        "de": "Du glaubst, ein guter Charakter zu sein, bist es aber nicht. Der Dämon weiß, wer du bist. [Du sitzt neben dem Dämon]",
+                        "en": "You think you are a good character, but you are not. The Demon knows who you are. [You neighbor the Demon]"
+                    },
+                    "icon": "🎎",
+                    "strategies": [
+                        {
+                            "de": "Als Marionette bist du im Grunde ein böser Trunkenbold – du hast nicht nur nicht die Fähigkeit, die du zu haben glaubst, sondern auch nicht die Gesinnung, die du zu haben glaubst!",
+                            "en": "As a Marionette, you are essentially an evil Drunk - not only do you not have the ability you think you do, but you don't have the alignment you think you do!"
+                        },
+                        {
+                            "de": "Auch wenn du es nicht weißt, ist deine Gesinnung böse, und du wirst Charakteren wie der Näherin oder dem Ausrufer als böse angezeigt.",
+                            "en": "Even though you don't know it, your alignment is evil and you will register as evil to characters like the Seamstress and the Town Crier."
+                        },
+                        {
+                            "de": "Vermeide es, deine Nachbarn zu nominieren oder gegen sie zu stimmen, außer die Beweise sind besonders überzeugend. Bist du die Marionette, muss der Dämon einer deiner Nachbarn sein.",
+                            "en": "Avoid nominating or voting for your neighbours unless the evidence is especially compelling. If you are a Marionette, the Demon must be one of your neighbours."
+                        },
+                        {
+                            "de": "Bist du der Dämon, ist es sehr vorteilhaft, der Marionette ihre wahre Identität so früh wie möglich mitzuteilen – so kann sie entsprechend ihrer wahren Gesinnung handeln, dich schützen und dich nicht versehentlich vor der Stadt verraten.",
+                            "en": "If you are a Demon, it's absolutely beneficial to tell a Marionette their identity as soon as possible - this enables them to act to their true alignment, protect you, and not accidentally reveal you to the town."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "mezepheles",
+                    "team": "minion",
+                    "name": {
+                        "de": "Mezepheles",
+                        "en": "Mezepheles"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn ein geheimes Wort. Der erste gute Spieler, der dieses Wort ausspricht, wird in dieser Nacht böse.",
+                        "en": "You start knowing a secret word. The 1st good player to say this word becomes evil that night."
+                    },
+                    "icon": "🔑",
+                    "strategies": [
+                        {
+                            "de": "Stelle sicher, dass du das geheime Wort richtig gehört bzw. gelesen hast! Frag im Zweifel beim Erzähler nach.",
+                            "en": "Make sure that you heard / read the secret word correctly! Ask the Storyteller if you are uncertain."
+                        },
+                        {
+                            "de": "Wähle einen guten Spieler aus, der wahrscheinlich böse wird. Hast du schon öfter mit den Spielern der Gruppe gespielt, solltest du ein gutes Gespür dafür haben, wer gerne böse Charaktere spielt.",
+                            "en": "Select a good player who is likely to turn evil. If you've played with various players in the group before, you should have a good sense of which players prefer to play evil characters."
+                        },
+                        {
+                            "de": "Vermeide Charaktere, die großartige Informationen erhalten oder noch eine mächtige Fähigkeit für das gute Team einzusetzen haben, da sie seltener böse werden – sie fühlen sich als echter Gewinn für das gute Team.",
+                            "en": "Avoid selecting characters who are getting great information or have a powerful ability still to use for the good team, since they are less likely to turn evil, feeling that they are a real benefit to the good team."
+                        },
+                        {
+                            "de": "Warte nicht zu lange mit einem privaten Gespräch mit einem guten Spieler. Am ersten Tag hat das gute Team weniger Informationen, ist eher verwirrt, wer wer ist, und eher geneigt, zum bösen Team zu wechseln.",
+                            "en": "Don't wait too long for a private chat with a good player. On the first day, the good team will have less information, so are more likely to feel confused about who is who, and more likely to want to swap to the evil team."
+                        },
+                        {
+                            "de": "Erzähle dem guten Team vor dem Einsatz deiner Fähigkeit wiederholt, dass du glaubst, die Bösen würden gewinnen. Gute Spieler, die die Hoffnung verloren haben, werden eher böse.",
+                            "en": "Before using your ability, continually tell the good team that you think that evil is winning. Good players who have lost hope are more likely to turn evil."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "organ_grinder",
+                    "team": "minion",
+                    "name": {
+                        "de": "Leierkastenmann",
+                        "en": "Organ Grinder"
+                    },
+                    "description": {
+                        "de": "Alle Spieler halten beim Abstimmen die Augen geschlossen, und die Stimmenzahl bleibt geheim. Jede Nacht entscheidest du, ob du bis zur Dämmerung betrunken bist.",
+                        "en": "All players keep their eyes closed when voting and the vote tally is secret. Each night, choose if you are drunk until dusk."
+                    },
+                    "icon": "🎻",
+                    "strategies": [
+                        {
+                            "de": "Überlege genau, ob du dich jemals hinrichten lassen willst. Bedenke, dass du bei deinem Tod wahrscheinlich als Leierkastenmann enttarnt wirst, da Abstimmungen dann plötzlich wieder offen sind.",
+                            "en": "Consider carefully if you ever want to get yourself executed. Bearing in mind that when you die, it's likely you'll be outed as the Organ Grinder because votes will suddenly become open."
+                        },
+                        {
+                            "de": "Du musst nicht für Spieler stimmen, die du eigentlich nicht hinrichten lassen willst, nur um dich anzupassen. Niemand weiß, für wen du stimmst – du musst also im ganzen Spiel nie für einen bösen Spieler stimmen, wenn du nicht willst!",
+                            "en": "Don't feel the need to vote for people you don't want executed in order to blend in. No-one knows who you're voting for, so you never need to vote for an evil player in the entire game if you don't want to!"
+                        },
+                        {
+                            "de": "Versuche, Situationen mit vielen Nominierungen an einem Tag zu schaffen. Das gute Team wird Mühe haben, bei all den Abstimmungen den Überblick zu behalten.",
+                            "en": "Try to create situations where there are lots of nominations in a day. The good team will struggle to try and keep track of all the votes that happen."
+                        },
+                        {
+                            "de": "Stimme deine Stimmen mit deinem bösen Team ab – zwar habt ihr keine Mehrheit, aber da sich das gute Team schwerer koordinieren kann, könnt ihr durch gebündeltes Vorgehen bei bestimmten Nominierungen Hinrichtungen zu eurem Vorteil lenken.",
+                            "en": "Coordinate votes with your evil team - while you don't have a majority in votes, the good team not being able to coordinate as easily means that uniting together behind certain nominations might allow you to swing executions in your favour."
+                        },
+                        {
+                            "de": "Sei im Endspiel vorsichtig. Erreicht das Spiel die letzten drei und ist sich das gute Team ziemlich sicher, dass du der Leierkastenmann bist, hat es eine 50/50-Chance zwischen den anderen beiden lebenden Spielern, welcher der Dämon ist.",
+                            "en": "Be wary of endgame. If the game goes to a final three and the good team are pretty certain that you are the Organ Grinder, then they've got a 50/50 between the other two living players as to which is the Demon."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "psychopath",
+                    "team": "minion",
+                    "name": {
+                        "de": "Psychopath",
+                        "en": "Psychopath"
+                    },
+                    "description": {
+                        "de": "An jedem Tag darfst du vor den Nominierungen öffentlich einen Spieler wählen: Er stirbt. Wirst du hingerichtet, stirbst du nur, wenn du bei Schnick-Schnack-Schnuck verlierst.",
+                        "en": "Each day, before nominations, you may publicly choose a player: they die. If executed, you only die if you lose roshambo."
+                    },
+                    "icon": "🪓",
+                    "strategies": [
+                        {
+                            "de": "Enthülle dich am ersten Tag oder so früh wie möglich öffentlich und beginne sofort zu töten. Selbst wenn du nicht ideale Spieler tötest, ist es trotzdem hilfreich.",
+                            "en": "Reveal yourself publicly on the first day, or as early as possible, and start killing immediately. Even if you kill players that are not ideal, it is still helpful."
+                        },
+                        {
+                            "de": "Warte mit deiner Enthüllung auf den perfekten Moment. Ein, zwei Tage Untätigkeit zu opfern kann sich lohnen, um einen besonders mächtigen Charakter überraschend anzugreifen.",
+                            "en": "Wait on revealing yourself until the perfect opportunity. Sacrificing a day or three of activity might be worth it, to make a surprise attack on a particularly powerful character."
+                        },
+                        {
+                            "de": "Töte dich nötigenfalls selbst. Gegen Spielende ist es oft nützlicher, tot zu sein, als lebend und bekanntermaßen nicht der Dämon.",
+                            "en": "Kill yourself if necessary. Towards the end of the game, it is often more useful for you to be dead than alive and known to not be the Demon."
+                        },
+                        {
+                            "de": "Eigne dir etwas Schnick-Schnack-Schnuck-Psychologie an. Anders als sonst musst du nicht gewinnen – sowohl Sieg als auch Unentschieden sind für dich in Ordnung.",
+                            "en": "Learn some Roshambo (Paper-Rock-Scissors) psychology. Unlike normal, you don't need to win. Either winning or drawing is ok for you."
+                        },
+                        {
+                            "de": "Töte hin und wieder einen bösen Spieler. Nimmt das gute Team korrekt an, dass du nur gute Spieler tötest, gibst du ihm damit zu viele Informationen.",
+                            "en": "Every so often, kill an evil player. If the good team correctly assumes that you only kill good players, that is giving them too much information."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "summoner",
+                    "team": "minion",
+                    "name": {
+                        "de": "Beschwörer",
+                        "en": "Summoner"
+                    },
+                    "description": {
+                        "de": "Du erhältst drei Bluff-Charaktere. In der dritten Nacht wählst du einen Spieler: Er wird zu einem bösen Dämon deiner Wahl. [Kein Dämon]",
+                        "en": "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice. [No Demon]"
+                    },
+                    "icon": "📯",
+                    "strategies": [],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "vizier",
+                    "team": "minion",
+                    "name": {
+                        "de": "Wesir",
+                        "en": "Vizier"
+                    },
+                    "description": {
+                        "de": "Alle Spieler wissen, dass du der Wesir bist. Du kannst tagsüber nicht sterben. Haben die Guten abgestimmt, darfst du die sofortige Hinrichtung auslösen.",
+                        "en": "All players know you are the Vizier. You cannot die during the day. If good voted, you may choose to execute immediately."
+                    },
+                    "icon": "🧞",
+                    "strategies": [
+                        {
+                            "de": "Der Vollständigkeit halber – richtet Leute hin! Letztlich ist deine Fähigkeit, hinzurichten, wen du willst – es hat also keinen Sinn, sie nicht zu nutzen.",
+                            "en": "To state the obvious – execute people! At the end of the day your ability is to execute whoever you feel like executing, so there's no point not using it."
+                        },
+                        {
+                            "de": "Richte nicht immer hin! Gute Spieler werden deine Hinrichtungsentscheidungen und -verweigerungen als Informationsquelle deuten.",
+                            "en": "Don't always execute! Good players will be reading into your execution choices and denials as a source of information."
+                        },
+                        {
+                            "de": "Wer bei deiner Hinrichtung mit abstimmt, ist auch für das gute Team leicht verständliche Information. Richtest du mit nur einer Stimme hin, ist dieser Spieler als gut bestätigt.",
+                            "en": "Who votes when you execute is easy to comprehend information for the good team too. If you execute with only one vote, that player is confirmed to be good."
+                        },
+                        {
+                            "de": "Alle wissen, wer du bist, sprich also nicht offensichtlich mit deinem bösen Team. Du brauchst keinen Bluff, da jeder weiß, wer du bist.",
+                            "en": "Everyone knows who you are so don't obviously talk to your evil team. You don't need a bluff because everyone knows who you are."
+                        },
+                        {
+                            "de": "Du brauchst eine Tarnung und eine Strategie dafür, warum du einen bestimmten Spieler nicht hinrichtest. Irgendwann musst du eine Hinrichtung verweigern, wenn über deinen Dämon abgestimmt wird.",
+                            "en": "You need cover and a strategy for why you don't execute any given player. At some point you'll need to not execute if your Demon gets voted on."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "widow",
+                    "team": "minion",
+                    "name": {
+                        "de": "Witwe",
+                        "en": "Widow"
+                    },
+                    "description": {
+                        "de": "In deiner ersten Nacht siehst du ins Grimoire und wählst einen Spieler: Er ist vergiftet. Ein guter Spieler weiß, dass eine Witwe im Spiel ist.",
+                        "en": "On your 1st night, look at the Grimoire & choose a player: They are poisoned. 1 good player knows a Widow is in play."
+                    },
+                    "icon": "🖤",
+                    "strategies": [
+                        {
+                            "de": "Ähnlich wie der Spion weißt du zu Spielbeginn alles! Alle im Spiel befindlichen Charaktere und ihre Spieler liegen offen im Grimoire.",
+                            "en": "Much like the Spy, you start the game knowing everything! All characters in play and who they are will be laid out in the Grimoire."
+                        },
+                        {
+                            "de": "Wen vergiftest du? Das ist die wichtigste Frage, die du dir stellen solltest. Nimm dir Zeit, betrachte jeden Charakter und triff die bestmögliche Wahl.",
+                            "en": "Who do you choose to poison? This is the most important question that you should be asking yourself. Take your time, look at every character, and make the best choice you can."
+                        },
+                        {
+                            "de": "Gibt es eine einzige, offensichtliche Wahl, wen du vergiften solltest, vergifte stattdessen jemand anderen. Da das gute Team weiß, dass eine Witwe im Spiel ist, wird es nach der naheliegendsten Wahl suchen.",
+                            "en": "If there is a single, obvious choice for which character to poison, poison a different character instead. Since the good team will know that a Widow is in play, they will be looking for the most obvious choice."
+                        },
+                        {
+                            "de": "Stimme dich mit deinem Dämon ab, damit er dein vergiftetes Ziel nicht tötet – außer es handelt sich um einen Charakter wie den Rabenhüter.",
+                            "en": "Coordinate with your Demon so that they do not kill your poisoned mark - unless they are a character like the Ravenkeeper."
+                        },
+                        {
+                            "de": "Stirb. Lebt die Witwe, ist ein guter Spieler vergiftet. Stirbt die Witwe, ist dieser Spieler nicht mehr vergiftet. Das kann einen stetigen Strom falscher Informationen in einen stetigen Strom wahrer Informationen verwandeln.",
+                            "en": "Die. If you are an alive Widow, then a good player is poisoned. If you are the dead Widow, then that player is no longer poisoned. This can turn a steady stream of false information into a steady stream of true information."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "wizard",
+                    "team": "minion",
+                    "name": {
+                        "de": "Zauberer",
+                        "en": "Wizard"
+                    },
+                    "description": {
+                        "de": "Einmal pro Spiel darfst du einen Wunsch äußern. Wird er gewährt, kann das einen Preis haben und einen Hinweis auf seine Art hinterlassen.",
+                        "en": "Once per game, choose to make a wish. If granted, it might have a price & leave a clue as to its nature."
+                    },
+                    "icon": "🧙",
+                    "strategies": [
+                        {
+                            "de": "Äußere deinen Wunsch sofort! Je früher du wünschst, desto schneller kann er wirken und das Chaos anrichten, das du dir für die Stadt gewünscht hast.",
+                            "en": "Make your wish immediately! The sooner you wish, the quicker your wish can take effect and start wreaking whatever havoc you've wished upon the town."
+                        },
+                        {
+                            "de": "Warte ein paar Tage, um zu entscheiden, welcher Wunsch deinem Team am meisten nützt. Das kann verbergen, dass ein Zauberer im Spiel ist.",
+                            "en": "Wait a few days to decide what kind of wish would be most helpful for your team. This can hide that there is a Wizard in play."
+                        },
+                        {
+                            "de": "Sei darauf vorbereitet, dass der Erzähler verkündet, der Zauberer habe gewünscht, oder eine 'unerwartete' Ankündigung macht. Tue überrascht, dass ein Zauberer im Spiel ist.",
+                            "en": "Be ready for the Storyteller to declare that the Wizard has made a wish, or for the Storyteller to make an \"unexpected\" announcement. Act surprised that there is a Wizard in play."
+                        },
+                        {
+                            "de": "Erzähle dem Rest deines bösen Teams, was du dir gewünscht hast! Wissen die anderen Bösen, was vor sich geht, können sie dein Vorgehen in ihre Bluffs einbauen.",
+                            "en": "Tell the rest of your evil team what you wished for! If the other evil players know what's happening, they can incorporate your shenanigans into their bluffs."
+                        },
+                        {
+                            "de": "Sei originell! Originelle Ideen werden vom Erzähler eher gewährt und sind für ihn auch schwerer auszubalancieren.",
+                            "en": "Be original! Original ideas are more likely to be granted by the Storyteller, and they are also trickier for the Storyteller to balance."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "wraith",
+                    "team": "minion",
+                    "name": {
+                        "de": "Gespenst",
+                        "en": "Wraith"
+                    },
+                    "description": {
+                        "de": "Du darfst nachts die Augen öffnen. Du wachst auf, wenn auch die anderen bösen Spieler aufwachen.",
+                        "en": "You may choose to open your eyes at night. You wake when other evil players do."
+                    },
+                    "icon": "👁️",
+                    "strategies": [
+                        {
+                            "de": "Sieh dir alles an! Du bist weit mächtiger als ein Spion oder eine Witwe, da du erfährst, wie gute Spieler ihre Fähigkeiten einsetzen.",
+                            "en": "Look at everything! You're far more powerful than a Spy or Widow, because you can learn how good players are using their abilities."
+                        },
+                        {
+                            "de": "Kommuniziere nachts so viel wie möglich mit deinen bösen Mitspielern. Aufzuwachen, wenn auch andere Böse aufwachen, ist einer der mächtigsten Teile deiner Fähigkeit.",
+                            "en": "Communicate as much as possible with your evil teammates at night. Waking when other evil players do is one of the most powerful parts of your ability."
+                        },
+                        {
+                            "de": "Du bist der strategische Anführer deines Teams! Nutze die Information, die du durch das gemeinsame Aufwachen mit deinen bösen Mitspielern erhältst, großzügig.",
+                            "en": "You are the strategic leader of your team! Take advantage of the information you gain from waking with your evil teammates and use it liberally."
+                        },
+                        {
+                            "de": "Beobachte hauptsächlich früh im Spiel, wenn du die meisten Informationen sammeln kannst (da die meisten guten Spieler leben und ihre Fähigkeiten nutzen).",
+                            "en": "Do most of your peeking early on in the game, when you can gain the most information (since the majority of good players are alive and using their abilities)."
+                        },
+                        {
+                            "de": "Wirst du erwischt, steh dazu. Na und, wenn ein guter Spieler weiß, dass du das Gespenst bist? Das verrät ihm nicht, wer dein Dämon ist.",
+                            "en": "If you get caught, own it. So what if a good player knows you're the Wraith? That doesn't tell them who your Demon is."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "xaan",
+                    "team": "minion",
+                    "name": {
+                        "de": "Xaan",
+                        "en": "Xaan"
+                    },
+                    "description": {
+                        "de": "In der Nacht X sind alle Dorfbewohner bis zur Dämmerung vergiftet. [X Außenseiter]",
+                        "en": "On night X, all Townsfolk are poisoned until dusk. [X Outsiders]"
+                    },
+                    "icon": "☠️",
+                    "strategies": [
+                        {
+                            "de": "Bleib so lange wie möglich am Leben – oder zumindest bis nach Nacht und Tag X! Denk daran, deine Fähigkeit wirkt nur, solange du lebst.",
+                            "en": "Stay alive as long as you can - or at least until after night & day X! Remember, your ability only works while you are alive."
+                        },
+                        {
+                            "de": "Lass dich vor Beginn der Nacht X töten, um zu verbergen, dass ein Xaan im Spiel ist, und um zusätzliche Außenseiter-Behauptungen verdächtig wirken zu lassen.",
+                            "en": "Get yourself killed before the start of night X, to hide that there is a Xaan in play and to make additional outsider claims look suspicious."
+                        },
+                        {
+                            "de": "Ist kein Xaan im Spiel, bluffe als Außenseiter, damit es so aussieht, als gäbe es einen lebenden Xaan. Gute Abstimmung im bösen Team hilft hier sehr.",
+                            "en": "If there is no Xaan in play, bluff as an Outsider to make it look like there is a living Xaan. Evil team coordination goes a long way here."
+                        },
+                        {
+                            "de": "Löse nach X auf! Im Ernst – finde heraus, wie viele Außenseiter im Spiel sind! Weißt du das, weißt du, wann Nacht X beginnt.",
+                            "en": "Solve for X! Seriously, though - identify how many Outsiders are in play! If you can figure out how many Outsiders there are in the game, you'll know when night X starts."
+                        },
+                        {
+                            "de": "Sei chaotisch und lenke Aufmerksamkeit auf dich (und damit weg von deinem Dämon)!",
+                            "en": "Be chaotic and draw attention towards yourself (and therefore away from your Demon)!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "al_hadikhia",
+                    "team": "demon",
+                    "name": {
+                        "de": "Al-Hadikhia",
+                        "en": "Al-Hadikhia"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) darfst du drei Spieler wählen (alle Spieler erfahren, wer): Jeder entscheidet still, ob er lebt oder stirbt. Entscheiden sich aber alle fürs Leben, sterben alle.",
+                        "en": "Each night (not the first), you may choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die."
+                    },
+                    "icon": "🏺",
+                    "strategies": [
+                        {
+                            "de": "Wähle drei gute Spieler, um die Anzahl der Tode pro Nacht zu maximieren. Gute Spieler entscheiden sich oft alle fürs Leben, wodurch alle drei sterben.",
+                            "en": "Choose three good players, in order to maximise the number of deaths per night. Good players will often all choose to live, meaning three good players will die."
+                        },
+                        {
+                            "de": "Wähle hin und wieder einen bösen Spieler, um ihn gut aussehen zu lassen oder mindestens einen Tod pro Nacht zu garantieren.",
+                            "en": "Choose an evil player every so often, to make that evil player look good, or to guarantee at least one death per night."
+                        },
+                        {
+                            "de": "Wähle dich irgendwann selbst, besonders wenn alle anderen Spieler in diesem Spiel bereits gewählt wurden.",
+                            "en": "Choose yourself at some stage, particularly if all other players have already been chosen previously this game."
+                        },
+                        {
+                            "de": "Wähle gelegentlich tote Diener. Du kannst Diener von den Toten erwecken, was entscheidend sein kann, besonders wenn sie ihre Fähigkeit erneut nutzen können.",
+                            "en": "Choose dead Minions occasionally. You can raise Minions from the dead, and this can be crucial, particularly if they get to use their ability again."
+                        },
+                        {
+                            "de": "Sprich mit deinen Dienern. Sie können dir vielleicht sagen, wen du nachts wählen solltest und wen nicht.",
+                            "en": "Talk to your Minions. They may be able to provide you with information on who to choose at night, and who not to."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "kazali",
+                    "team": "demon",
+                    "name": {
+                        "de": "Kazali",
+                        "en": "Kazali"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. [Du bestimmst, welche Spieler welche Diener sind. -? bis +? Außenseiter]",
+                        "en": "Each night*, choose a player: they die. [You choose which players are which Minions. -? to +? Outsiders]"
+                    },
+                    "icon": "🐍",
+                    "strategies": [
+                        {
+                            "de": "Wähle die Spieler, mit denen du als Böse die beste Zusammenarbeit hast.",
+                            "en": "Choose the players who you have the best synergy with as evil."
+                        },
+                        {
+                            "de": "Im Zweifel wähle die Spieler, vor denen du dich fürchtest, wenn du böse bist und sie gut sind.",
+                            "en": "If in doubt, choose the players you're afraid of when you're evil and they're good."
+                        },
+                        {
+                            "de": "Wähle Spieler, die nicht die naheliegendste Wahl für einen Kazali sind.",
+                            "en": "Choose players who aren't the top picks for a Kazali."
+                        },
+                        {
+                            "de": "Gib deinen gewählten Spielern die Charaktere, die am besten zu ihrem Spielstil passen.",
+                            "en": "Give your chosen players the characters that best suit their playstyle."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "legion",
+                    "team": "demon",
+                    "name": {
+                        "de": "Legion",
+                        "en": "Legion"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) könnte ein Spieler sterben. Hinrichtungen scheitern, wenn nur Böse abgestimmt haben. Du wirst zusätzlich als Diener angezeigt. [Die meisten Spieler sind Legion]",
+                        "en": "Each night*, a player might die. Executions fail if only evil voted. You register as a Minion too. [Most players are Legion]"
+                    },
+                    "icon": "⚔️",
+                    "strategies": [
+                        {
+                            "de": "Sei vorsichtig damit, einen deiner Bluffs allein zu beanspruchen. Besonders in größeren Spielen könnte es bis zu vier Legion-Spieler für jeden einzelnen vom Erzähler vergebenen Bluff geben.",
+                            "en": "Be wary of solely claiming any of your bluffs. Particularly in larger games, there could be as many as 4 Legion for each single bluff given by the Storyteller."
+                        },
+                        {
+                            "de": "Achte darauf, wer abstimmt, während die Abstimmung im Kreis herumgeht. Erwäge, deine Hand unten zu lassen, außer du weißt, dass auch ein guter Spieler mitstimmt.",
+                            "en": "Pay attention to who is voting as the vote goes around the circle. Consider keeping your hand down unless you know that a good player is voting as well."
+                        },
+                        {
+                            "de": "Erwäge, bewusst die Rolle eines der guten Spieler im Spiel zu beanspruchen.",
+                            "en": "Consider deliberately claiming the role of one of the good players in the game."
+                        },
+                        {
+                            "de": "Gib vor, ein Diener zu sein. Legion kann sowohl als Diener als auch als Dämon registrieren. Überzeugst du das gute Team, ein Diener zu sein, bringst du es von der richtigen Spur ab.",
+                            "en": "Pretend to be a Minion. Legions can register as Minions as well as Demons. If you can convince the good team that you are a Minion, you can throw the good team off the scent."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "leviathan",
+                    "team": "demon",
+                    "name": {
+                        "de": "Leviathan",
+                        "en": "Leviathan"
+                    },
+                    "description": {
+                        "de": "Wird mehr als ein guter Spieler hingerichtet, gewinnt das böse Team. Alle Spieler wissen, dass du im Spiel bist. Nach Tag 5 gewinnt das böse Team.",
+                        "en": "If more than 1 good player is executed, evil wins. All players know you are in play. After day 5, evil wins."
+                    },
+                    "icon": "🌊",
+                    "strategies": [
+                        {
+                            "de": "Weißt du nicht, welchen Charakter du bluffen sollst, greife standardmäßig auf einen mächtigen Charakter zurück, der seine Identität normalerweise verbergen möchte.",
+                            "en": "If you don't know which character to bluff as, default to bluffing as a powerful character that would normally want to hide their identity."
+                        },
+                        {
+                            "de": "Bluffe früh. Da Spieler nur durch Hinrichtung sterben können, sind die meisten guten Spieler nicht geheimniskrämerisch.",
+                            "en": "Bluff early. Since players can only die by execution, most of the good players will not be secretive."
+                        },
+                        {
+                            "de": "Lenke so viel Verdacht wie möglich auf Spieler mit Fähigkeiten, die den Dämon aufdecken können.",
+                            "en": "Cast as much suspicion as possible on players that have abilities that detect the Demon."
+                        },
+                        {
+                            "de": "Bist du der Dämon, wähle Bluffs, die sich nicht widerlegen lassen.",
+                            "en": "If you are the Demon, choose bluffs that are unfalsifiable."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "lil_monsta",
+                    "team": "demon",
+                    "name": {
+                        "de": "Lil' Monsta",
+                        "en": "Lil' Monsta"
+                    },
+                    "description": {
+                        "de": "Jede Nacht wählen die Diener, wer auf Lil' Monsta aufpasst und dabei „der Dämon“ ist. Jede Nacht (außer der ersten) könnte ein Spieler sterben. [+1 Diener]",
+                        "en": "Each night, Minions choose who babysits Lil' Monsta & \"is the Demon\". Each night*, a player might die. [+1 Minion]"
+                    },
+                    "icon": "👶",
+                    "strategies": [
+                        {
+                            "de": "Halte das Baby sicher, indem du es bei deinem zuverlässigsten und am wenigsten verdächtigen Diener platzierst.",
+                            "en": "Keep the baby safe by placing them with your most reliable and least suspicious Minion."
+                        },
+                        {
+                            "de": "Jeder Spieler kann auf Lil' Monsta aufpassen. Stimmt die Mehrheit der Diener zu, könnt ihr das Baby an jeden in der Stadt übergeben.",
+                            "en": "Any player can babysit Lil' Monsta. If the majority of Minions agree, you can hand the baby off to anyone in town."
+                        },
+                        {
+                            "de": "Da der Erzähler jede Nacht bestimmt, wer stirbt, könnte er auf diesem Weg auch böse Spieler töten. Den Spieler, der gerade auf Lil' Monsta aufpasst, wird der Erzähler jedoch nie töten!",
+                            "en": "Since the Storyteller chooses who dies each night, they may kill some evil players this way. However, the Storyteller will never kill the player who is babysitting Lil' Monsta!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "lleech",
+                    "team": "demon",
+                    "name": {
+                        "de": "Lleech",
+                        "en": "Lleech"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. Zu Beginn wählst du einen Spieler: Er ist vergiftet. Du stirbst genau dann, wenn dieser Spieler tot ist.",
+                        "en": "Each night*, choose a player: they die. You start by choosing a player: they are poisoned. You die if & only if they are dead."
+                    },
+                    "icon": "🩸",
+                    "strategies": [
+                        {
+                            "de": "Kommuniziere so früh wie möglich mit deinen Dienern und sag ihnen, wen du vergiftet hast.",
+                            "en": "Communicate with your Minions as early as possible, and tell them who you have poisoned."
+                        },
+                        {
+                            "de": "Vergifte einen deiner Nachbarn, damit du deinen Wirt in der Nähe und unter Kontrolle behältst.",
+                            "en": "Poison one of your neighbours, because then you can keep your host close and under your thumb."
+                        },
+                        {
+                            "de": "Vergifte jemanden auf der anderen Seite des Kreises, um die Aufmerksamkeit so weit wie möglich von dir wegzulenken.",
+                            "en": "Poison someone on the other side of the circle, to draw attention as far away from you as possible."
+                        },
+                        {
+                            "de": "Vermeide es, hingerichtet zu werden. Auch wenn du dadurch nicht sterben kannst, kann es dem guten Team allein durch das Wissen, wer der Dämon ist, oft genügen, um das Spiel zu gewinnen.",
+                            "en": "Avoid being executed. Even though you cannot die by execution, the good team learning who the Demon is can often be enough information for them to win the game."
+                        },
+                        {
+                            "de": "In einem normalen Dämonen-Spiel hat der Schutz des Dämons vor dem Tod Priorität. In einem Lleech-Spiel hat es Priorität, so viele Fehlinformationen wie möglich zu streuen, um den Wirt zu tarnen.",
+                            "en": "In a normal Demon game, the priority is to protect the Demon from being killed. In a Lleech game, the priority is to create as much misinformation as possible to disguise the host."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "lord_of_typhon",
+                    "team": "demon",
+                    "name": {
+                        "de": "Lord von Typhon",
+                        "en": "Lord of Typhon"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. [Die bösen Charaktere sitzen in einer Reihe, du in der Mitte. +1 Diener. -? bis +? Außenseiter]",
+                        "en": "Each night*, choose a player: they die. [Evil characters are in a line. You are in the middle. +1 Minion. -? to +? Outsiders]"
+                    },
+                    "icon": "🐉",
+                    "strategies": [
+                        {
+                            "de": "Bluffe als Diener den Charakter, den du zu Spielbeginn gezogen hast. Findet das gute Team einen bösen Spieler und erkennt, dass es sich um ein Lord-von-Typhon-Spiel handelt, findet es das ganze böse Team – du musst also extrem gut wirken.",
+                            "en": "As a Minion, bluff as the character you drew at the start of the game. If the good team finds one evil player and figures out it's a Lord of Typhon game, they find the whole evil team, so you need to seem extremely good."
+                        },
+                        {
+                            "de": "Versteck dich! Der Lord von Typhon ist kein Dämon, der riskante Spielzüge belohnt. Denk genau über die Folgen nach, als enttarnter Böser zu spielen.",
+                            "en": "Hide! The Lord of Typhon is not a Demon that rewards risky plays. Think carefully about the consequences of playing as an outed evil."
+                        },
+                        {
+                            "de": "Nutze den zusätzlichen Diener zu deinem Vorteil. +1 Diener bedeutet, dass ihr das gute Team eher überstimmen könnt und später im Spiel eher mehr Böse am Leben sind.",
+                            "en": "Use the additional Minion to your advantage. +1 Minion means you are more likely to outvote the good team, and more likely to have more evil players alive later in the game."
+                        },
+                        {
+                            "de": "Stimmt nicht als Team ab. Stimmt die ganze Reihe gemeinsam ab, kann das gute Team die Reihe finden, besonders wenn ein Blumenmädchen die Stimmen genau beobachtet.",
+                            "en": "Don't vote as a team. When the entire line votes together, the good team can find the line, especially when a Flowergirl is carefully watching votes."
+                        },
+                        {
+                            "de": "Nutze eure benachbarten Plätze, um Informationen auszutauschen. Sprich beiläufig zu Tagesbeginn! Flüstere nachts mit deinen Nachbarn!",
+                            "en": "Use your seats next to each other to swap information. Talk casually at the start of the day! Whisper to your neighbors during the night!"
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "ojo",
+                    "team": "demon",
+                    "name": {
+                        "de": "Ojo",
+                        "en": "Ojo"
+                    },
+                    "description": {
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Charakter: Er stirbt. Ist dieser Charakter nicht im Spiel, bestimmt der Erzähler, wer stirbt.",
+                        "en": "Each night*, choose a character: they die. If they are not in play, the Storyteller chooses who dies."
+                    },
+                    "icon": "👁️‍🗨️",
+                    "strategies": [
+                        {
+                            "de": "Wähle zuerst die mächtigsten Charaktere. Das Schöne an deiner Fähigkeit ist, dass du die Charaktere, die dir am meisten Sorgen bereiten, loswerden kannst, wann immer du willst – fang also einfach an, sie zu töten!",
+                            "en": "Choose the most powerful characters first. The joy of your ability is that you can get rid of the characters you're most concerned about playing against as soon as you want, so just start killing them!"
+                        },
+                        {
+                            "de": "Glaubst du, dass die Spieler herausfinden werden, dass du der Ojo bist, bluffe einen weniger mächtigen Dorfbewohner oder Außenseiter.",
+                            "en": "If you think players are going to work out you're an Ojo, make sure you bluff as a less powerful Townsfolk or Outsider."
+                        },
+                        {
+                            "de": "Bluffe einen mächtigen Dorfbewohner und bring auch deine Diener dazu, dasselbe zu tun!",
+                            "en": "Bluff as a powerful Townsfolk and get your Minions to do so too!"
+                        },
+                        {
+                            "de": "Bist du dir nicht sicher, ob jemand über seinen Charakter die Wahrheit sagt, kannst du diesen Charakter wählen und es herausfinden.",
+                            "en": "If you're not sure if someone is telling the truth about being a certain character, you can pick it and find out."
+                        },
+                        {
+                            "de": "Vergiss die Außenseiter nicht. Konzentrierst du dich nur darauf, Dorfbewohner zu töten, landest du am Ende vielleicht in den letzten drei nur mit zwei Außenseitern.",
+                            "en": "Don't forget Outsiders. If you focus all your attention on killing Townsfolk, you might end up in a final three with just two Outsiders."
+                        }
+                    ],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "riot",
+                    "team": "demon",
+                    "name": {
+                        "de": "Riot",
+                        "en": "Riot"
+                    },
+                    "description": {
+                        "de": "An Tag 3 werden die Diener zu Riot, und Nominierte sterben, nominieren dabei aber sofort einen lebenden Spieler. Das muss geschehen.",
+                        "en": "On day 3, Minions become Riot & nominees die but nominate an alive player immediately. This must happen."
+                    },
+                    "icon": "🚨",
+                    "strategies": [],
+                    "bluffRoles": [],
+                    "bluffStrategies": []
+                },
+                {
+                    "id": "yaggababble",
+                    "team": "demon",
+                    "name": {
+                        "de": "Yaggababble",
+                        "en": "Yaggababble"
+                    },
+                    "description": {
+                        "de": "Du kennst zu Beginn einen geheimen Satz. Für jedes Mal, das du ihn heute öffentlich gesagt hast, könnte ein Spieler sterben.",
+                        "en": "You start knowing a secret phrase. For each time you said it publicly today, a player might die."
+                    },
+                    "icon": "🗣️",
+                    "strategies": [
+                        {
+                            "de": "Sag deinen Satz so oft wie möglich! So bekommst du schließlich deine Tötungen. Du kannst deine Fähigkeit richtig aufladen, indem du jede Nacht mehrere Tötungen erzielst.",
+                            "en": "Say your phrase as often as you can! It's how you get kills, after all, you can really charge up your ability by getting a bunch of kills every single night."
+                        },
+                        {
+                            "de": "Sei sparsam, etwa einmal am Tag, um den Satz vor der Stadt zu verbergen. Du willst dich nicht verraten, indem du ihn allzu offensichtlich machst.",
+                            "en": "Be sparing, around once per day, with how often you say it to conceal the phrase from the town, you don't want to be giving yourself away by making your phrase really obvious."
+                        },
+                        {
+                            "de": "Teile den Satz mit deinen Dienern. Sie können dir Gesprächsübergänge liefern, um deinen Satz einzubringen, damit alles natürlicher wirkt statt erzwungen.",
+                            "en": "Share the phrase with your Minions. They can give you conversational segues to bring up your phrase and make everything seem more natural rather than forced."
+                        },
+                        {
+                            "de": "Sag deine Sätze, wenn weniger Leute in der Nähe sind. Hören ihn weniger Leute, können auch weniger Leute die Verbindung ziehen, wie oft du ihn schon gesagt hast.",
+                            "en": "Say your phrases when there are fewer people around. If fewer people hear it then fewer people can draw the link of how many times you might have said your phrase."
+                        },
+                        {
+                            "de": "Stelle sicher, dass du wirklich genau den Satz sagst, der dir gegeben wurde. Formuliere ihn nicht um, sonst gibt dir der Erzähler die Tötungen vielleicht nicht.",
+                            "en": "Make sure you're confident that you are saying the exact phrase you were given. Don't reword the phrase or the Storyteller might not give the kills to you."
                         }
                     ],
                     "bluffRoles": [],
