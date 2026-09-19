@@ -115,7 +115,7 @@
                         "en": "Investigator"
                     },
                     "description": {
-                        "de": "Du erfährst in der ersten Nacht, dass einer von zwei Spielern eine bestimmte Diener-Rolle hat.",
+                        "de": "Du erfährst in der ersten Nacht, dass einer von zwei Spielern eine bestimmte Schergen-Rolle hat.",
                         "en": "You start knowing that 1 of 2 players is a particular Minion."
                     },
                     "icon": "🔎",
@@ -130,7 +130,7 @@
                         },
                         {
                             "de": "Hüte dich vor der Spion und dem Einsiedler – sie können dir ein falsches Minion-Paar vorgaukeln. Also wäge Außenseiter-Anzahl und Verhalten ab, bevor du deiner Information blind vertraust.",
-                            "en": "Beware of the Spy and Recluse: they may cause you to see a false Minion pairing. So weigh outsider counts and behavior before fully trusting your information."
+                            "en": "Beware of the Spy and Recluse: They may cause you to see a false Minion pairing. So weigh outsider counts and behavior before fully trusting your information."
                         },
                         {
                             "de": "Wenn du als Böser bluffst, wähle zwei gute Spieler aus und behaupte, einer von ihnen sei ein Minion, um sie hinrichten zu lassen.",
@@ -192,7 +192,7 @@
                     "strategies": [
                         {
                             "de": "Interpretiere deine nächtliche Zahl sorgfältig: Eine 0 deutet darauf hin, dass beide lebenden Nachbarn gut sind, während 1 oder 2 bedeutet, dass mindestens ein Nachbar untersucht werden sollte.",
-                            "en": "Interpret your nightly number carefully: a 0 suggests both your living neighbors are good, while a 1 or 2 means at least one neighbor needs investigating."
+                            "en": "Interpret your nightly number carefully: A 0 suggests both your living neighbors are good, while a 1 or 2 means at least one neighbor needs investigating."
                         },
                         {
                             "de": "Da sich deine Nachbarn ändern, sobald Spieler sterben, überprüfe deine Einschätzung jede Nacht neu, statt dich nur auf dein erstes Ergebnis zu verlassen.",
@@ -204,7 +204,7 @@
                         },
                         {
                             "de": "Hüte dich vor dem Spion und dem Einsiedler – sie können unabhängig von ihrer wahren Gesinnung als böse oder gut angezeigt werden, sodass eine Zahl über null nicht garantiert, dass dein Nachbar wirklich böse ist.",
-                            "en": "Beware of the Spy and Recluse: they can register as evil or good regardless of their true alignment, so a nonzero count doesn't guarantee your neighbor is truly evil."
+                            "en": "Beware of the Spy and Recluse: They can register as evil or good regardless of their true alignment, so a nonzero count doesn't guarantee your neighbor is truly evil."
                         },
                         {
                             "de": "Böse, die als Empathin bluffen, behaupten oft eine niedrigere Zahl als tatsächlich, um harmlos zu wirken, da niedrige Zahlen unschuldig oder wie betrunken bzw. vergiftet wirken.",
@@ -227,7 +227,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du zwei Spieler und erfährst, ob einer von ihnen der Dämon ist. Es gibt einen guten Spieler, der dir als Dämon angezeigt wird (\"Falsche Fährte\").",
-                        "en": "Each night, choose 2 players: you learn if either is a Demon. There is 1 good player that registers as a Demon to you (\"Red Herring\")."
+                        "en": "Each night, choose 2 players: You learn if either is a Demon. There is 1 good player that registers as a Demon to you (\"Red Herring\")."
                     },
                     "icon": "🔮",
                     "strategies": [
@@ -306,7 +306,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht (ab der zweiten) schützt du einen anderen Spieler vor dem Dämon.",
-                        "en": "Each night, choose a player (not yourself): they are safe from the Demon tonight."
+                        "en": "Each night, choose a player (not yourself): They are safe from the Demon tonight."
                     },
                     "icon": "🙏",
                     "strategies": [
@@ -339,7 +339,7 @@
                     },
                     "description": {
                         "de": "Wenn du nachts stirbst, wachst du auf, wählst einen Spieler und erfährst seine Rolle.",
-                        "en": "If you die at night, you are woken to choose a player: you learn their character."
+                        "en": "If you die at night, you are woken to choose a player: You learn their character."
                     },
                     "icon": "🐦‍⬛",
                     "strategies": [
@@ -419,7 +419,7 @@
                         },
                         {
                             "de": "Selbst ein Fehlschuss ist wertvoll – einen Spieler als Dämon auszuschließen, engt den Kreis der Verdächtigen für alle ein.",
-                            "en": "Even a failed shot is valuable: ruling out a player as the Demon narrows down the remaining suspects for everyone."
+                            "en": "Even a failed shot is valuable: Ruling out a player as the Demon narrows down the remaining suspects for everyone."
                         },
                         {
                             "de": "Willst du deine Fähigkeit öffentlich einsetzen, sichere dir vorher wenn möglich den Schutz eines Mönchs, damit du nicht in der Nacht davor getötet wirst, bevor du die Chance dazu bekommst.",
@@ -526,7 +526,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du einen anderen Spieler als deinen Herrn. Am nächsten Tag darfst du nur abstimmen, wenn dein Herr abstimmt.",
-                        "en": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too."
+                        "en": "Each night, choose a player (not yourself): Tomorrow, you may only vote if they are voting too."
                     },
                     "icon": "🥄",
                     "strategies": [
@@ -599,7 +599,7 @@
                         "en": "Recluse"
                     },
                     "description": {
-                        "de": "Du kannst fälschlich als böse und als Diener oder Dämon angezeigt werden, auch wenn du tot bist.",
+                        "de": "Du kannst fälschlich als böse und als Scherge oder Dämon angezeigt werden, auch wenn du tot bist.",
                         "en": "You might register as evil and as a Minion or Demon, even if dead."
                     },
                     "icon": "🏚️",
@@ -643,7 +643,7 @@
                     "strategies": [
                         {
                             "de": "Deine oberste Priorität ist einfach: Lass dich nicht hinrichten.",
-                            "en": "Your top priority is simple: do not get executed."
+                            "en": "Your top priority is simple: Do not get executed."
                         },
                         {
                             "de": "Enthülle laut, dass du der Heilige bist, und lass es dir bestätigen – etwa indem eine Empathin deine Nachbarn liest, eine Wahrsagerin dich prüft oder ein Dämonenjäger seinen Schuss auf dich verwendet (was deine Fähigkeit nicht auslöst).",
@@ -673,7 +673,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht vergiftest du einen Spieler: Bis morgen Tag funktioniert seine Fähigkeit nicht und seine Infos sind falsch.",
-                        "en": "Each night, choose a player: they are poisoned tonight and tomorrow day."
+                        "en": "Each night, choose a player: They are poisoned tonight and tomorrow day."
                     },
                     "icon": "🧪",
                     "strategies": [
@@ -720,7 +720,7 @@
                         },
                         {
                             "de": "Nutze dein volles Wissen über das Grimoire: Merke dir, welche Charaktere nicht im Spiel sind, damit deine Bluffs sicher bleiben, und erkenne, welche Spieler wichtige Informationsrollen innehaben, die neutralisiert werden sollten.",
-                            "en": "Use your full knowledge of the grimoire: track which characters are not in play so your bluffs stay safe, and identify which players hold high-priority information roles worth neutralizing."
+                            "en": "Use your full knowledge of the grimoire: Track which characters are not in play so your bluffs stay safe, and identify which players hold high-priority information roles worth neutralizing."
                         },
                         {
                             "de": "Erwäge, dich einer Nominierung durch die Jungfrau zu opfern oder deinen Tod vom Totengräber als Dorfbewohner \"bestätigen\" zu lassen – ein teurer, aber wirkungsvoller Weg, Vertrauen für dein Team aufzubauen.",
@@ -777,7 +777,7 @@
                         },
                         {
                             "de": "Für Gute: Wirkt ein vermeintlich erfolgreicher Angriff auf den Imp seltsam wirkungslos, oder ändert sich die Ausrichtung eines Spielers plötzlich nach einem Todesfall, ist der Verdacht auf eine Scharlachrote Frau angebracht.",
-                            "en": "For good players: if a supposedly successful kill on the Imp doesn't end the threat, or someone's targeting behavior shifts abruptly after a death, suspect a Scarlet Woman is in play."
+                            "en": "For good players: If a supposedly successful kill on the Imp doesn't end the threat, or someone's targeting behavior shifts abruptly after a death, suspect a Scarlet Woman is in play."
                         }
                     ],
                     "bluffRoles": [
@@ -832,8 +832,8 @@
                         "en": "Imp"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten) tötest du einen Spieler. Tötest du dich selbst, wird ein Diener zum Kobold.",
-                        "en": "Each night, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp."
+                        "de": "Jede Nacht (ab der zweiten) tötest du einen Spieler. Tötest du dich selbst, wird ein Scherge zum Kobold.",
+                        "en": "Each night, choose a player: They die. If you kill yourself this way, a Minion becomes the Imp."
                     },
                     "icon": "😈",
                     "strategies": [
@@ -859,7 +859,7 @@
                         },
                         {
                             "de": "Als Böser ist der Bürgermeister ein starker Bluff: Baue früh Vertrauen auf, indem du dich ausgewählten Spielern anvertraust, töte bevorzugt Charaktere mit niedriger Priorität, damit dein möglicher Tod wie eine Umleitung wirkt, und rufe bei einer Nominierung zu einem Unentschieden auf, da ein Unentschieden Hinrichtungen verhindert.",
-                            "en": "As evil, the Mayor is a strong bluff: build trust early by confiding in select players, choose to kill low-priority characters so it looks like your death was redirected, and call for a tied vote when nominated, since ties prevent executions."
+                            "en": "As evil, the Mayor is a strong bluff: Build trust early by confiding in select players, choose to kill low-priority characters so it looks like your death was redirected, and call for a tied vote when nominated, since ties prevent executions."
                         }
                     ],
                     "bluffRoles": [
@@ -942,7 +942,7 @@
                         },
                         {
                             "de": "Du kannst deine Güte beweisen, indem du eine Hinrichtung über dich ergehen lässt: Überlebst du, warst du nüchtern. Das reinigt spät im Spiel deinen Namen.",
-                            "en": "You can prove you're good by accepting execution: if you survive, you were sober, clearing your name late in the game."
+                            "en": "You can prove you're good by accepting execution: If you survive, you were sober, clearing your name late in the game."
                         }
                     ],
                     "bluffRoles": [
@@ -962,8 +962,8 @@
                         "en": "Chambermaid"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du zwei andere lebende Spieler: du erfährst, wie viele von ihnen wegen ihrer Fähigkeit aufgewacht sind.",
-                        "en": "Each night, choose 2 alive players (not yourself): you learn how many woke tonight due to their ability."
+                        "de": "Jede Nacht wählst du zwei andere lebende Spieler: Du erfährst, wie viele von ihnen wegen ihrer Fähigkeit aufgewacht sind.",
+                        "en": "Each night, choose 2 alive players (not yourself): You learn how many woke tonight due to their ability."
                     },
                     "icon": "🛎️",
                     "strategies": [
@@ -1033,8 +1033,8 @@
                         "en": "Innkeeper"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten) wählst du zwei Spieler: sie können diese Nacht nicht sterben, aber einer von ihnen ist bis zur Dämmerung betrunken.",
-                        "en": "Each night*, choose 2 players: they can't die tonight, but one of them is drunk until dusk."
+                        "de": "Jede Nacht (ab der zweiten) wählst du zwei Spieler: Sie können diese Nacht nicht sterben, aber einer von ihnen ist bis zur Dämmerung betrunken.",
+                        "en": "Each night*, choose 2 players: They can't die tonight, but one of them is drunk until dusk."
                     },
                     "icon": "🛏️",
                     "strategies": [
@@ -1094,7 +1094,7 @@
                         },
                         {
                             "de": "Bist du dir wirklich unsicher, rate deinen eigenen Charakter: Eine richtige Vermutung über dich selbst garantiert dein Überleben, und stirbst du später, wird dir das nicht als Fehleinschätzung angelastet.",
-                            "en": "If truly uncertain, guess yourself: a correct guess about your own character guarantees you survive, and dying afterward isn't blamed on a bad read."
+                            "en": "If truly uncertain, guess yourself: A correct guess about your own character guarantees you survive, and dying afterward isn't blamed on a bad read."
                         }
                     ],
                     "bluffRoles": [
@@ -1193,7 +1193,7 @@
                     },
                     "description": {
                         "de": "Einmal pro Spiel wählst du nachts (ab der zweiten) einen toten Spieler: Ist er ein Dorfbewohner, wird er wiederbelebt.",
-                        "en": "Once per game, at night*, choose a dead player: if they are a Townsfolk, they are resurrected."
+                        "en": "Once per game, at night*, choose a dead player: If they are a Townsfolk, they are resurrected."
                     },
                     "icon": "🎓",
                     "strategies": [
@@ -1233,7 +1233,7 @@
                         "en": "Minstrel"
                     },
                     "description": {
-                        "de": "Stirbt ein Diener durch Hinrichtung, sind alle anderen Spieler (außer Reisende) bis zur Dämmerung des nächsten Tages betrunken.",
+                        "de": "Stirbt ein Scherge durch Hinrichtung, sind alle anderen Spieler (außer Reisende) bis zur Dämmerung des nächsten Tages betrunken.",
                         "en": "When a Minion dies by execution, all other players (except Travellers) are drunk until dusk the next day."
                     },
                     "icon": "🎻",
@@ -1277,7 +1277,7 @@
                     "strategies": [
                         {
                             "de": "Der Zeitpunkt deiner Enthüllung ist eine Kernfrage: Frühes Offenlegen ermöglicht Absprachen über den Schutz, während Schweigen dich vor der Aufmerksamkeit des Bösen schützt.",
-                            "en": "Deciding when to reveal is a core tension: revealing early lets you coordinate protection claims, but staying quiet keeps you safer from evil's attention."
+                            "en": "Deciding when to reveal is a core tension: Revealing early lets you coordinate protection claims, but staying quiet keeps you safer from evil's attention."
                         },
                         {
                             "de": "Erwäge, deine eigenen Nachbarn hinrichten zu lassen, um deine Fähigkeit zu testen. Sind beide gut, können sie in dieser Nacht nicht sterben. Teste nicht an Spielern mit Hinrichtungsimmunität wie dem Matrose oder dem Narren, da das Ergebnis sonst irreführend ist.",
@@ -1491,7 +1491,7 @@
                         },
                         {
                             "de": "Im Endspiel solltest du dich zu deiner aktuellen Gesinnung bekennen: Hilf dem Dorf, wenn du gut bist, oder stifte Chaos, wenn du böse bist, und nutze deine Wechselhistorie, um Spieler zu entlarven, die über dich gelogen haben.",
-                            "en": "In the endgame, commit to whatever alignment you currently hold: help the town if good, sow chaos if evil, and use your history of switches to expose players who lied about you."
+                            "en": "In the endgame, commit to whatever alignment you currently hold: Help the town if good, sow chaos if evil, and use your history of switches to expose players who lied about you."
                         }
                     ],
                     "bluffRoles": [
@@ -1521,7 +1521,7 @@
                         },
                         {
                             "de": "Teste deine vermeintlichen Handlanger: Echte Handlanger erkennen dich als ihren Dämon, während ein bluffender Handlanger sich seltsam verhält oder es abstreitet.",
-                            "en": "Test your supposed minions: real minions will recognize you as their Demon, while a bluffing minion may act oddly or deny it."
+                            "en": "Test your supposed minions: Real minions will recognize you as their Demon, while a bluffing minion may act oddly or deny it."
                         },
                         {
                             "de": "Die drei Bluff-Charaktere, die dir zu Beginn gezeigt wurden, können tatsächlich im Spiel sein – ein Hinweis auf die Wahrheit.",
@@ -1552,8 +1552,8 @@
                         "en": "Godfather"
                     },
                     "description": {
-                        "de": "Du erfährst zu Beginn, welche Außenseiter im Spiel sind. Stirbt ein Außenseiter durch Hinrichtung, wählst du in der kommenden Nacht (ab der zweiten) einen Spieler: Er stirbt.",
-                        "en": "You start knowing which Outsiders are in play. If an Outsider died today, choose a player tonight (not the first night): They die."
+                        "de": "Du erfährst zu Beginn, welche Außenseiter im Spiel sind [±1 Außenseiter]. Stirbt ein Außenseiter durch Hinrichtung, wählst du in der kommenden Nacht (ab der zweiten) einen Spieler: Er stirbt.",
+                        "en": "You start knowing which Outsiders are in play [±1 Outsider]. If an Outsider died today, choose a player tonight (not the first night): They die."
                     },
                     "icon": "🕴️",
                     "strategies": [
@@ -1761,7 +1761,7 @@
                         },
                         {
                             "de": "Für gute Spieler: Legt eure Charaktere und Informationen so früh wie möglich offen, denn der Pukka kann zuschlagen, bevor überhaupt etwas geteilt wurde – und seid misstrauisch bei ungewöhnlich frühen Todesfällen, etwa wenn ein Narr zu früh stirbt oder ein Seemann überhaupt stirbt.",
-                            "en": "For good players: reveal your character and information publicly as soon as possible, since the Pukka can strike before players have had time to share anything — and be suspicious of unusual early deaths, like a Fool dying too soon or a Sailor dying at all."
+                            "en": "For good players: Reveal your character and information publicly as soon as possible, since the Pukka can strike before players have had time to share anything — and be suspicious of unusual early deaths, like a Fool dying too soon or a Sailor dying at all."
                         },
                         {
                             "de": "Wenn du keine Ahnung hast, welche Spieler böse sind, richte Spieler hin, von denen du glaubst, dass sie vergiftet sind. Es ist besser, einen guten Spieler hinzurichten, der vom Pukka vergiftet wurde, als einen guten Spieler, der es nicht ist, denn wenn du ein Opfer des Pukka hinrichtest, stirbt in dieser Nacht niemand durch den Dämon.",
@@ -1871,7 +1871,7 @@
                         "en": "Clockmaker"
                     },
                     "description": {
-                        "de": "Du erfährst zu Beginn, wie viele Schritte zwischen dem Dämon und dem ihm nächstgelegenen Diener liegen.",
+                        "de": "Du erfährst zu Beginn, wie viele Schritte zwischen dem Dämon und dem ihm nächstgelegenen Schergen liegen.",
                         "en": "You start knowing how many steps from the Demon to its nearest Minion."
                     },
                     "icon": "🕰️",
@@ -2074,7 +2074,7 @@
                         "en": "Town Crier"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten) erfährst du, ob ein Diener heute nominiert hat.",
+                        "de": "Jede Nacht (ab der zweiten) erfährst du, ob ein Scherge heute nominiert hat.",
                         "en": "Each night*, you learn if a Minion nominated today."
                     },
                     "icon": "📯",
@@ -2122,7 +2122,7 @@
                         },
                         {
                             "de": "Achte auf Muster: Ein unerwarteter Sprung in deiner Zahl kann auf einen Sprung des Fang Gu oder einen vom Vigormortis am Leben erhaltenen Handlanger hindeuten.",
-                            "en": "Watch for patterns: an unexpected jump in your count can indicate a Fang Gu jump or a Minion being kept alive by Vigormortis."
+                            "en": "Watch for patterns: An unexpected jump in your count can indicate a Fang Gu jump or a Minion being kept alive by Vigormortis."
                         },
                         {
                             "de": "Hüte dich vor bösen Spielern, die sich als Orakel ausgeben. Sie könnten behaupten, alle Toten seien gut, um einen gestorbenen Bösen zu schützen oder ihre Zahl langsam steigern, um glaubwürdig zu wirken, ohne Verdacht zu erregen.",
@@ -2186,7 +2186,7 @@
                     "strategies": [
                         {
                             "de": "Entscheide über dein Timing: Warte ein paar Tage, um Verdächtigungen und Behauptungen zu sammeln, oder nutze deine Fähigkeit so früh wie möglich, falls du vorher stirbst.",
-                            "en": "Decide on your timing: wait a couple of days to gather claims and suspicions first, or use your ability as soon as possible in case you die before getting the chance."
+                            "en": "Decide on your timing: Wait a couple of days to gather claims and suspicions first, or use your ability as soon as possible in case you die before getting the chance."
                         },
                         {
                             "de": "Wähle Ziele, die du noch nicht gut kennst, statt deiner Nachbarn, und bevorzuge Spieler mit großem Einfluss auf das Spiel, wie den Gelehrten oder das Blumenmädchen, gegenüber unwichtigeren Rollen.",
@@ -2521,7 +2521,7 @@
                         },
                         {
                             "de": "Spiele mit echter Dringlichkeit: Protestiere leidenschaftlich gegen deine eigene Hinrichtung, so wie es ein unschuldiger guter Zwilling tun würde, anstatt gelassen zu bleiben.",
-                            "en": "Play the part with real urgency: protest your own execution passionately, the way an innocent good twin would, rather than staying relaxed about it."
+                            "en": "Play the part with real urgency: Protest your own execution passionately, the way an innocent good twin would, rather than staying relaxed about it."
                         },
                         {
                             "de": "Dein gesamtes Ziel ist es, deinen guten Zwilling hinrichten zu lassen. Liefere falsche Informationen, unterstütze die Erzählungen deiner bösen Mitspieler und lasse deinen Zwilling unglaubwürdig wirken.",
@@ -2673,8 +2673,8 @@
                         "en": "Fang Gu"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: Er stirbt. Der erste Außenseiter, der dadurch stirbt, wird zum neuen Fang Gu, und du stirbst stattdessen.",
-                        "en": "Each night (not the first), choose a player: They die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead."
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: Er stirbt. Der erste Außenseiter, der dadurch stirbt, wird zum neuen Fang Gu, und du stirbst stattdessen [+1 Außenseiter].",
+                        "en": "Each night (not the first), choose a player: They die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead [+1 Outsider]."
                     },
                     "icon": "🐺",
                     "strategies": [
@@ -2714,8 +2714,8 @@
                         "en": "Vigormortis"
                     },
                     "description": {
-                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: Er stirbt. Wenn ein Diener stirbt, behält er seine Fähigkeit und vergiftet einen Dorfbewohner-Nachbarn.",
-                        "en": "Each night*, choose a player: They die. Minions you kill keep their ability and poison one Townsfolk neighbor."
+                        "de": "Jede Nacht (ab der zweiten) wählst du einen Spieler: Er stirbt. Wenn ein Scherge stirbt, behält er seine Fähigkeit und vergiftet einen Dorfbewohner-Nachbarn [-1 Outsider].",
+                        "en": "Each night*, choose a player: They die. Minions you kill keep their ability and poison one Townsfolk neighbor [-1 Outsider]."
                     },
                     "icon": "🥀",
                     "strategies": [
@@ -2896,7 +2896,7 @@
                     },
                     "description": {
                         "de": "Jeden Tag, nachdem die erste Abstimmung ausgewertet wurde, kannst du einen Spieler auswählen, der abgestimmt hat: Dieser stirbt.",
-                        "en": "Each day, after the 1st vote has been tallied, you may choose a player that voted: they die."
+                        "en": "Each day, after the 1st vote has been tallied, you may choose a player that voted: They die."
                     },
                     "icon": "🔫",
                     "strategies": [
@@ -2970,7 +2970,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du einen anderen Spieler: Der Erzähler zählt seine Stimme morgen dreifach, in die von dir gewählte Richtung.",
-                        "en": "Each night, choose a player (not yourself): their vote counts as 3 votes tomorrow, in favour of whichever you choose."
+                        "en": "Each night, choose a player (not yourself): Their vote counts as 3 votes tomorrow, in favour of whichever you choose."
                     },
                     "icon": "📜",
                     "strategies": [
@@ -3081,7 +3081,7 @@
                     },
                     "description": {
                         "de": "Einmal pro Spiel wählst du nachts einen toten Spieler: Bis zur nächsten Dämmerung erhält er wieder seine Fähigkeit zurück.",
-                        "en": "Once per game, at night, choose a dead player: they regain their ability until dusk."
+                        "en": "Once per game, at night, choose a dead player: They regain their ability until dusk."
                     },
                     "icon": "🦴",
                     "strategies": [
@@ -3216,13 +3216,13 @@
                         "en": "Apprentice"
                     },
                     "description": {
-                        "de": "In deiner ersten Nacht erhältst du die Fähigkeit eines Dorfbewohners (wenn gut) oder eines Dieners (wenn böse).",
+                        "de": "In deiner ersten Nacht erhältst du die Fähigkeit eines Dorfbewohners (wenn gut) oder eines Schergen (wenn böse).",
                         "en": "On your 1st night, you gain a Townsfolk ability (if good) or a Minion ability (if evil)."
                     },
                     "icon": "🎓",
                     "strategies": [
                         {
-                            "de": "Deine Strategie hängt fast vollständig davon ab, welche Dorfbewohner- oder Diener-Fähigkeit du erhältst. Spiele danach genau wie der jeweilige Charakter.",
+                            "de": "Deine Strategie hängt fast vollständig davon ab, welche Dorfbewohner- oder Schergen-Fähigkeit du erhältst. Spiele danach genau wie der jeweilige Charakter.",
                             "en": "The strategy that you employ will depend almost entirely on which Townsfolk (or Minion) ability you gain. Play the game as you would that character."
                         },
                         {
@@ -3275,7 +3275,7 @@
                             "en": "Avoid reseating players next to yourself, as this is a common evil Matron tactic and makes you appear suspicious."
                         },
                         {
-                            "de": "Bist du böse, setze Diener und Dämon nebeneinander, um ihre Absprachen zu erleichtern und platziere sie danach wieder um.",
+                            "de": "Bist du böse, setze Schergen und Dämon nebeneinander, um ihre Absprachen zu erleichtern und platziere sie danach wieder um.",
                             "en": "If you're evil, reposition evil players next to yourself to coordinate strategy, seating Minions and Demon adjacent to each other, then move them elsewhere afterward."
                         }
                     ],
@@ -3394,7 +3394,7 @@
                     },
                     "description": {
                         "de": "An jedem Tag wählst du einen Spieler: Ein anderer Spieler wechselt in dieser Nacht seine Rolle.",
-                        "en": "Each day, choose a player: a different player changes character tonight."
+                        "en": "Each day, choose a player: A different player changes character tonight."
                     },
                     "icon": "🎭",
                     "strategies": [
@@ -3448,7 +3448,7 @@
                             "en": "If you can, kill every day. Just by playing the odds, killing two players per day means that the good team is twice as likely to kill the Demon and win."
                         },
                         {
-                            "de": "Vermutest du, dass ein bestimmter Spieler der Dämon (oder ein Diener) ist, töte Spieler, die zwischen dir und ihm sitzen.",
+                            "de": "Vermutest du, dass ein bestimmter Spieler der Dämon (oder ein Scherge) ist, töte Spieler, die zwischen dir und ihm sitzen.",
                             "en": "If you think that a particular player is the Demon (or even a Minion), then kill players that are sitting between you and them."
                         },
                         {
@@ -3514,7 +3514,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Ist er in dieser Nacht betrunken oder vergiftet oder wird er es, stirbst du.",
-                        "en": "Each night*, choose a player: if they are or become drunk or poisoned tonight, you die."
+                        "en": "Each night*, choose a player: If they are or become drunk or poisoned tonight, you die."
                     },
                     "icon": "🤸",
                     "strategies": [],
@@ -3529,7 +3529,7 @@
                         "en": "Alchemist"
                     },
                     "description": {
-                        "de": "Du hast die Fähigkeit eines Dieners. Nutzt du sie, kann der Erzähler dich auffordern, anders zu wählen.",
+                        "de": "Du hast die Fähigkeit eines Schergen. Nutzt du sie, kann der Erzähler dich auffordern, anders zu wählen.",
                         "en": "You have a Minion ability. When using this, the Storyteller may prompt you to choose differently."
                     },
                     "icon": "⚗️",
@@ -3545,13 +3545,13 @@
                         "en": "Alsaahir"
                     },
                     "description": {
-                        "de": "Errätst du an einem Tag öffentlich, welche Spieler Diener und welcher der Dämon ist, gewinnt das gute Team.",
+                        "de": "Errätst du an einem Tag öffentlich, welche Spieler Schergen und welcher der Dämon ist, gewinnt das gute Team.",
                         "en": "Each day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins."
                     },
                     "icon": "🧠",
                     "strategies": [
                         {
-                            "de": "Rate jeden Tag! Jede Vermutung grenzt ein, wer Dämon und Diener sind.",
+                            "de": "Rate jeden Tag! Jede Vermutung grenzt ein, wer Dämon und Scherge ist.",
                             "en": "Make a guess every day! Every guess you make narrows down who the Demon and Minion players are."
                         },
                         {
@@ -3567,7 +3567,7 @@
                             "en": "Seek out characters that detect evil players, such as the Investigator, Empath, Fortune Teller, or Bounty Hunter, and use their information to boost your chances of guessing correctly."
                         },
                         {
-                            "de": "Denk daran, tote Spieler in deine Vermutungen einzubeziehen! Glaubst du, der Imp hat sich selbst getötet oder der Fang Gu ist auf einen Außenseiter übergesprungen, musst du sowohl den toten als auch den lebenden Dämon als Dämonen raten und alle Diener (tot oder lebendig) als Diener.",
+                            "de": "Denk daran, tote Spieler in deine Vermutungen einzubeziehen! Glaubst du, der Imp hat sich selbst getötet oder der Fang Gu ist auf einen Außenseiter übergesprungen, musst du sowohl den toten als auch den lebenden Dämon als Dämonen raten und alle Schergen (tot oder lebendig) als Schergen.",
                             "en": "Remember to include dead players in your guesses! If you think the Imp killed themself in the night, or the Fang Gu jumped to an Outsider, you'll need to guess the dead demon and the living demon as Demons, and any minions (dead or alive) as a Minion."
                         }
                     ],
@@ -3583,7 +3583,7 @@
                     },
                     "description": {
                         "de": "Du weißt nicht, welche Fähigkeit du hast. Jeden Tag darfst du privat raten, welche es ist: Du erfährst, wie zutreffend deine Vermutung war.",
-                        "en": "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are."
+                        "en": "You do not know what your ability is. Each day, privately guess what it is: You learn how accurate you are."
                     },
                     "icon": "💭",
                     "strategies": [
@@ -3652,8 +3652,8 @@
                         "en": "Balloonist"
                     },
                     "description": {
-                        "de": "Jede Nacht erfährst du einen Spieler eines anderen Charaktertyps als in der vorherigen Nacht. [+0 oder +1 Außenseiter]",
-                        "en": "Each night, you learn a player of a different character type than last night. [+0 or +1 Outsider]"
+                        "de": "Jede Nacht erfährst du einen Spieler eines anderen Charaktertyps als in der vorherigen Nacht. [0 oder +1 Außenseiter]",
+                        "en": "Each night, you learn a player of a different character type than last night. [0 or +1 Outsider]"
                     },
                     "icon": "🎈",
                     "strategies": [
@@ -3674,7 +3674,7 @@
                             "en": "Lie about your role to stay alive as long as possible. The longer you live, the more powerful your information is."
                         },
                         {
-                            "de": "Suche nach anderen Charakteren, die den Charaktertyp erkennen, wie den Bibliothekar oder den Ausrufer. Weißt du, dass jemand definitiv ein Außenseiter ist oder kein Diener sein kann, grenzt das deine Information weiter ein und macht dich noch mächtiger.",
+                            "de": "Suche nach anderen Charakteren, die den Charaktertyp erkennen, wie den Bibliothekar oder den Ausrufer. Weißt du, dass jemand definitiv ein Außenseiter ist oder kein Scherge sein kann, grenzt das deine Information weiter ein und macht dich noch mächtiger.",
                             "en": "Look for other characters that detect character type, like the Librarian and the Town Crier. If you know someone is definitely an Outsider, or cannot be a Minion, this narrows down your information and makes you even more powerful."
                         }
                     ],
@@ -3706,7 +3706,7 @@
                             "en": "You get confirmed when you die – take advantage of this. Get hold of every bit of information you can."
                         },
                         {
-                            "de": "Sobald du tot bist, kannst du es dir leisten, immer den Dämon zu jagen. Diener zu töten ist nicht mehr so wichtig, da ihr nicht automatisch verliert, nur weil am Ende ausschließlich Böse übrig sind. Jage also jeden Tag den Dämon!",
+                            "de": "Sobald du tot bist, kannst du es dir leisten, immer den Dämon zu jagen. Schergen zu töten ist nicht mehr so wichtig, da ihr nicht automatisch verliert, nur weil am Ende ausschließlich Böse übrig sind. Jage also jeden Tag den Dämon!",
                             "en": "You can afford to always hunt Demons once you're dead. Killing Minions may no longer be as important as you can't automatically lose to having only evil players remaining alive. So gun for the Demon every day!"
                         },
                         {
@@ -3803,8 +3803,8 @@
                         "en": "Choirboy"
                     },
                     "description": {
-                        "de": "Tötet der Dämon den König, erfährst du, welcher Spieler der Dämon ist. [+der König]",
-                        "en": "If the Demon kills the King, you learn which player is the Demon. [+the King]"
+                        "de": "Tötet der Dämon den König, erfährst du, welcher Spieler der Dämon ist. [+ der König]",
+                        "en": "If the Demon kills the King, you learn which player is the Demon. [+ the King]"
                     },
                     "icon": "🎶",
                     "strategies": [
@@ -3877,13 +3877,13 @@
                         "en": "Engineer"
                     },
                     "description": {
-                        "de": "Einmal pro Spiel wählst du nachts, welche Diener oder welcher Dämon im Spiel sind.",
+                        "de": "Einmal pro Spiel wählst du nachts, welche Schergen oder welcher Dämon im Spiel sind/ist.",
                         "en": "Once per game, at night, choose which Minions or which Demon is in play."
                     },
                     "icon": "🔧",
                     "strategies": [
                         {
-                            "de": "Als Ingenieur kannst du grob eines von vier Dingen erreichen: Festlegen, welche Diener im Spiel sind, welche Diener nicht im Spiel sind, welcher Dämon im Spiel ist oder welcher Dämon nicht im Spiel ist.",
+                            "de": "Als Ingenieur kannst du grob eines von vier Dingen erreichen: Festlegen, welche Schergen im Spiel sind, welche Schergen nicht im Spiel sind, welcher Dämon im Spiel ist oder welcher Dämon nicht im Spiel ist.",
                             "en": "If you are the Engineer, you can broadly accomplish one of four things: Deciding which Minions are in play, deciding which Minions are not in play, deciding which Demon is in play, deciding which Demon is not in play."
                         },
                         {
@@ -3891,7 +3891,7 @@
                             "en": "To prevent the evil team (or the good team!) killing you before you use your ability, use your ability on the first night. This guarantees that you will get to act."
                         },
                         {
-                            "de": "Um die idealsten Diener oder den idealsten Dämon zu erschaffen, warte bis zur zweiten oder dritten Nacht und sorge in der Zwischenzeit für möglichst viel Diskussion.",
+                            "de": "Um die idealsten Schergen oder den idealsten Dämon zu erschaffen, warte bis zur zweiten oder dritten Nacht und sorge in der Zwischenzeit für möglichst viel Diskussion.",
                             "en": "To choose the most ideal Minions or Demon to create, wait until the second or third night, and generate as much discussion as you can in the meantime."
                         },
                         {
@@ -4039,7 +4039,7 @@
                             "en": "Tell the person you saw that you're the High Priestess and learnt them, see if they know a good reason why they might have been shown. Your information can be very nebulous but it's possible that the player you saw has good theories based on whatever they've gained from their own character as to what they can offer to you and to the good team more widely."
                         },
                         {
-                            "de": "In der ersten Nacht ist der dir gezeigte Spieler höchstwahrscheinlich entweder ein guter Spieler, der bereits Informationen hat, die er mit dir teilen kann, oder ein Diener, bei dem du soziale Hinweise sammeln oder ihn ohne Bluff in die Falle locken könntest.",
+                            "de": "In der ersten Nacht ist der dir gezeigte Spieler höchstwahrscheinlich entweder ein guter Spieler, der bereits Informationen hat, die er mit dir teilen kann, oder ein Scherge, bei dem du soziale Hinweise sammeln oder ihn ohne Bluff in die Falle locken könntest.",
                             "en": "On the first night, the player you learn is most likely either a good player who already has information so that they can share it with you or a Minion who you might be able to get a social read from or trap without a bluff."
                         },
                         {
@@ -4062,8 +4062,8 @@
                         "en": "Huntsman"
                     },
                     "description": {
-                        "de": "Einmal pro Spiel wählst du nachts einen lebenden Spieler: Ist es die Maid, wird sie zu einem nicht im Spiel befindlichen Dorfbewohner. [+die Maid]",
-                        "en": "Once per game, at night, choose a living player: the Damsel, if chosen, becomes a not-in-play Townsfolk. [+the Damsel]"
+                        "de": "Einmal pro Spiel wählst du nachts einen lebenden Spieler: Ist es die Maid, wird sie zu einem nicht im Spiel befindlichen Dorfbewohner. [+ die Maid]",
+                        "en": "Once per game, at night, choose a living player: The Damsel, if chosen, becomes a not-in-play Townsfolk. [+ the Damsel]"
                     },
                     "icon": "🦌",
                     "strategies": [
@@ -4204,7 +4204,7 @@
                         "en": "Magician"
                     },
                     "description": {
-                        "de": "Der Dämon hält dich für einen Diener. Diener halten dich für den Dämon.",
+                        "de": "Der Dämon hält dich für einen Schergen. Schergen halten dich für den Dämon.",
                         "en": "The Demon thinks you are a Minion. Minions think you are a Demon."
                     },
                     "icon": "🪄",
@@ -4214,15 +4214,15 @@
                             "en": "Look as evil as you can. Make poor decisions on who to nominate. Vote haphazardly. Say that trustworthy players are untrustworthy, or vice versa. The evil players think that you might be evil, so if you act more evil than the others, they may believe that you are the evil player, and the Magician is elsewhere."
                         },
                         {
-                            "de": "Böse, die dich für böse halten, lassen dich tendenziell am Leben. Die Diener denken, du könntest der Dämon sein. Wirst du nominiert, achte darauf, wer nicht für dich stimmt oder Angst zu haben scheint, für dich zu stimmen. Vielleicht hast du damit Diener gefunden.",
+                            "de": "Böse, die dich für böse halten, lassen dich tendenziell am Leben. Die Schergen denken, du könntest der Dämon sein. Wirst du nominiert, achte darauf, wer nicht für dich stimmt oder Angst zu haben scheint, für dich zu stimmen. Vielleicht hast du damit Schergen gefunden.",
                             "en": "Evil players that believe that you are evil will tend to keep you alive. The Minions think that you might be the Demon. If you are nominated, pay attention to who doesn't vote for you, or who seems afraid to vote for you. You may have found some Minions."
                         },
                         {
-                            "de": "Wähle einen anderen Charakter zum Bluffen oder schweige so lange wie möglich darüber, wer du bist. Erfährt das böse Team, dass du der Magier bist, erfahren die Diener, wer der echte Dämon ist, und der Dämon erfährt, wer die echten Diener sind.",
+                            "de": "Wähle einen anderen Charakter zum Bluffen oder schweige so lange wie möglich darüber, wer du bist. Erfährt das böse Team, dass du der Magier bist, erfahren die Schergen, wer der echte Dämon ist, und der Dämon erfährt, wer die echten Schergen sind.",
                             "en": "Choose a different character to bluff as, or stay silent about who you are for as long as possible. If the evil team learns that you are the Magician, the Minions will learn who the real Demon is and the Demon will learn who the real Minions are."
                         },
                         {
-                            "de": "Bleib so lange wie möglich am Leben. Lass dich nicht hinrichten. Der Dämon wird dich nachts wahrscheinlich nicht töten, da er dich für einen Diener hält. Dein Überleben liegt also an dir und dem guten Team.",
+                            "de": "Bleib so lange wie möglich am Leben. Lass dich nicht hinrichten. Der Dämon wird dich nachts wahrscheinlich nicht töten, da er dich für einen Schergen hält. Dein Überleben liegt also an dir und dem guten Team.",
                             "en": "Stay alive as long as possible. Don't get executed. The Demon probably won't kill you at night, because they think that you are a Minion. So staying alive is up to you and the good team."
                         },
                         {
@@ -4242,7 +4242,7 @@
                     },
                     "description": {
                         "de": "Einmal pro Spiel wählst du nachts einen Spieler: Er erfährt, dass du der Nachtwächter bist.",
-                        "en": "Once per game, at night, choose a player: they learn you are the Nightwatchman."
+                        "en": "Once per game, at night, choose a player: They learn you are the Nightwatchman."
                     },
                     "icon": "🔦",
                     "strategies": [
@@ -4284,7 +4284,7 @@
                             "en": "Come out with your information right away. If you tell the group that you are the Noble, and which three players you learned, the group can use this information."
                         },
                         {
-                            "de": "Warte mit der Enthüllung deines Wissens bis kurz vor Spielende. Wahrscheinlich hat dir der Erzähler einen Diener gezeigt, aber nicht den Dämon.",
+                            "de": "Warte mit der Enthüllung deines Wissens bis kurz vor Spielende. Wahrscheinlich hat dir der Erzähler einen Schergen gezeigt, aber nicht den Dämon.",
                             "en": "Wait until the game is nearly over to reveal what you know. It is likely that the Storyteller showed you one player that was a Minion, and did not show you the Demon player."
                         },
                         {
@@ -4348,7 +4348,7 @@
                         "en": "Poppy Grower"
                     },
                     "description": {
-                        "de": "Diener und Dämon kennen einander nicht. Stirbst du, erfahren sie in dieser Nacht, wer der jeweils andere ist.",
+                        "de": "Schergen und Dämon kennen einander nicht. Stirbst du, erfahren sie in dieser Nacht, wer der jeweils andere ist.",
                         "en": "Minions & Demons do not know each other. If you die, they learn who each other are that night."
                     },
                     "icon": "🌺",
@@ -4362,7 +4362,7 @@
                             "en": "As the Poppy Grower, you are essentially single-handedly responsible for the evil team's lack of ability to coordinate. Take special notice of any two players who are claiming to be the same character."
                         },
                         {
-                            "de": "Achte am ersten Tag darauf, wer sich unter die Leute mischt und wer sich still zurückhält. Diener, die von ihrem Team abgeschnitten sind, sind besonders vorsichtig, da sie zu Beginn keine Informationen haben.",
+                            "de": "Achte am ersten Tag darauf, wer sich unter die Leute mischt und wer sich still zurückhält. Schergen, die von ihrem Team abgeschnitten sind, sind besonders vorsichtig, da sie zu Beginn keine Informationen haben.",
                             "en": "On the first day, pay attention to who mingles and who keeps quietly to themselves. Minions, being cut off from the rest of their team, will be extra cautious because they will have no information to start with."
                         },
                         {
@@ -4385,13 +4385,13 @@
                         "en": "Preacher"
                     },
                     "description": {
-                        "de": "Jede Nacht wählst du einen Spieler: Ist es ein Diener, erfährt er das. Alle so gewählten Diener verlieren ihre Fähigkeit, so lange du lebst und nicht betrunken oder vergiftet bist.",
-                        "en": "Each night, choose a player: a Minion, if chosen, learns this. All chosen Minions have no ability, as long as you are alive, sober and healthy."
+                        "de": "Jede Nacht wählst du einen Spieler: Ist es ein Scherge, erfährt er das. Alle so gewählten Schergen verlieren ihre Fähigkeit, so lange du lebst und nicht betrunken oder vergiftet bist.",
+                        "en": "Each night, choose a player: A Minion, if chosen, learns this. All chosen Minions have no ability, as long as you are alive, sober and healthy."
                     },
                     "icon": "📖",
                     "strategies": [
                         {
-                            "de": "Die Fähigkeit des Predigers kann Diener-Fähigkeiten abschalten. Der Diener merkt das, bekommt seine Fähigkeit aber zurück, sobald du tot bist. Da du nicht weißt, ob du einen Diener getroffen hast, beobachte dein Ziel am nächsten Tag genau, ob sich sein Verhalten ändert.",
+                            "de": "Die Fähigkeit des Predigers kann Schergen-Fähigkeiten abschalten. Der Scherge merkt das, bekommt seine Fähigkeit aber zurück, sobald du tot bist. Da du nicht weißt, ob du einen Scherge getroffen hast, beobachte dein Ziel am nächsten Tag genau, ob sich sein Verhalten ändert.",
                             "en": "The Preacher's ability can turn Minion abilities off. They learn this but will get it back as soon as you're dead. While you don't know whether you've successfully hit a Minion or not, watch your targets carefully the next day and see if their behaviour changes."
                         },
                         {
@@ -4403,11 +4403,11 @@
                             "en": "If a player is acting suspicious and they're keeping to themselves, that's a good target for you. You have nothing to lose for taking the shot in the dark!"
                         },
                         {
-                            "de": "Höre am ersten Tag genau hin, wer sich öffentlich äußert. Denk daran, dass Diener keine Bluffs erhalten und sich meist als Letzte öffentlich enthüllen.",
+                            "de": "Höre am ersten Tag genau hin, wer sich öffentlich äußert. Denk daran, dass Schergen keine Bluffs erhalten und sich meist als Letzte öffentlich enthüllen.",
                             "en": "On the first day, listen carefully for people who are making public claims. Remember that Minions do not get bluffs and tend to be the last to come out publicly."
                         },
                         {
-                            "de": "Musst du zwischen zwei möglichen Dienern wählen, wähle den, der aktuell den meisten Schaden anrichtet.",
+                            "de": "Musst du zwischen zwei möglichen Schergen wählen, wähle den, der aktuell den meisten Schaden anrichtet.",
                             "en": "If you have to pick between two potential Minions, pick the one doing the most ongoing damage."
                         }
                     ],
@@ -4502,7 +4502,7 @@
                     "icon": "🗝️",
                     "strategies": [
                         {
-                            "de": "Du kennst einen Spieler, der weder der Dämon noch ein Diener ist. Das ist eine großartige Information! Du kannst darauf vertrauen, dass er im Sinne deines Teams handelt, und nur Trunkenheit oder Vergiftung können seine Information verfälschen.",
+                            "de": "Du kennst einen Spieler, der weder der Dämon noch ein Scherge ist. Das ist eine großartige Information! Du kannst darauf vertrauen, dass er im Sinne deines Teams handelt, und nur Trunkenheit oder Vergiftung können seine Information verfälschen.",
                             "en": "You know a player who is neither the Demon or a Minion. This is great info! You can trust they are acting with good intent for your team and the only thing that can mess with their information is drunkenness and poisoning."
                         },
                         {
@@ -4530,7 +4530,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du einen Spieler: Du erfährst seine Gesinnung. [+0 bis +2 Dorftrottel. Einer der zusätzlichen ist betrunken]",
-                        "en": "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]"
+                        "en": "Each night, choose a player: You learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]"
                     },
                     "icon": "🤪",
                     "strategies": [
@@ -4566,8 +4566,8 @@
                         "en": "Damsel"
                     },
                     "description": {
-                        "de": "Alle Diener wissen, dass eine Maid im Spiel ist. Errät ein Diener (einmal) öffentlich, dass du die Maid bist, verliert dein Team.",
-                        "en": "All Minions know a Damsel is in play. If a Minion publicly guesses you (once), your team loses."
+                        "de": "Alle Schergen wissen, dass eine Maid im Spiel ist. Errät ein Scherge (einmal) öffentlich, dass du die Maid bist, verliert dein Team.",
+                        "en": "All Servants know a Damsel is in play. If a Servant publicly guesses you (once), your team loses."
                     },
                     "icon": "👗",
                     "strategies": [
@@ -4580,16 +4580,16 @@
                             "en": "Tell one or two trusted players that you are the Damsel, so that the group doesn't put too much pressure on you to reveal who you are. You'll want to make very sure that these one or two players are good before telling them though."
                         },
                         {
-                            "de": "Die Diener wissen, dass du im Spiel bist. Achte darauf, welche Spieler ungewöhnlich aufmerksam beobachten und zuhören.",
-                            "en": "The Minions know you're in play. Be attentive to which players are watching and listening more than usual."
+                            "de": "Die Schergen wissen, dass du im Spiel bist. Achte darauf, welche Spieler ungewöhnlich aufmerksam beobachten und zuhören.",
+                            "en": "The Servants know you're in play. Be attentive to which players are watching and listening more than usual."
                         },
                         {
-                            "de": "Vermutest du einen Jäger, mach ihn zu deiner obersten Priorität. Verwandelst du dich in einen Dorfbewohner, erhältst du eine coole Fähigkeit und kannst nicht mehr von den Dienern genannt werden.",
-                            "en": "If you suspect there's a Huntsman, make them your number one priority. If you transform into a townsfolk, you gain a cool ability, and you can't be named by the Minions anymore."
+                            "de": "Vermutest du einen Jäger, mach ihn zu deiner obersten Priorität. Verwandelst du dich in einen Dorfbewohner, erhältst du eine coole Fähigkeit und kannst nicht mehr von den Schergen genannt werden.",
+                            "en": "If you suspect there's a Huntsman, make them your number one priority. If you transform into a townsfolk, you gain a cool ability, and you can't be named by the Servants anymore."
                         },
                         {
-                            "de": "Wirst du getötet (nachts oder durch Hinrichtung), hast du keine Fähigkeit mehr und kannst dich enthüllen. Sei aber vorsichtig, zu eifrig auf eine Hinrichtung hinzuarbeiten. Die Diener werden darauf achten!",
-                            "en": "If you are killed (at night or by execution), you will no longer have an ability and can come out. Be wary about being too eager to get executed, though. Minions will be on the watch for that!"
+                            "de": "Wirst du getötet (nachts oder durch Hinrichtung), hast du keine Fähigkeit mehr und kannst dich enthüllen. Sei aber vorsichtig, zu eifrig auf eine Hinrichtung hinzuarbeiten. Die Schergen werden darauf achten!",
+                            "en": "If you are killed (at night or by execution), you will no longer have an ability and can come out. Be wary about being too eager to get executed, though. Servants will be on the watch for that!"
                         }
                     ],
                     "bluffRoles": [],
@@ -4617,8 +4617,8 @@
                             "en": "If you want to find out whether a player is the Demon or not, nominate them. If they don't die, you will know that they are the Demon."
                         },
                         {
-                            "de": "Willst du einen Diener aus dem Spiel entfernen, warte geduldig und nominiere erst, wenn du glaubst, einen Diener gefunden zu haben. Auch Diener können durch deine Fähigkeit sterben, was außerordentlich hilfreich sein kann.",
-                            "en": "If you want to remove a Minion from the game, wait patiently and only nominate when you think you have found out who a Minion is. Minions can still die from your ability, and this can be extraordinarily helpful."
+                            "de": "Willst du einen Schergen aus dem Spiel entfernen, warte geduldig und nominiere erst, wenn du glaubst, einen Schergen gefunden zu haben. Auch Schergen können durch deine Fähigkeit sterben, was außerordentlich hilfreich sein kann.",
+                            "en": "If you want to remove a Servant from the game, wait patiently and only nominate when you think you have found out who a Servant is. Servants can still die from your ability, and this can be extraordinarily helpful."
                         },
                         {
                             "de": "Wenn möglich, hebe dir deine Fähigkeit für den letzten Tag auf. Leben nur noch zwei andere Spieler, hast du eine fünfzigprozentige Chance, den Dämon zu treffen und zu erfahren, wer er ist.",
@@ -4640,8 +4640,8 @@
                         "en": "Hatter"
                     },
                     "description": {
-                        "de": "Bist du heute oder in dieser Nacht gestorben, dürfen die Diener- und Dämonen-Spieler neue Diener- und Dämonen-Charaktere wählen.",
-                        "en": "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be."
+                        "de": "Bist du heute oder in dieser Nacht gestorben, dürfen die Schergen- und Dämonen-Spieler neue Schergen- und Dämonen-Charaktere wählen.",
+                        "en": "If you died today or tonight, the Servant & Demon players may choose new Servant & Demon characters to be."
                     },
                     "icon": "👒",
                     "strategies": [
@@ -4662,7 +4662,7 @@
                             "en": "The day after you die, tell everyone that you were the Hatter! They need to adjust their choices accordingly to adjust to a potential change of characters on the evil team."
                         },
                         {
-                            "de": "Versuche nach deinem Tod anhand von Veränderungen im Spielverlauf seit dem frühen Spiel herauszufinden, in welche Charaktere sich die Diener/Dämonen verwandelt haben.",
+                            "de": "Versuche nach deinem Tod anhand von Veränderungen im Spielverlauf seit dem frühen Spiel herauszufinden, in welche Charaktere sich die Schergen/Dämonen verwandelt haben.",
                             "en": "After you die, try to see if you can spot what the Minions/Demons have changed to based on game state changes from the early game."
                         }
                     ],
@@ -4710,8 +4710,8 @@
                         "en": "Hermit"
                     },
                     "description": {
-                        "de": "Du hast alle Fähigkeiten der Außenseiter. [-0 oder -1 Außenseiter]",
-                        "en": "You have all Outsider abilities. [-0 or -1 Outsider]"
+                        "de": "Du hast alle Fähigkeiten der Außenseiter. [0 oder -1 Außenseiter]",
+                        "en": "You have all Outsider abilities. [0 or -1 Outsider]"
                     },
                     "icon": "🏔️",
                     "strategies": [],
@@ -4727,7 +4727,7 @@
                     },
                     "description": {
                         "de": "In deiner ersten Nacht wählst du einen Spieler (nicht dich selbst): Du nimmst dessen Gesinnung an (ohne zu wissen, welche), selbst wenn du betrunken oder vergiftet bist.",
-                        "en": "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned."
+                        "en": "On your 1st night, choose a player (not yourself): You become their alignment (you don't know which) even if drunk or poisoned."
                     },
                     "icon": "👹",
                     "strategies": [
@@ -4763,7 +4763,7 @@
                         "en": "Plague Doctor"
                     },
                     "description": {
-                        "de": "Stirbst du, erhält der Erzähler die Fähigkeit eines Dieners.",
+                        "de": "Stirbst du, erhält der Erzähler die Fähigkeit eines Schergen.",
                         "en": "When you die, the Storyteller gains a Minion ability."
                     },
                     "icon": "😷",
@@ -4777,11 +4777,11 @@
                             "en": "If you die, tell everyone who you are immediately. Knowing you're the Plague Doctor is extremely important for the good team, since your ability activates on death."
                         },
                         {
-                            "de": "Suche nach deinem Tod nach der Diener-Fähigkeit, die durch deinen Tod ins Spiel gekommen ist. Kannst du eine öffentlich sichtbare Fähigkeit benennen oder einem guten Mitspieler Hinweise darauf zeigen, hilft das zu beweisen, dass du der Pestarzt warst.",
+                            "de": "Suche nach deinem Tod nach der Schergen-Fähigkeit, die durch deinen Tod ins Spiel gekommen ist. Kannst du eine öffentlich sichtbare Fähigkeit benennen oder einem guten Mitspieler Hinweise darauf zeigen, hilft das zu beweisen, dass du der Pestarzt warst.",
                             "en": "When you die, look for the Minion ability that came into play as a result of your death. If you can point out a publicly visible ability, or show evidence of an ability to a good teammate, this helps prove you are the Plague Doctor."
                         },
                         {
-                            "de": "Denk über deinen Erzähler nach! Gibt es eine Fähigkeit, von der du glaubst, dass dein Erzähler sie gerne einsetzen würde, kannst du das nutzen, um herauszufinden, welche Diener-Fähigkeit bei deinem Tod ins Spiel kam.",
+                            "de": "Denk über deinen Erzähler nach! Gibt es eine Fähigkeit, von der du glaubst, dass dein Erzähler sie gerne einsetzen würde, kannst du das nutzen, um herauszufinden, welche Schergen-Fähigkeit bei deinem Tod ins Spiel kam.",
                             "en": "Meta your Storyteller! If there's an ability you think your Storyteller will want to use, you can use that to figure out which Minion ability entered play when you died."
                         }
                     ],
@@ -4873,7 +4873,7 @@
                         "en": "Snitch"
                     },
                     "description": {
-                        "de": "Jeder Diener erhält drei Bluff-Charaktere.",
+                        "de": "Jeder Scherge erhält drei Bluff-Charaktere.",
                         "en": "Each Minion gets 3 bluffs."
                     },
                     "icon": "🐀",
@@ -4994,7 +4994,7 @@
                             "en": "Tell your other evil players that you are the Boomdandy. Do it as early as possible, so that they know to vote for you at every opportunity."
                         },
                         {
-                            "de": "Nach deiner Explosion wissen alle, dass du ein Diener bist. Zeig ruhig auf einen beliebigen Spieler, auch den Dämon. Zeige aber im allerletzten Moment immer auf einen Nicht-Dämon, da jede Stimme zählt.",
+                            "de": "Nach deiner Explosion wissen alle, dass du ein Scherge bist. Zeig ruhig auf einen beliebigen Spieler, auch den Dämon. Zeige aber im allerletzten Moment immer auf einen Nicht-Dämon, da jede Stimme zählt.",
                             "en": "After exploding, everyone will know you are a Minion. Feel free to point at any player you wish, even the Demon. Make sure that you always point at a non-Demon player at the very last second though, since every vote counts."
                         }
                     ],
@@ -5010,7 +5010,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du einen Spieler: Nominierst und richtest du ihn hin, verliert sein Team. Alle Spieler erfahren, wenn du einen neuen Spieler wählst.",
-                        "en": "Each night, choose a player: if you nominate & execute them, their team loses. All players know if you choose a new player."
+                        "en": "Each night, choose a player: If you nominate & execute them, their team loses. All players know if you choose a new player."
                     },
                     "icon": "😱",
                     "strategies": [
@@ -5076,7 +5076,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht wählst du zwei Spieler: Am nächsten Tag glaubt der erste wahnhaft, dass der zweite böse ist, oder einer von beiden (oder beide) könnten sterben.",
-                        "en": "Each night, choose 2 players: tomorrow, the 1st player is mad that the 2nd is evil, or one or both might die."
+                        "en": "Each night, choose 2 players: Tomorrow, the 1st player is mad that the 2nd is evil, or one or both might die."
                     },
                     "icon": "🦅",
                     "strategies": [
@@ -5216,7 +5216,7 @@
                     },
                     "description": {
                         "de": "An jedem Tag darfst du vor den Nominierungen öffentlich einen Spieler wählen: Er stirbt. Wirst du hingerichtet, stirbst du nur, wenn du bei Schnick-Schnack-Schnuck verlierst.",
-                        "en": "Each day, before nominations, you may publicly choose a player: they die. If executed, you only die if you lose roshambo."
+                        "en": "Each day, before nominations, you may publicly choose a player: They die. If executed, you only die if you lose roshambo."
                     },
                     "icon": "🪓",
                     "strategies": [
@@ -5253,7 +5253,7 @@
                     },
                     "description": {
                         "de": "Du erhältst drei Bluff-Charaktere. In der dritten Nacht wählst du einen Spieler: Er wird zu einem bösen Dämon deiner Wahl. [Kein Dämon]",
-                        "en": "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice. [No Demon]"
+                        "en": "You get 3 bluffs. On the 3rd night, choose a player: They become an evil Demon of your choice. [No Demon]"
                     },
                     "icon": "📯",
                     "strategies": [],
@@ -5454,7 +5454,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht (außer der ersten) darfst du drei Spieler wählen (alle Spieler erfahren, wer): Jeder entscheidet still, ob er lebt oder stirbt. Entscheiden sich aber alle fürs Leben, sterben alle.",
-                        "en": "Each night (not the first), you may choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die."
+                        "en": "Each night (not the first), you may choose 3 players (all players learn who): Each silently chooses to live or die, but if all live, all die."
                     },
                     "icon": "🏺",
                     "strategies": [
@@ -5471,11 +5471,11 @@
                             "en": "Choose yourself at some stage, particularly if all other players have already been chosen previously this game."
                         },
                         {
-                            "de": "Wähle gelegentlich tote Diener. Du kannst Diener von den Toten erwecken, was entscheidend sein kann, besonders wenn sie ihre Fähigkeit erneut nutzen können.",
+                            "de": "Wähle gelegentlich tote Schergen. Du kannst Schergen von den Toten erwecken, was entscheidend sein kann, besonders wenn sie ihre Fähigkeit erneut nutzen können.",
                             "en": "Choose dead Minions occasionally. You can raise Minions from the dead, and this can be crucial, particularly if they get to use their ability again."
                         },
                         {
-                            "de": "Sprich mit deinen Dienern. Sie können dir vielleicht sagen, wen du nachts wählen solltest und wen nicht.",
+                            "de": "Sprich mit deinen Schergen. Sie können dir vielleicht sagen, wen du nachts wählen solltest und wen nicht.",
                             "en": "Talk to your Minions. They may be able to provide you with information on who to choose at night, and who not to."
                         }
                     ],
@@ -5490,8 +5490,8 @@
                         "en": "Kazali"
                     },
                     "description": {
-                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. [Du bestimmst, welche Spieler welche Diener sind. -? bis +? Außenseiter]",
-                        "en": "Each night*, choose a player: they die. [You choose which players are which Minions. -? to +? Outsiders]"
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. [Du bestimmst, welche Spieler welche Schergen sind. -? bis +? Außenseiter]",
+                        "en": "Each night*, choose a player: They die. [You choose which players are which Minions. -? to +? Outsiders]"
                     },
                     "icon": "🐍",
                     "strategies": [
@@ -5523,7 +5523,7 @@
                         "en": "Legion"
                     },
                     "description": {
-                        "de": "Jede Nacht (außer der ersten) könnte ein Spieler sterben. Hinrichtungen scheitern, wenn nur Böse abgestimmt haben. Du wirst zusätzlich als Diener angezeigt. [Die meisten Spieler sind Legion]",
+                        "de": "Jede Nacht (außer der ersten) könnte ein Spieler sterben. Hinrichtungen scheitern, wenn nur Böse abgestimmt haben. Du wirst zusätzlich als Scherge angezeigt. [Die meisten Spieler sind Legion]",
                         "en": "Each night*, a player might die. Executions fail if only evil voted. You register as a Minion too. [Most players are Legion]"
                     },
                     "icon": "⚔️",
@@ -5541,7 +5541,7 @@
                             "en": "Consider deliberately claiming the role of one of the good players in the game."
                         },
                         {
-                            "de": "Gib vor, ein Diener zu sein. Legion kann sowohl als Diener als auch als Dämon registrieren. Überzeugst du das gute Team, ein Diener zu sein, bringst du es von der richtigen Spur ab.",
+                            "de": "Gib vor, ein Scherge zu sein. Legion kann sowohl als Scherge als auch als Dämon registrieren. Überzeugst du das gute Team, ein Scherge zu sein, bringst du es von der richtigen Spur ab.",
                             "en": "Pretend to be a Minion. Legions can register as Minions as well as Demons. If you can convince the good team that you are a Minion, you can throw the good team off the scent."
                         }
                     ],
@@ -5589,17 +5589,17 @@
                         "en": "Lil' Monsta"
                     },
                     "description": {
-                        "de": "Jede Nacht wählen die Diener, wer auf Lil' Monsta aufpasst und dabei „der Dämon“ ist. Jede Nacht (außer der ersten) könnte ein Spieler sterben. [+1 Diener]",
+                        "de": "Jede Nacht wählen die Schergen, wer auf Lil' Monsta aufpasst und dabei „der Dämon“ ist. Jede Nacht (außer der ersten) könnte ein Spieler sterben. [+1 Scherge]",
                         "en": "Each night, Minions choose who babysits Lil' Monsta & \"is the Demon\". Each night*, a player might die. [+1 Minion]"
                     },
                     "icon": "👶",
                     "strategies": [
                         {
-                            "de": "Halte das Baby sicher, indem du es bei deinem zuverlässigsten und am wenigsten verdächtigen Diener platzierst.",
+                            "de": "Halte das Baby sicher, indem du es bei deinem zuverlässigsten und am wenigsten verdächtigen Schergen platzierst.",
                             "en": "Keep the baby safe by placing them with your most reliable and least suspicious Minion."
                         },
                         {
-                            "de": "Jeder Spieler kann auf Lil' Monsta aufpassen. Stimmt die Mehrheit der Diener zu, könnt ihr das Baby an jeden in der Stadt übergeben.",
+                            "de": "Jeder Spieler kann auf Lil' Monsta aufpassen. Stimmt die Mehrheit der Schergen zu, könnt ihr das Baby an jeden in der Stadt übergeben.",
                             "en": "Any player can babysit Lil' Monsta. If the majority of Minions agree, you can hand the baby off to anyone in town."
                         },
                         {
@@ -5619,12 +5619,12 @@
                     },
                     "description": {
                         "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. Zu Beginn wählst du einen Spieler: Er ist vergiftet. Du stirbst genau dann, wenn dieser Spieler tot ist.",
-                        "en": "Each night*, choose a player: they die. You start by choosing a player: they are poisoned. You die if & only if they are dead."
+                        "en": "Each night*, choose a player: They die. You start by choosing a player: They are poisoned. You die if & only if they are dead."
                     },
                     "icon": "🩸",
                     "strategies": [
                         {
-                            "de": "Kommuniziere so früh wie möglich mit deinen Dienern und sag ihnen, wen du vergiftet hast.",
+                            "de": "Kommuniziere so früh wie möglich mit deinen Schergen und sag ihnen, wen du vergiftet hast.",
                             "en": "Communicate with your Minions as early as possible, and tell them who you have poisoned."
                         },
                         {
@@ -5655,13 +5655,13 @@
                         "en": "Lord of Typhon"
                     },
                     "description": {
-                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. [Die bösen Charaktere sitzen in einer Reihe, du in der Mitte. +1 Diener. -? bis +? Außenseiter]",
-                        "en": "Each night*, choose a player: they die. [Evil characters are in a line. You are in the middle. +1 Minion. -? to +? Outsiders]"
+                        "de": "Jede Nacht (außer der ersten) wählst du einen Spieler: Er stirbt. [Die bösen Charaktere sitzen in einer Reihe, du in der Mitte. +1 Scherge. -? bis +? Außenseiter]",
+                        "en": "Each night*, choose a player: They die. [Evil characters are in a line. You are in the middle. +1 Minion. -? to +? Outsiders]"
                     },
                     "icon": "🐉",
                     "strategies": [
                         {
-                            "de": "Bluffe als Diener den Charakter, den du zu Spielbeginn gezogen hast. Findet das gute Team einen bösen Spieler und erkennt, dass es sich um ein Lord-von-Typhon-Spiel handelt, findet es das ganze böse Team – du musst also extrem gut wirken.",
+                            "de": "Bluffe als Scherge den Charakter, den du zu Spielbeginn gezogen hast. Findet das gute Team einen bösen Spieler und erkennt, dass es sich um ein Lord-von-Typhon-Spiel handelt, findet es das ganze böse Team – du musst also extrem gut wirken.",
                             "en": "As a Minion, bluff as the character you drew at the start of the game. If the good team finds one evil player and figures out it's a Lord of Typhon game, they find the whole evil team, so you need to seem extremely good."
                         },
                         {
@@ -5669,7 +5669,7 @@
                             "en": "Hide! The Lord of Typhon is not a Demon that rewards risky plays. Think carefully about the consequences of playing as an outed evil."
                         },
                         {
-                            "de": "Nutze den zusätzlichen Diener zu deinem Vorteil. +1 Diener bedeutet, dass ihr das gute Team eher überstimmen könnt und später im Spiel eher mehr Böse am Leben sind.",
+                            "de": "Nutze den zusätzlichen Scherge zu deinem Vorteil. +1 Scherge bedeutet, dass ihr das gute Team eher überstimmen könnt und später im Spiel eher mehr Böse am Leben sind.",
                             "en": "Use the additional Minion to your advantage. +1 Minion means you are more likely to outvote the good team, and more likely to have more evil players alive later in the game."
                         },
                         {
@@ -5693,7 +5693,7 @@
                     },
                     "description": {
                         "de": "Jede Nacht (außer der ersten) wählst du einen Charakter: Er stirbt. Ist dieser Charakter nicht im Spiel, bestimmt der Erzähler, wer stirbt.",
-                        "en": "Each night*, choose a character: they die. If they are not in play, the Storyteller chooses who dies."
+                        "en": "Each night*, choose a character: They die. If they are not in play, the Storyteller chooses who dies."
                     },
                     "icon": "👁️‍🗨️",
                     "strategies": [
@@ -5706,7 +5706,7 @@
                             "en": "If you think players are going to work out you're an Ojo, make sure you bluff as a less powerful Townsfolk or Outsider."
                         },
                         {
-                            "de": "Bluffe einen mächtigen Dorfbewohner und bring auch deine Diener dazu, dasselbe zu tun!",
+                            "de": "Bluffe einen mächtigen Dorfbewohner und bring auch deine Schergen dazu, dasselbe zu tun!",
                             "en": "Bluff as a powerful Townsfolk and get your Minions to do so too!"
                         },
                         {
@@ -5729,7 +5729,7 @@
                         "en": "Riot"
                     },
                     "description": {
-                        "de": "An Tag 3 werden die Diener zu Riot, und Nominierte sterben, nominieren dabei aber sofort einen lebenden Spieler. Das muss geschehen.",
+                        "de": "An Tag 3 werden die Schergen zu Riot, und Nominierte sterben, nominieren dabei aber sofort einen lebenden Spieler. Das muss geschehen.",
                         "en": "On day 3, Minions become Riot & nominees die but nominate an alive player immediately. This must happen."
                     },
                     "icon": "🚨",
@@ -5759,7 +5759,7 @@
                             "en": "Be sparing, around once per day, with how often you say it to conceal the phrase from the town, you don't want to be giving yourself away by making your phrase really obvious."
                         },
                         {
-                            "de": "Teile den Satz mit deinen Dienern. Sie können dir Gesprächsübergänge liefern, um deinen Satz einzubringen, damit alles natürlicher wirkt statt erzwungen.",
+                            "de": "Teile den Satz mit deinen Schergen. Sie können dir Gesprächsübergänge liefern, um deinen Satz einzubringen, damit alles natürlicher wirkt statt erzwungen.",
                             "en": "Share the phrase with your Minions. They can give you conversational segues to bring up your phrase and make everything seem more natural rather than forced."
                         },
                         {
