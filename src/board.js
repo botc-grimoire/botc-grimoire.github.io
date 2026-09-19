@@ -38,12 +38,98 @@ let tokenLayer = null;
 const activePingFilters = new Set();
 const SHARED_ROLE_FILTER_PREFIX = 'shared-role:';
 
+// Random, session-stable colors for the per-role "double claim" dots (see
+// getSharedRoleColor()) – keyed by role id, so a role keeps its color across
+// re-renders for as long as the page stays open.
+const sharedRoleColors = new Map();
+const MIN_CONTRAST_RATIO = 3.5;
+const MIN_HUE_DISTANCE = 40;
+
 function pingSourceKey(source) {
     return `${source.sourcePlayerId} ${getRoleId(source.sourceRole)} ${source.day}`;
 }
 
 function sharedRoleFilterKey(roleId) {
     return `${SHARED_ROLE_FILTER_PREFIX}${roleId}`;
+}
+
+/** Accepts both "#rrggbb" (our generated colors) and "rgb(r, g, b)" (from getComputedStyle). */
+function parseColor(color) {
+    if (color.startsWith('#')) {
+        return [0, 2, 4].map((offset) => parseInt(color.slice(1 + offset, 3 + offset), 16));
+    }
+
+    return (color.match(/[\d.]+/g) ?? [0, 0, 0]).slice(0, 3).map(Number);
+}
+
+function relativeLuminance(color) {
+    const [r, g, b] = parseColor(color).map((channel) => {
+        const ratio = channel / 255;
+
+        return ratio <= 0.03928 ? ratio / 12.92 : ((ratio + 0.055) / 1.055) ** 2.4;
+    });
+
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+function getBoardBackground() {
+    return getComputedStyle(document.body).backgroundColor;
+}
+
+function contrastRatio(hexA, hexB) {
+    const [lighter, darker] = [relativeLuminance(hexA), relativeLuminance(hexB)].sort((a, b) => b - a);
+
+    return (lighter + 0.05) / (darker + 0.05);
+}
+
+function hslToHex(hue, saturation, lightness) {
+    const a = saturation * Math.min(lightness, 1 - lightness);
+    const channel = (n) => {
+        const k = (n + hue / 30) % 12;
+        const value = lightness - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+
+        return Math.round(value * 255).toString(16).padStart(2, '0');
+    };
+
+    return `#${channel(0)}${channel(8)}${channel(4)}`;
+}
+
+function hueDistance(a, b) {
+    const diff = Math.abs(a - b) % 360;
+
+    return Math.min(diff, 360 - diff);
+}
+
+/**
+ * A random color for one "double claim" filter's dot: picks a hue kept away
+ * from already-assigned filter colors where possible, then lightens it until
+ * it clearly contrasts against the board's actual background. Cached per
+ * role id so it stays stable across re-renders while the page is open.
+ */
+function getSharedRoleColor(roleId) {
+    if (sharedRoleColors.has(roleId)) {
+        return sharedRoleColors.get(roleId).hex;
+    }
+
+    const usedHues = [...sharedRoleColors.values()].map((color) => color.hue);
+    let hue = Math.floor(Math.random() * 360);
+
+    for (let attempt = 0; attempt < 12 && usedHues.some((used) => hueDistance(hue, used) < MIN_HUE_DISTANCE); attempt++) {
+        hue = Math.floor(Math.random() * 360);
+    }
+
+    const boardBackground = getBoardBackground();
+    let lightness = 0.5;
+    let hex = hslToHex(hue, 0.7, lightness);
+
+    while (contrastRatio(hex, boardBackground) < MIN_CONTRAST_RATIO && lightness < 0.9) {
+        lightness += 0.05;
+        hex = hslToHex(hue, 0.7, lightness);
+    }
+
+    sharedRoleColors.set(roleId, { hex, hue });
+
+    return hex;
 }
 
 /** Small dots above the token, one per active filter that matches. */
@@ -60,6 +146,7 @@ function buildPingDots(entry, pingSourceLookup, sharedRoles) {
                 const dot = document.createElement('span');
 
                 dot.className = 'token__ping-dot token__ping-dot--shared';
+                dot.style.setProperty('--ping-dot-color', getSharedRoleColor(roleId));
                 container.append(dot);
             }
 

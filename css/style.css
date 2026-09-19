@@ -377,9 +377,9 @@ input {
     width: 8px;
 }
 
-/* Square instead of round, and a fixed color rather than per-source: marks a role tagged on more than one player, not any single ping. */
+/* Square instead of round: marks a double-claimed role rather than a single ping. Color is per-role (see getSharedRoleColor() in board.js), --tag-shared is just the fallback. */
 .token__ping-dot--shared {
-    background: var(--tag-shared);
+    background: var(--ping-dot-color, var(--tag-shared));
     border-radius: 0;
     order: -1;
 }
