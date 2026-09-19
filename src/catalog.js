@@ -123,30 +123,59 @@ export function getRoleTeam(tagText) {
 }
 
 /**
- * Known roles that alter the base outsider count, as the {min, max} range of
- * how many more (positive) or fewer (negative) Outsiders than the base
- * distribution the role's presence causes – a small, explicit table instead
- * of a dedicated roles.json field, since these are the only such cases in
- * the catalog. Per the official rules:
+ * Known roles that alter the base Townsfolk/Outsider/Minion/Demon counts, as
+ * {team, min, max}: the range of how many more (positive) or fewer
+ * (negative) of `team` than the base distribution the role's presence
+ * causes. Whatever team gains or loses players always trades against
+ * Townsfolk, since that's the "flex" pool in the official rules for all of
+ * these – a small, explicit table instead of a dedicated roles.json field,
+ * since these are the only such cases in the catalog. Per the official
+ * rules:
  * - Baron: always [+2 Outsiders]
  * - Godfather: [-1 or +1 Outsider], Storyteller's choice
  * - Fang Gu: always [+1 Outsider]
  * - Vigormortis: always [-1 Outsider]
  * - Balloonist: [+0 or +1 Outsider], Storyteller's choice
  * - Hermit: [-0 or -1 Outsider], Storyteller's choice
+ * - Summoner: always [No Demon] – the Demon slot is a Townsfolk until night 3
+ * - Lord of Typhon: always [+1 Minion]
  */
-const OUTSIDER_MODIFIERS = {
-    Baron: { min: 2, max: 2 },
-    Godfather: { min: -1, max: 1 },
-    'Fang Gu': { min: 1, max: 1 },
-    Vigormortis: { min: -1, max: -1 },
-    Balloonist: { min: 0, max: 1 },
-    Hermit: { min: -1, max: 0 }
+const ROLE_MODIFIERS = {
+    Baron: { team: 'outsider', min: 2, max: 2 },
+    Godfather: { team: 'outsider', min: -1, max: 1 },
+    'Fang Gu': { team: 'outsider', min: 1, max: 1 },
+    Vigormortis: { team: 'outsider', min: -1, max: -1 },
+    Balloonist: { team: 'outsider', min: 0, max: 1 },
+    Hermit: { team: 'outsider', min: -1, max: 0 },
+    Summoner: { team: 'demon', min: -1, max: -1 },
+    'Lord of Typhon': { team: 'minion', min: 1, max: 1 }
 };
 
-/** This role's {min, max} modifier range to the outsider count, {min: 0, max: 0} if none is known. */
-export function getOutsiderModifier(tagText) {
+/** This role's {team, min, max} modifier, `null` if none is known. */
+export function getRoleModifier(tagText) {
     const role = findRoleByName(tagText);
 
-    return (role && OUTSIDER_MODIFIERS[role.name.en]) ?? { min: 0, max: 0 };
+    return (role && ROLE_MODIFIERS[role.name.en]) ?? null;
+}
+
+/**
+ * Roles whose Storyteller's-choice modifier has no fixed or player-count-
+ * derived bound, per the official rules ("no maximum ... determined by the
+ * script" for Kazali; "-? to +? Outsiders" for both) – so a computed number
+ * would just be invented. Listed per team they make unpredictable:
+ * - Kazali: turns an unspecified number of players into Minions, and its
+ *   Outsider count swing is likewise open-ended
+ * - Lord of Typhon: [+1 Minion] is fixed (see ROLE_MODIFIERS), but its
+ *   Outsider swing is open-ended too
+ */
+const UNDETERMINED_TEAMS = {
+    Kazali: ['outsider', 'minion'],
+    'Lord of Typhon': ['outsider']
+};
+
+/** Teams this role makes unpredictable (see UNDETERMINED_TEAMS), or []. */
+export function getUndeterminedTeams(tagText) {
+    const role = findRoleByName(tagText);
+
+    return (role && UNDETERMINED_TEAMS[role.name.en]) ?? [];
 }
