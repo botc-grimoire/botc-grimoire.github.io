@@ -96,7 +96,7 @@ input {
 
 .icon-button--toolbar {
     height: 44px;
-    width: 44px;
+    min-width: 44px;
 }
 
 .icon-button--toolbar:active {
