@@ -30,15 +30,20 @@ let selectHandler = () => {};
 let tokenLayer = null;
 
 // Pure UI state (not in localStorage) – which ping sources are currently
-// checked as filters. Keys as in pingSourceKey(). SHARED_ROLES_FILTER_KEY is
-// a synthetic entry (no real ping source behind it) for the "double claims"
-// filter; it never collides with a real key since those always contain a
-// space (playerId + role id) and this one doesn't.
+// checked as filters. Keys as in pingSourceKey(). Keys built by
+// sharedRoleFilterKey() are synthetic entries (no real ping source behind
+// them), one per double-claimed role; they never collide with a real key
+// since those always contain a space (playerId + role id) and this prefix
+// doesn't.
 const activePingFilters = new Set();
-const SHARED_ROLES_FILTER_KEY = 'shared-roles';
+const SHARED_ROLE_FILTER_PREFIX = 'shared-role:';
 
 function pingSourceKey(source) {
     return `${source.sourcePlayerId} ${getRoleId(source.sourceRole)} ${source.day}`;
+}
+
+function sharedRoleFilterKey(roleId) {
+    return `${SHARED_ROLE_FILTER_PREFIX}${roleId}`;
 }
 
 /** Small dots above the token, one per active filter that matches. */
@@ -48,8 +53,10 @@ function buildPingDots(entry, pingSourceLookup, sharedRoles) {
     container.className = 'token__pings';
 
     activePingFilters.forEach((key) => {
-        if (key === SHARED_ROLES_FILTER_KEY) {
-            if (entry.roles.some((role) => sharedRoles.has(getRoleId(role)))) {
+        if (key.startsWith(SHARED_ROLE_FILTER_PREFIX)) {
+            const roleId = key.slice(SHARED_ROLE_FILTER_PREFIX.length);
+
+            if (entry.roles.some((role) => getRoleId(role) === roleId)) {
                 const dot = document.createElement('span');
 
                 dot.className = 'token__ping-dot token__ping-dot--shared';
@@ -132,10 +139,12 @@ function rebuildPingFilterOptions(pingSources, sharedRoles) {
         insertPingFilterOptionAt(pingSourceKey(source), label, true);
     });
 
-    // Only offered once at least one role is actually tagged on more than one player.
-    if (sharedRoles.size > 0) {
-        insertPingFilterOptionAt(SHARED_ROLES_FILTER_KEY, t('board.ping-filter.shared'), false);
-    }
+    [...sharedRoles]
+        .map(([roleId, tag]) => ({ name: normalizeRoleName(tag), roleId }))
+        .sort((a, b) => b.name.localeCompare(a.name))
+        .forEach(({ name, roleId }) => {
+            insertPingFilterOptionAt(sharedRoleFilterKey(roleId), t('board.ping-filter.shared', { role: name }), false);
+        });
 }
 
 function buildToken(entry, pingSourceLookup, sharedRoles) {

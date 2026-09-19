@@ -805,22 +805,28 @@ export function getPlayersPingedBy(sourcePlayerId, sourceRole, day, canonicalize
 
 /**
  * Roles that are currently recorded for more than one player – used to
- * highlight possible bluffs/mix-ups. Keys are built via `canonicalize`
- * (the caller's language-independent role id when supplied, otherwise a
- * lowercased tag).
+ * highlight possible bluffs/mix-ups, one entry per double-claimed role.
+ * Keys are built via `canonicalize` (the caller's language-independent role
+ * id when supplied, otherwise a lowercased tag); each value is one of the
+ * as-tagged role texts sharing that key, for display purposes.
  */
 export function getSharedRoles(canonicalize = defaultCanonicalize) {
     const counts = new Map();
+    const tags = new Map();
 
     board.players.forEach((entry) => {
         entry.roles.forEach((role) => {
             const key = canonicalize(role);
 
             counts.set(key, (counts.get(key) ?? 0) + 1);
+            
+            if (!tags.has(key)) {
+                tags.set(key, role);
+            }
         });
     });
 
-    return new Set([...counts].filter(([, count]) => count > 1).map(([key]) => key));
+    return new Map([...counts].filter(([, count]) => count > 1).map(([key]) => [key, tags.get(key)]));
 }
 
 export function getDay() {
