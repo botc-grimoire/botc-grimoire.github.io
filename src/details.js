@@ -590,6 +590,7 @@ export function initDetails() {
     });
 
     subscribe('board-changed', render);
+    subscribe('custom-roles-changed', render);
     subscribe('edition-changed', render);
     subscribe('roster-changed', render);
 }

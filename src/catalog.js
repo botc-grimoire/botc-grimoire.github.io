@@ -1,4 +1,9 @@
 import { localize } from './i18n.js';
+import { CUSTOM_EDITION_ID, getCustomRoleIds } from './state.js';
+
+// Order the glossary's role list, and the "Custom" edition's role picker,
+// are grouped in – one section per team.
+export const TEAMS = ['townsfolk', 'outsider', 'traveller', 'minion', 'demon'];
 
 let editions = [];
 
@@ -7,31 +12,51 @@ export function setCatalog(data) {
 }
 
 /**
- * Role names for the suggestion list, alphabetical and without duplicates.
- * "experimental" deliberately has no fixed set of its own in roles.json –
- * for that (and for any unknown edition), all roles are suggested.
+ * The roles a given edition offers. "experimental" deliberately has no fixed
+ * set of its own in roles.json – for that (and for any unknown edition), all
+ * roles across all editions are returned. CUSTOM_EDITION_ID is resolved to
+ * whichever roles the user hand-picked (see state.js's getCustomRoleIds()).
  */
-export function getRoleNames(editionId) {
+function resolveRoles(editionId) {
+    if (editionId === CUSTOM_EDITION_ID) {
+        const selected = new Set(getCustomRoleIds());
+
+        return editions.flatMap((entry) => entry.roles).filter((role) => selected.has(role.id));
+    }
+
     const edition = editionId === 'experimental' ? null : editions.find((entry) => entry.id === editionId);
-    const roles = edition ? edition.roles : editions.flatMap((entry) => entry.roles);
-    const names = roles.map((role) => localize(role.name));
+
+    return edition ? edition.roles : editions.flatMap((entry) => entry.roles);
+}
+
+/** Role names for the suggestion list, alphabetical and without duplicates. */
+export function getRoleNames(editionId) {
+    const names = resolveRoles(editionId).map((role) => localize(role.name));
 
     return [...new Set(names)].sort((a, b) => a.localeCompare(b));
 }
 
 /**
- * All catalog roles of a given team ("townsfolk"/"outsider"/"traveller"/
- * "minion"/"demon") within one edition, as {id, name} pairs (name localized
- * to the active language), alphabetically sorted. Used for the settings
- * glossary's role list, grouped by team via <optgroup>. As with
- * getRoleNames(), "experimental" (and any unknown edition) is unfiltered –
- * all roles across all editions are included.
+ * This edition's catalog roles of a given team (one of TEAMS), as {id, name}
+ * pairs (name localized to the active language), alphabetically sorted. Used
+ * for the settings glossary's role list, grouped by team via <optgroup>.
  */
 export function getRolesByTeam(team, editionId) {
-    const edition = editionId === 'experimental' ? null : editions.find((entry) => entry.id === editionId);
-    const roles = edition ? edition.roles : editions.flatMap((entry) => entry.roles);
+    return resolveRoles(editionId)
+        .filter((role) => role.team === team)
+        .map((role) => ({ id: role.id, name: localize(role.name) }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+}
 
-    return roles
+/**
+ * Every catalog role of a given team, across all editions – used for the
+ * "Custom" edition's role picker, which lets the user choose from the full
+ * catalog regardless of any edition (unlike getRolesByTeam(), this never
+ * narrows by the currently selected custom roles).
+ */
+export function getAllRolesByTeam(team) {
+    return editions
+        .flatMap((entry) => entry.roles)
         .filter((role) => role.team === team)
         .map((role) => ({ id: role.id, name: localize(role.name) }))
         .sort((a, b) => a.name.localeCompare(b.name));

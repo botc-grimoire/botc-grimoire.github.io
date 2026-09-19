@@ -208,6 +208,21 @@ input {
     gap: 8px;
 }
 
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 16px 0;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.checkbox-list__option {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
 /* Current/expected team distribution, purely informational, not a button. */
 .team-distribution {
     align-items: center;
@@ -271,6 +286,17 @@ input {
     border-radius: var(--radius);
     color: var(--text);
     min-height: 44px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.settings-field__reset {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    cursor: pointer;
+    min-height: 40px;
     padding: 0 10px;
     width: 100%;
 }

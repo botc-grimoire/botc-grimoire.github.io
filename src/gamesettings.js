@@ -1,9 +1,6 @@
 import { FABLED, LORICS, addFabled, addLoric, getActiveFabled, getActiveLorics, getEdition, removeFabled, removeLoric, subscribe } from './state.js';
-import { getRoleById, getRolesByTeam } from './catalog.js';
+import { TEAMS, getRoleById, getRolesByTeam } from './catalog.js';
 import { localize, t } from './i18n.js';
-
-// Order the glossary's role list is grouped in, one <optgroup> per team.
-const GLOSSARY_TEAMS = ['townsfolk', 'outsider', 'traveller', 'minion', 'demon'];
 
 let dialog = null;
 let fabledAddSelect = null;
@@ -156,7 +153,7 @@ function rebuildGlossaryRoleOptions() {
 
     glossaryRoleSelect.replaceChildren();
 
-    GLOSSARY_TEAMS.forEach((team) => {
+    TEAMS.forEach((team) => {
         const roles = getRolesByTeam(team, edition);
 
         if (roles.length === 0) {
@@ -287,13 +284,16 @@ export function initGameSettings() {
         }
     });
 
-    subscribe('fabled-changed', renderFabled);
-    subscribe('lorics-changed', renderLorics);
-    subscribe('edition-changed', () => {
+    const onRoleSetChanged = () => {
         selectedBluffRoleId = null;
         rebuildGlossaryRoleOptions();
         renderGlossaryRole();
-    });
+    };
+
+    subscribe('fabled-changed', renderFabled);
+    subscribe('lorics-changed', renderLorics);
+    subscribe('edition-changed', onRoleSetChanged);
+    subscribe('custom-roles-changed', onRoleSetChanged);
     renderFabled();
     renderLorics();
 }

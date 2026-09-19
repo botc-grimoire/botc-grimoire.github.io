@@ -1,4 +1,4 @@
-import { BOARD_KEY, EDITION_KEY, FABLED_KEY, LORICS_KEY, ROSTER_KEY, load, save } from './storage.js';
+import { BOARD_KEY, CUSTOM_ROLES_KEY, EDITION_KEY, FABLED_KEY, LORICS_KEY, ROSTER_KEY, load, save } from './storage.js';
 
 export const PALETTE = [
     '#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6',
@@ -30,6 +30,10 @@ const SELF_COLOR = '#ffffff';
 const SELF_X = 50;
 const SELF_Y = 88;
 
+// "Custom" lets the user hand-pick roles from the full catalog (see
+// getCustomRoleIds()/setCustomRoleSelected()) instead of using a fixed set.
+export const CUSTOM_EDITION_ID = 'custom';
+
 /**
  * Editions are deliberately kept in English, even in the German UI – that's
  * simply what the sets are called. Order as requested; "experimental" is the
@@ -40,7 +44,8 @@ export const EDITIONS = [
     { id: 'bad-moon-rising', label: 'Bad Moon Rising' },
     { id: 'sects-violets', label: 'Sects & Violets' },
     { id: 'travellers', label: 'Travellers' },
-    { id: 'experimental', label: 'Experimental' }
+    { id: 'experimental', label: 'Experimental' },
+    { id: CUSTOM_EDITION_ID, label: 'Custom' }
 ];
 
 export const DEFAULT_EDITION = 'experimental';
@@ -268,6 +273,7 @@ export const FABLED = [
 const events = new EventTarget();
 
 let board = normalizeBoard(load(BOARD_KEY, null));
+let customRoleIds = normalizeCustomRoleIds(load(CUSTOM_ROLES_KEY, []));
 let edition = normalizeEdition(load(EDITION_KEY, DEFAULT_EDITION));
 let fabled = normalizeFabled(load(FABLED_KEY, []));
 let lorics = normalizeLorics(load(LORICS_KEY, []));
@@ -406,6 +412,20 @@ function normalizeEdition(value) {
     return EDITIONS.some((entry) => entry.id === value) ? value : DEFAULT_EDITION;
 }
 
+/**
+ * Drops duplicates, keeps the order of first occurrence. Unlike Fabled/Lorics,
+ * there's no local catalog constant to validate ids against here – the role
+ * catalog lives in catalog.js/roles.json, which state.js deliberately stays
+ * free of (see getSharedRoles()'s doc comment).
+ */
+function normalizeCustomRoleIds(value) {
+    if (!Array.isArray(value)) {
+        return [];
+    }
+
+    return [...new Set(value.filter((id) => typeof id === 'string' && id !== ''))];
+}
+
 /** Drops unknown/duplicate ids, keeps the order of first occurrence. */
 function normalizeFabled(value) {
     if (!Array.isArray(value)) {
@@ -461,6 +481,11 @@ function normalizeRoster(value) {
 function persistBoard() {
     save(BOARD_KEY, board);
     emit('board-changed');
+}
+
+function persistCustomRoleIds() {
+    save(CUSTOM_ROLES_KEY, customRoleIds);
+    emit('custom-roles-changed');
 }
 
 function persistEdition() {
@@ -568,6 +593,37 @@ export function setEdition(value) {
 
     edition = value;
     persistEdition();
+}
+
+/* -------------------------------------------------------------- Custom roles */
+
+// A separate storage slot, like the edition: a setup decision that "clear
+// board" does not affect. Only relevant while the edition is
+// CUSTOM_EDITION_ID, but kept even if the user switches away and back.
+export function getCustomRoleIds() {
+    return [...customRoleIds];
+}
+
+export function isCustomRoleSelected(id) {
+    return customRoleIds.includes(id);
+}
+
+export function setCustomRoleSelected(id, selected) {
+    if (selected === customRoleIds.includes(id)) {
+        return;
+    }
+
+    customRoleIds = selected ? [...customRoleIds, id] : customRoleIds.filter((existing) => existing !== id);
+    persistCustomRoleIds();
+}
+
+export function clearCustomRoleIds() {
+    if (customRoleIds.length === 0) {
+        return;
+    }
+
+    customRoleIds = [];
+    persistCustomRoleIds();
 }
 
 /* ------------------------------------------------------------------- Fabled */

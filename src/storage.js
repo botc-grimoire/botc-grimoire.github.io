@@ -1,4 +1,5 @@
 export const BOARD_KEY = 'botc.board';
+export const CUSTOM_ROLES_KEY = 'botc.customRoles';
 export const EDITION_KEY = 'botc.edition';
 export const FABLED_KEY = 'botc.fabled';
 export const LORICS_KEY = 'botc.lorics';
