@@ -4,7 +4,7 @@ import { initSidebar, openSidebar, refreshLabels, showPanel } from './sidebar.js
 import { isLocked, refresh, subscribe } from './state.js';
 import { initBoard } from './board.js';
 import { initDayCounter } from './daycounter.js';
-import { initEdition } from './edition.js';
+import { initEdition, refreshCustomRoleLabels } from './edition.js';
 import { initGameSettings } from './gamesettings.js';
 import { initDistribution } from './distribution.js';
 import { initPingDialog } from './pingdialog.js';
@@ -39,6 +39,7 @@ function initLanguageSwitch() {
         setLanguage(input.checked ? 'en' : 'de');
         applyTranslations();
         refreshLabels();
+        refreshCustomRoleLabels();
         // Re-renders the player list, board and detail panel with the new texts.
         refresh();
     });

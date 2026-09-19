@@ -57,6 +57,10 @@ function updateCustomRolesVisibility() {
     customRolesSection.hidden = select.value !== CUSTOM_EDITION_ID;
 }
 
+export function refreshCustomRoleLabels() {
+    rebuildCustomRoleOptions();
+}
+
 export function initEdition() {
     customRolesList = document.getElementById('custom-roles-list');
     customRolesReset = document.getElementById('custom-roles-reset');
