@@ -123,15 +123,30 @@ export function getRoleTeam(tagText) {
 }
 
 /**
- * Known roles that alter the base outsider count (currently only the
- * Baron, [+2 Outsiders]) – a small, explicit table instead of a dedicated
- * roles.json field, since this is so far the only such case in the catalog.
+ * Known roles that alter the base outsider count, as the {min, max} range of
+ * how many more (positive) or fewer (negative) Outsiders than the base
+ * distribution the role's presence causes – a small, explicit table instead
+ * of a dedicated roles.json field, since these are the only such cases in
+ * the catalog. Per the official rules:
+ * - Baron: always [+2 Outsiders]
+ * - Godfather: [-1 or +1 Outsider], Storyteller's choice
+ * - Fang Gu: always [+1 Outsider]
+ * - Vigormortis: always [-1 Outsider]
+ * - Balloonist: [+0 or +1 Outsider], Storyteller's choice
+ * - Hermit: [-0 or -1 Outsider], Storyteller's choice
  */
-const OUTSIDER_MODIFIERS = { Baron: 2 };
+const OUTSIDER_MODIFIERS = {
+    Baron: { min: 2, max: 2 },
+    Godfather: { min: -1, max: 1 },
+    'Fang Gu': { min: 1, max: 1 },
+    Vigormortis: { min: -1, max: -1 },
+    Balloonist: { min: 0, max: 1 },
+    Hermit: { min: -1, max: 0 }
+};
 
-/** This role's modifier to the outsider count, 0 if none is known. */
+/** This role's {min, max} modifier range to the outsider count, {min: 0, max: 0} if none is known. */
 export function getOutsiderModifier(tagText) {
     const role = findRoleByName(tagText);
 
-    return role ? OUTSIDER_MODIFIERS[role.name.en] ?? 0 : 0;
+    return (role && OUTSIDER_MODIFIERS[role.name.en]) ?? { min: 0, max: 0 };
 }

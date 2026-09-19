@@ -56,29 +56,43 @@ function countTravellerPlayers(players) {
 }
 
 /**
- * Bonus from known roles like the Baron. Counts each known modifier role
- * only once, regardless of how often/on how many players it appears as a
- * tag – in the actual game it only exists once anyway. Per the official
- * rules, the Baron trades Townsfolk for Outsiders, so it doesn't change the
- * total player count.
+ * Combined {min, max} outsider bonus from known roles like the Baron.
+ * Counts each known modifier role only once, regardless of how often/on how
+ * many players it appears as a tag – in the actual game it only exists once
+ * anyway. Per the official rules, these roles trade Townsfolk for Outsiders
+ * (or vice versa), so they don't change the total player count.
  */
 function countOutsiderBonus(players) {
     const seen = new Set();
-    let bonus = 0;
+    let min = 0;
+    let max = 0;
 
     players.forEach((entry) => {
         entry.roles.forEach((role) => {
             const modifier = getOutsiderModifier(role);
             const key = getRoleId(role);
 
-            if (modifier > 0 && !seen.has(key)) {
+            if ((modifier.min !== 0 || modifier.max !== 0) && !seen.has(key)) {
                 seen.add(key);
-                bonus += modifier;
+                min += modifier.min;
+                max += modifier.max;
             }
         });
     });
 
-    return bonus;
+    return { min, max };
+}
+
+/**
+ * Formats a base count adjusted by a {min, max} bonus as "n" or "lo-hi".
+ * Clamped at 0 – e.g. Godfather's "-1 or +1 Outsider" can't actually remove
+ * an Outsider from a base distribution that has none.
+ */
+function formatRange(base, min, max) {
+    const lo = Math.max(0, base + min);
+    const hi = Math.max(0, base + max);
+
+    return lo === hi ? `${lo}` : `${lo}-${hi}`;
 }
 
 function render() {
@@ -89,8 +103,8 @@ function render() {
 
     const currentTownsfolk = countDistinctRoles(players, 'townsfolk');
     const currentOutsiders = countDistinctRoles(players, 'outsider');
-    const expectedTownsfolk = table === undefined ? '–' : table.townsfolk - bonus;
-    const expectedOutsiders = table === undefined ? '–' : table.outsiders + bonus;
+    const expectedTownsfolk = table === undefined ? '–' : formatRange(table.townsfolk, -bonus.max, -bonus.min);
+    const expectedOutsiders = table === undefined ? '–' : formatRange(table.outsiders, bonus.min, bonus.max);
     const expectedMinions = table === undefined ? '–' : table.minions;
     const expectedDemons = table === undefined ? '–' : table.demons;
 
