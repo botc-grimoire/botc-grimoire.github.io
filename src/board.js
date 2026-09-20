@@ -94,6 +94,11 @@ function hslToHex(hue, saturation, lightness) {
     return `#${channel(0)}${channel(8)}${channel(4)}`;
 }
 
+/** Whichever of black/white gives better contrast against the given (hex) background. */
+function readableTextColor(backgroundColor) {
+    return contrastRatio(backgroundColor, '#000000') >= contrastRatio(backgroundColor, '#ffffff') ? '#000' : '#fff';
+}
+
 function hueDistance(a, b) {
     const diff = Math.abs(a - b) % 360;
 
@@ -163,8 +168,16 @@ function buildPingDots(entry, pingSourceLookup, sharedRoles) {
         const livePlayer = getPlayer(source.sourcePlayerId);
         const dot = document.createElement('span');
 
+        const dotColor = livePlayer ? livePlayer.color : source.sourceColor;
+
         dot.className = 'token__ping-dot';
-        dot.style.setProperty('--ping-dot-color', livePlayer ? livePlayer.color : source.sourceColor);
+        dot.style.setProperty('--ping-dot-color', dotColor);
+        dot.style.color = readableTextColor(dotColor);
+
+        if (source.day !== null) {
+            dot.textContent = String(source.day);
+        }
+
         container.append(dot);
     });
 

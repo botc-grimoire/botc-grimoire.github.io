@@ -400,11 +400,17 @@ input {
 }
 
 .token__ping-dot {
+    align-items: center;
     background: var(--ping-dot-color, var(--text-muted));
     border-radius: 50%;
     box-shadow: 0 0 0 1px rgb(0 0 0 / 40%);
-    height: 8px;
-    width: 8px;
+    color: #fff;
+    display: flex;
+    font-size: 8px;
+    height: 12px;
+    justify-content: center;
+    line-height: 1;
+    width: 12px;
 }
 
 /* Square instead of round: marks a double-claimed role rather than a single ping. Color is per-role (see getSharedRoleColor() in board.js), --tag-shared is just the fallback. */
