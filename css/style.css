@@ -383,7 +383,7 @@ input {
 /* Ping filter matches: small circles above the token, wrapping to a new line from 5 onward. */
 .token__pings {
     bottom: 100%;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 2px;
     justify-content: center;
@@ -393,6 +393,10 @@ input {
     pointer-events: none;
     position: absolute;
     transform: translateX(-50%);
+}
+
+.board--locked .token__pings {
+    display: flex;
 }
 
 .token__ping-dot {
