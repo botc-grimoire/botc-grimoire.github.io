@@ -707,11 +707,15 @@ export function addPing(playerId, { sourcePlayerId, sourceRole, day, comment }, 
     const normalizedDay = Number.isInteger(day) && day > 0 ? day : null;
     const normalizedComment = typeof comment === 'string' ? comment : '';
 
-    // No duplicate entries for the same source on one player: an existing
-    // entry is updated instead of duplicated (e.g. when the quick dialog
-    // creates the same ping again for a target that was already recorded).
+    // No duplicate entries for the same source/role on the same day: an
+    // existing entry is updated instead of duplicated (e.g. when the quick
+    // dialog creates the same ping again for a target that was already
+    // recorded). A different day is a distinct ping, not a duplicate.
     const existing = entry.pings.find(
-        (ping) => ping.sourcePlayerId === sourcePlayerId && canonicalize(ping.sourceRole) === canonicalize(trimmedRole)
+        (ping) =>
+            ping.sourcePlayerId === sourcePlayerId &&
+            canonicalize(ping.sourceRole) === canonicalize(trimmedRole) &&
+            ping.day === normalizedDay
     );
 
     if (existing) {
